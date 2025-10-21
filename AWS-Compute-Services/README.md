@@ -1,4 +1,4 @@
-# ⚙️ AWS Compute Services Explained
+# ⚙️ AWS Compute Services 
 
 ---
 
