@@ -1,135 +1,149 @@
-# AWS-Basics-to-Advanced
+# AWS Complete Syllabus
 
-## ☁️ **1. AWS Core Concepts**
-
-* What is Cloud Computing
-* AWS Global Infrastructure (Regions, AZs, Edge Locations)
-* Shared Responsibility Model
-* AWS Management Console & CLI
+This syllabus covers **all major AWS services** categorized by domain, suitable for learning, certification prep, or interview preparation.
 
 ---
 
-## 🖥️ **2. Compute Services**
-
-* **EC2 (Elastic Compute Cloud)**
-
-  * What is EC2, Instance Types
-  * EBS Volume vs Instance Store
-  * AMI, Security Group, Key Pair, Tags
-  * Pricing Models (On-demand, Reserved, Spot, Savings Plans)
-  * **Difference between Security Group & NACLs**
-
-* **AWS Batch** – Running large-scale batch computing jobs with EC2 or Fargate
-
-* **Elastic Beanstalk** – Automated app deployment (e.g., Python, Java, Node.js apps)
-
-* **Lambda** – Serverless compute with pay-per-invocation
-
-  * Examples of Lambda use cases
-  * Optimization strategies
-
-* **Fargate** – Serverless container compute for ECS/EKS
-
-  * Examples and comparison with EC2 and Lambda
-
-* **AWS SAR (Serverless Application Repository)** – Deploy reusable Lambda-based apps
+## 1. AWS Compute Services
+- **EC2 (Elastic Compute Cloud)**
+  - Instance types, pricing, AMI, key pairs, security groups, instance store, EBS
+- **Lambda**
+  - Serverless compute, triggers, execution time, integration with API Gateway
+- **Elastic Beanstalk**
+  - PaaS deployment, environment management
+- **AWS Batch**
+  - Batch job orchestration and scheduling
+- **Fargate**
+  - Serverless containers with ECS/EKS
+- **Serverless Application Repository (SAR)**
 
 ---
 
-## 🗃️ **3. Storage Services**
-
-* **S3 (Simple Storage Service)** – Object storage with versioning & lifecycle rules
-* **EBS (Elastic Block Store)** – Persistent block storage for EC2
-* **EFS (Elastic File System)** – Shared file storage for Linux EC2 instances
-* **FSx (Windows/Linux File Systems)**
-* **Glacier** – Low-cost cold storage for archival
-* **Storage Gateway** – Hybrid cloud storage bridge
-* **AWS Backup** – Centralized backup management
-* **Snow Family** – Physical data transport solutions
-
----
-
-## 🗄️ **4. Database Services**
-
-* **RDS (Relational Database Service)** – Managed relational databases (MySQL, PostgreSQL, Oracle, SQL Server, MariaDB, Aurora)
-* **DynamoDB** – Fully managed NoSQL key-value database
-* **Redshift** – Data warehouse for analytics and BI workloads
-* **ElastiCache** – In-memory caching service (Redis and Memcached)
-* **Neptune** – Managed graph database for connected data
-* **DocumentDB** – Managed document-oriented database compatible with MongoDB
-* **Aurora** – High-performance relational database compatible with MySQL and PostgreSQL
+## 2. AWS Storage Services
+- **S3 (Simple Storage Service)**
+  - Buckets, objects, versioning, storage classes, lifecycle policies
+- **EBS (Elastic Block Store)**
+  - Volumes, snapshots, types, performance
+- **EFS (Elastic File System)**
+  - NFS-based file storage, multi-AZ
+- **FSx**
+  - Windows File Server, Lustre integration
+- **Glacier & Glacier Deep Archive**
+  - Cold storage for archival
+- **Storage Gateway**
+  - Hybrid cloud storage
+- **AWS Backup & Snow Family**
 
 ---
 
-## 🧩 **5. Networking & Content Delivery**
-
-* **VPC (Virtual Private Cloud)**
-
-  * Subnets, Route Tables, Internet Gateway, NAT Gateway
-  * Security Groups vs NACLs
-* **Elastic Load Balancer (ELB)** – Types: Classic, ALB, NLB
-* **Route 53** – DNS and Domain management
-* **AWS Direct Connect** – Dedicated network connection to AWS
-
----
-
-## 🔐 **6. Security, Identity & Compliance**
-
-* **IAM (Identity and Access Management)**
-
-  * Users, Groups, Roles, Policies
-  * IAM Best Practices
-* **KMS (Key Management Service)** – Encryption key creation & management
-
----
-
-## 🧱 **7. Infrastructure as Code (IaC)**
-
-* **AWS CloudFormation** – Automating infrastructure deployment using templates
+## 3. AWS Database Services
+- **Amazon RDS (Relational Database Service)**
+  - Managed databases: MySQL, PostgreSQL, MariaDB, Oracle, SQL Server
+  - Multi-AZ, Read Replicas, automated backups
+- **Amazon Aurora**
+  - High-performance MySQL/PostgreSQL-compatible database
+- **Amazon DynamoDB**
+  - Fully managed NoSQL database
+  - Key-value and document data model, global tables
+- **Amazon Redshift**
+  - Data warehouse for analytics
+- **Amazon DocumentDB**
+  - Managed MongoDB-compatible database
+- **Amazon Neptune**
+  - Graph database for highly connected data
+- **Amazon QLDB (Quantum Ledger Database)**
+  - Immutable ledger for transaction data
+- **Amazon ElastiCache**
+  - In-memory caching with Redis or Memcached
+- **AWS Database Migration Service (DMS)**
+  - Migrate databases to AWS with minimal downtime
 
 ---
 
-## ⚙️ **8. Application Integration**
-
-* **SQS (Simple Queue Service)**
-* **SNS (Simple Notification Service)**
-* **EventBridge (CloudWatch Events)**
-
----
-
-## 🚀 **9. Deployment & CI/CD**
-
-* **AWS CodeCommit** – Source control repository
-* **AWS CodeBuild** – Build automation
-* **AWS CodeDeploy** – Deployment automation
-* **AWS CodePipeline** – CI/CD orchestration
+## 4. AWS Networking & Content Delivery
+- **VPC (Virtual Private Cloud)**
+  - Subnets, route tables, IGW, NAT, NACLs, security groups
+- **API Gateway**
+  - REST & WebSocket APIs, integration with Lambda
+- **Route 53**
+  - DNS service, routing policies
+- **CloudFront**
+  - CDN, caching, edge locations
+- **Elastic Load Balancing (ALB, NLB)**
+- **Direct Connect & Transit Gateway**
+- **AWS Global Accelerator**
 
 ---
 
-## 📊 **10. Monitoring & Management**
-
-* **CloudWatch** – Logs, Metrics, Alarms
-* **CloudTrail** – API activity tracking
-* **Trusted Advisor** – Cost, Security, and Performance recommendations
-* **AWS Config** – Configuration compliance tracking
-
----
-
-## 🧩 **11. Containers & Kubernetes**
-
-* **ECS (Elastic Container Service)**
-* **EKS (Elastic Kubernetes Service)**
-* Integration with Fargate and EC2
+## 5. AWS Security, Identity & Compliance
+- **IAM (Identity and Access Management)**
+- **KMS (Key Management Service)**
+- **Cognito**
+- **Directory Service**
+- **RAM (Resource Access Manager)**
+- **Secrets Manager**
+- **Certificate Manager**
+- **Security Hub & GuardDuty**
 
 ---
 
-## 💰 **12. Billing & Cost Management Services**
-
-* **AWS Billing Console** – Centralized view of account charges and usage
-* **Cost Explorer** – Analyze spending trends and forecast future costs
-* **AWS Budgets** – Set custom budgets and receive alerts on spending limits
-* **AWS Pricing Calculator** – Estimate costs before deploying resources
-* **Consolidated Billing** – Combine multiple AWS accounts for unified billing
-* **Savings Plans & Reserved Instances** – Cost optimization options for long-term workloads
+## 6. AWS Billing & Cost Management
+- **Cost Explorer**
+- **Budgets**
+- **Pricing Calculator**
+- **Cost and Usage Reports (CUR)**
+- **Reserved Instance & Savings Plan Reporting**
 
 ---
+
+## 7. AWS Management & Governance
+- **Auto Scaling**
+- **CloudFormation**
+- **CloudWatch**
+- **CloudTrail**
+- **AWS Config**
+- **License Manager**
+- **AWS Organizations**
+- **Systems Manager**
+
+---
+
+## 8. AWS Developer Tools
+- **CodeCommit**
+- **CodeBuild**
+- **CodePipeline**
+- **CodeDeploy**
+- **X-Ray**
+
+---
+
+## 9. AWS Application Integration
+- **SQS (Simple Queue Service)**
+- **SNS (Simple Notification Service)**
+- **EventBridge**
+- **Step Functions**
+- **SWF (Simple Workflow Service)**
+
+---
+
+## 10. AWS Containers & Kubernetes
+- **ECS (Elastic Container Service)**
+- **EKS (Elastic Kubernetes Service)**
+- **ECR (Elastic Container Registry)**
+- **Integration with Fargate**
+- **Container orchestration, scaling, and deployment workflows**
+
+---
+
+## 11. Other Topics for Production Support / DevOps Focus
+- **Cloud monitoring & logging**
+- **CI/CD pipelines with AWS Developer Tools**
+- **Serverless architecture patterns**
+- **Event-driven architecture with EventBridge & SNS**
+- **Cost optimization strategies**
+- **Security best practices & compliance checks**
+
+---
+
+This syllabus provides a **structured roadmap for learning AWS services** from foundational compute, storage, and databases to advanced DevOps, container, and integration services.  
+
