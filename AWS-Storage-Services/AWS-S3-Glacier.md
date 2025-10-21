@@ -1,4 +1,4 @@
-# AWS S3 Glacier & Glacier Deep Archive: 
+# AWS S3 Glacier ( and Glacier Deep Archive )
 
 ## What is AWS S3 Glacier?
 
