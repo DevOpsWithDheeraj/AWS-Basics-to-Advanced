@@ -211,6 +211,3 @@ Once deployed, ECS will run the container via Fargate.
 Use **AWS Fargate + ECS + Application Load Balancer + CloudWatch** to build a **fully managed, auto-scaling microservice architecture** — no servers, no patching, no downtime!
 
 ---
-
-Would you like me to convert this `.md` file into a **.pdf** version for your AWS study notes collection (with formatted tables and highlights)?
-```
