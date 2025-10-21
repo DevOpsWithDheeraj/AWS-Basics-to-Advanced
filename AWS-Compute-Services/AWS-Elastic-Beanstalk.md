@@ -101,8 +101,7 @@ Deploy a Node.js website on AWS with zero manual server setup.
    mkdir my-node-app && cd my-node-app
    npm init -y
    npm install express
-````
-
+   
 2. **Add `app.js`**
 
    ```javascript
