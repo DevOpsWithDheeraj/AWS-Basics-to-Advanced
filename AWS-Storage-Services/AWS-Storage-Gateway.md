@@ -1,6 +1,6 @@
 # AWS Storage Gateway
 
-## What is AWS Storage Gateway?
+## 1. What is AWS Storage Gateway?
 
 AWS Storage Gateway is a hybrid cloud storage service that connects on-premises environments with AWS cloud storage. It enables seamless integration of on-premises applications with AWS storage services like **S3, Glacier, and EBS**, providing secure, low-latency access to cloud storage while retaining local access for frequently used data.
 
@@ -8,7 +8,7 @@ It helps organizations **move backup, archive, and disaster recovery workloads t
 
 ---
 
-## Types of AWS Storage Gateway
+## 2. Types of AWS Storage Gateway
 
 AWS Storage Gateway offers three main types:
 
@@ -50,7 +50,7 @@ AWS Storage Gateway offers three main types:
 
 ---
 
-## Features
+## 3. Features
 
 - Hybrid cloud storage with low-latency access.
 - Seamless integration with S3, Glacier, and EBS.
@@ -62,7 +62,7 @@ AWS Storage Gateway offers three main types:
 
 ---
 
-## How to Configure AWS Storage Gateway
+## 4. How to Configure AWS Storage Gateway
 
 ### Step 1: Deploy the Gateway
 - Choose deployment option: **VMware ESXi, Hyper-V, EC2, or hardware appliance**.
@@ -90,7 +90,7 @@ AWS Storage Gateway offers three main types:
 
 ---
 
-## Pricing
+## 5. Pricing
 
 - **Gateway Usage**: Hourly charge for the running gateway instance.
 - **Storage**:
@@ -105,7 +105,7 @@ AWS Storage Gateway offers three main types:
 
 ---
 
-## Best Practices
+## 6. Best Practices
 
 - Enable local caching to improve performance for frequently accessed data.
 - Use IAM policies to control access to S3 buckets.
@@ -116,7 +116,7 @@ AWS Storage Gateway offers three main types:
 
 ---
 
-## Practical Example: File Gateway for Hybrid File Storage
+## 7. Practical Example: File Gateway for Hybrid File Storage
 
 ### Scenario
 A company wants to store user-generated files in AWS S3 while allowing employees to access them locally over SMB.
@@ -136,7 +136,7 @@ The company now has a hybrid file storage solution: fast local access for employ
 
 ---
 
-## References
+## 8. References
 - [AWS Storage Gateway Documentation](https://docs.aws.amazon.com/storagegateway/latest/userguide/WhatIsStorageGateway.html)
 - [AWS Storage Gateway Pricing](https://aws.amazon.com/storagegateway/pricing/)
 ```
