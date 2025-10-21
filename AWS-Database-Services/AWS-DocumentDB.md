@@ -278,6 +278,4 @@ With its seamless MongoDB compatibility, managed scaling, and AWS ecosystem inte
 * [Amazon DocumentDB Official Docs](https://docs.aws.amazon.com/documentdb/latest/developerguide/what-is.html)
 * [AWS Pricing for DocumentDB](https://aws.amazon.com/documentdb/pricing/)
 
-
-Would you like me to also create a downloadable `.md` file (`Amazon_DocumentDB_Guide.md`) for you?
-```
+---
