@@ -1,6 +1,6 @@
 # AWS RDS (Relational Database Service) 
 
-## What is AWS RDS?
+## 1. What is AWS RDS?
 
 AWS RDS (Relational Database Service) is a fully managed service provided by Amazon Web Services that makes it easy to set up, operate, and scale a relational database in the cloud. RDS handles routine database tasks such as provisioning, patching, backup, recovery, and scaling, allowing developers and businesses to focus on application development rather than database management.
 
@@ -13,7 +13,7 @@ RDS supports several popular relational database engines, including:
 * Oracle Database
 * Microsoft SQL Server
 
-## Key Features of AWS RDS
+## 2. Key Features of AWS RDS
 
 ### 1. Fully Managed
 
@@ -56,7 +56,7 @@ RDS provides easy vertical and horizontal scaling:
 * Reserved instances for long-term cost savings.
 * Storage autoscaling to adjust with workload.
 
-## AWS RDS Architecture
+## 3. AWS RDS Architecture
 
 RDS has a simple architecture with these key components:
 
@@ -83,7 +83,7 @@ RDS has a simple architecture with these key components:
             +------------------------+
 ```
 
-## How AWS RDS Works
+## 4. How AWS RDS Works:
 
 1. **Instance Launch:** You select a database engine, instance type, storage type, and network settings.
 2. **Automatic Management:** AWS RDS automates backups, patching, and health monitoring.
@@ -91,7 +91,7 @@ RDS has a simple architecture with these key components:
 4. **Scaling:** Storage and compute resources can be scaled with minimal downtime.
 5. **Security & Monitoring:** Integrated with VPC, IAM, KMS, and CloudWatch for full control.
 
-## Practical Example: Deploying a MySQL RDS Instance
+## 5. Practical Example: Deploying a MySQL RDS Instance
 
 ### Step 1: Sign in to AWS Management Console
 
@@ -159,7 +159,7 @@ INSERT INTO employees (name, position, salary) VALUES
 SELECT * FROM employees;
 ```
 
-## Best Practices
+## 6. Best Practices
 
 1. **Enable Multi-AZ for Production** for high availability.
 2. **Use Read Replicas** for read-heavy workloads.
@@ -168,7 +168,7 @@ SELECT * FROM employees;
 5. **Monitor metrics** via CloudWatch.
 6. **Apply security patches** regularly.
 
-## Use Cases of AWS RDS
+## 7. Use Cases of AWS RDS
 
 * Web and mobile applications requiring a relational database.
 * E-commerce platforms managing transactional data.
@@ -176,7 +176,7 @@ SELECT * FROM employees;
 * Content management systems (CMS) like WordPress.
 * SaaS applications needing managed database services.
 
-## Pricing
+## 8. Pricing
 
 Pricing depends on:
 
@@ -188,7 +188,7 @@ Pricing depends on:
 
 AWS provides a **cost calculator** to estimate monthly charges.
 
-## Conclusion
+## 9. Conclusion
 
 AWS RDS abstracts database management complexity and provides a reliable, scalable, and secure environment for relational databases. By leveraging RDS, organizations can focus on application development while AWS handles operational overhead, ensuring high availability and performance.
 
