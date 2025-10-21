@@ -1,6 +1,6 @@
 # 📗 Amazon Aurora 
 
-> **Amazon Aurora** is a cloud-native, fully managed relational database engine that is compatible with **MySQL** and **PostgreSQL**. It combines the performance and availability of high-end commercial databases with the simplicity and cost-effectiveness of open-source databases. :contentReference[oaicite:0]{index=0}
+> **Amazon Aurora** is a cloud-native, fully managed relational database engine that is compatible with **MySQL** and **PostgreSQL**. It combines the performance and availability of high-end commercial databases with the simplicity and cost-effectiveness of open-source databases.
 
 ---
 
