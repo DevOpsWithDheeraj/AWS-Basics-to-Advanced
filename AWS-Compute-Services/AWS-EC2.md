@@ -163,8 +163,3 @@ EC2 pricing models:
 Use **AWS CloudWatch** to monitor CPU, memory, and disk usage of your EC2 instance.
 
 ```
-
----
-
-Would you like me to **convert this `.md` file into a downloadable `.pdf` or `.docx`** for your AWS notes?
-```
