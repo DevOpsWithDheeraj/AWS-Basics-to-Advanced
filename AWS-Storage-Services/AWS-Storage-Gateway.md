@@ -139,6 +139,5 @@ The company now has a hybrid file storage solution: fast local access for employ
 ## 8. References
 - [AWS Storage Gateway Documentation](https://docs.aws.amazon.com/storagegateway/latest/userguide/WhatIsStorageGateway.html)
 - [AWS Storage Gateway Pricing](https://aws.amazon.com/storagegateway/pricing/)
-```
 
 ---
