@@ -1,6 +1,6 @@
 # AWS Snow Family
 
-## What is AWS Snow Family?
+## 1. What is AWS Snow Family?
 
 AWS Snow Family is a set of physical devices and services designed to **move large amounts of data between on-premises environments and AWS**. It helps in **data migration, edge computing, and disaster recovery** where network transfer is impractical due to bandwidth constraints or latency issues.  
 
@@ -12,7 +12,7 @@ The Snow Family includes:
 
 ---
 
-## Features
+## 2. Features
 
 - **Secure and Durable**: End-to-end encryption, tamper-resistant devices.
 - **Edge Computing**: Snowcone and Snowball Edge can run compute workloads at the edge using AWS Lambda or EC2 instances.
@@ -24,7 +24,7 @@ The Snow Family includes:
 
 ---
 
-## How to Configure AWS Snow Family
+## 3. How to Configure AWS Snow Family
 
 ### Step 1: Choose the Device
 - **Snowcone**: For small datasets (< 8 TB) and edge computing.
@@ -54,7 +54,7 @@ The Snow Family includes:
 
 ---
 
-## Use Cases
+## 4. Use Cases
 
 - **Data Migration**: Moving large datasets to AWS without relying on internet bandwidth.
 - **Disaster Recovery**: Physical transport of backup data to AWS.
@@ -64,7 +64,7 @@ The Snow Family includes:
 
 ---
 
-## Pricing
+## 5. Pricing
 
 - **Device Rental**: Charged per job (device usage), usually per day.
   - Snowcone: ~$0.03 per GB/day (storage + compute).
@@ -81,7 +81,7 @@ The Snow Family includes:
 
 ---
 
-## Best Practices
+## 6. Best Practices
 
 - Plan device usage: Estimate data size and choose appropriate device.
 - Use checksum validation to ensure data integrity.
@@ -93,7 +93,7 @@ The Snow Family includes:
 
 ---
 
-## Practical Example: Migrating a Media Archive
+## 7. Practical Example: Migrating a Media Archive
 
 ### Scenario
 A media company wants to move **500 TB of archived video content** from on-premises storage to AWS S3 for long-term storage and processing.
@@ -113,6 +113,6 @@ The media archive is successfully migrated to AWS without saturating internet ba
 
 ---
 
-## References
+## 8. References
 - [AWS Snow Family Documentation](https://docs.aws.amazon.com/snowball/latest/ug/whatissnow.html)
 - [AWS Snow Family Pricing](https://aws.amazon.com/snowball/pricing/)
