@@ -163,3 +163,5 @@ EC2 pricing models:
 ### 💡 Tip:
 
 Use **AWS CloudWatch** to monitor CPU, memory, and disk usage of your EC2 instance.
+
+---
