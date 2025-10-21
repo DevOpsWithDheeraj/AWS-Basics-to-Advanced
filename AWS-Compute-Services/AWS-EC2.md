@@ -104,6 +104,8 @@ EC2 pricing models:
 
 ---
 
+
+
 ## 🧠 Practical Example
 
 ### Scenario: Deploying a Simple Web Server
