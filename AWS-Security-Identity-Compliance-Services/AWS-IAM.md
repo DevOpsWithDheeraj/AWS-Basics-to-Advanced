@@ -190,6 +190,3 @@ You want your **EC2 instance** to **read data from an S3 bucket** without manual
 > Using IAM roles for EC2, CloudWatch, Lambda, or CodePipeline allows automation without compromising security.
 
 ---
-
-Would you like me to **save this as a downloadable `.md` file** for you (so you can upload it to GitHub or your DevOps notes folder)?
-```
