@@ -203,4 +203,4 @@ When a user uploads a photo to **S3**, Lambda automatically creates a **thumbnai
 
 Combine **Lambda + API Gateway + DynamoDB** to build a **completely serverless web application** — scalable, cost-efficient, and maintenance-free!
 
-```
+--- 
