@@ -1,73 +1,98 @@
 # AWS Developer Tools
 
-AWS Developer Tools help **developers build, test, and deploy applications efficiently** on AWS. These tools provide CI/CD pipelines, version control, deployment automation, and monitoring.
+AWS Developer Tools provide **services for DevOps automation, CI/CD, and monitoring** to help developers build, test, deploy, and monitor applications efficiently in AWS.
 
 ---
 
 ## 1. AWS CodeCommit
 
 **Description:**  
-AWS CodeCommit is a **fully managed source control service** that hosts Git repositories. It allows teams to store and version code securely.
+CodeCommit is a **fully managed source control service** that hosts Git repositories securely in the cloud.
 
 **Key Features:**
-- Private Git repositories.
-- Integrated with AWS IAM for access control.
-- Supports Git commands and standard workflows.
+- Supports Git commands and workflows.
+- Fully managed, scalable, and secure.
+- Integrates with AWS IAM for access control.
 
 **Example Use Case:**  
-A development team stores their **microservice code** in CodeCommit. Developers push code changes, which trigger automated builds and deployments.
+A team stores their application code in CodeCommit instead of GitHub. Developers push code to the repository, and commits trigger CI/CD pipelines in CodePipeline.
 
 ---
 
 ## 2. AWS CodeBuild
 
 **Description:**  
-AWS CodeBuild is a **fully managed build service** that compiles source code, runs tests, and produces deployable artifacts.
+CodeBuild is a **fully managed build service** that compiles source code, runs tests, and produces artifacts ready for deployment.
 
 **Key Features:**
-- Build environments with preinstalled tools or custom Docker images.
 - Scales automatically based on build volume.
-- Integrates with CodeCommit, CodePipeline, and GitHub.
+- Supports custom build environments with Docker.
+- Integrates with CodeCommit, GitHub, and CodePipeline.
 
 **Example Use Case:**  
-A team pushes code to CodeCommit. CodeBuild compiles a **Java application**, runs unit tests, and produces a JAR file ready for deployment.
+When a developer pushes code to CodeCommit, CodeBuild automatically runs unit tests, compiles the application, and creates a deployment artifact for further stages in CodePipeline.
 
 ---
 
-## 3. AWS CodeDeploy
+## 3. AWS CodePipeline
 
 **Description:**  
-AWS CodeDeploy automates **application deployments** to EC2 instances, on-premises servers, Lambda functions, or ECS.
+CodePipeline is a **continuous integration and continuous delivery (CI/CD) service** that automates the steps required to release applications.
 
 **Key Features:**
-- Blue/Green or Rolling deployments.
-- Automated rollback on deployment failure.
-- Integrates with CodePipeline and CloudWatch.
+- Automate build, test, and deployment stages.
+- Integrates with CodeCommit, CodeBuild, CodeDeploy, and third-party tools.
+- Supports parallel and sequential pipelines.
 
 **Example Use Case:**  
-After CodeBuild generates the application artifact, CodeDeploy deploys it to **10 EC2 instances** using a rolling deployment. If an error occurs, it automatically rolls back to the previous version.
+A web application pipeline:
+1. **Source Stage:** Pulls code from CodeCommit.
+2. **Build Stage:** CodeBuild compiles and runs tests.
+3. **Deploy Stage:** CodeDeploy deploys to EC2 or Lambda.
 
 ---
 
-## 4. AWS X-Ray
+## 4. AWS CodeDeploy
 
 **Description:**  
-AWS X-Ray helps **analyze and debug distributed applications** in production or development. It provides **end-to-end request tracing**, helping developers identify bottlenecks and errors.
+CodeDeploy automates **deployment of applications** to EC2 instances, Lambda functions, or on-premises servers.
 
 **Key Features:**
-- Trace requests across microservices.
-- Visualize service maps and latency issues.
-- Detect errors, exceptions, and performance bottlenecks.
+- Supports in-place and blue/green deployments.
+- Reduces downtime during deployment.
+- Integrates with CodePipeline or works standalone.
 
 **Example Use Case:**  
-A user reports slow response from a web app. X-Ray shows that **the database query in one microservice is taking 500ms**, while other services respond within 50ms. Developers optimize the query to improve performance.
+A company deploys a new version of a web app to EC2 instances using CodeDeploy with a **blue/green deployment strategy**, minimizing downtime for end-users.
+
+---
+
+## 5. AWS X-Ray
+
+**Description:**  
+X-Ray helps **analyze and debug distributed applications** by tracing requests across services.
+
+**Key Features:**
+- Collects data on requests as they travel through your application.
+- Generates service maps to visualize dependencies.
+- Identifies performance bottlenecks and errors.
+
+**Example Use Case:**  
+A microservices-based e-commerce app uses X-Ray to trace a customer checkout request across EC2, Lambda, and RDS services. The team identifies a slow database query causing checkout delays.
 
 ---
 
 ## Summary of AWS Developer Tools
 
-| Service          | Purpose                                               | Key Example                                         |
-|-----------------|-------------------------------------------------------|----------------------------------------------------|
-| **CodeCommit**   | Source code version control                            | Store microservice code in a private Git repo     |
-| **CodeBuild**    | Compile, test, and build code                          | Build a Java application and produce a JAR        |
-| **CodeDe**
+| Service             | Purpose                                               | Key Example                                          |
+|---------------------|-------------------------------------------------------|-----------------------------------------------------|
+| **CodeCommit**       | Managed Git repository for source code             | Store application code and trigger CI pipelines    |
+| **CodeBuild**        | Automated build and test service                     | Compile code and run unit tests on each commit     |
+| **CodePipeline**     | CI/CD automation                                     | Automate build, test, and deployment stages       |
+| **CodeDeploy**       | Automated application deployment                     | Blue/green deployment of web app to EC2           |
+| **X-Ray**            | Distributed application tracing and monitoring      | Identify performance bottlenecks in microservices |
+
+---
+
+AWS Developer Tools help **streamline software development, testing, deployment, and monitoring**, enabling teams to adopt modern DevOps practices effectively.
+
