@@ -235,6 +235,3 @@ Output shows `"ServerSideEncryption": "aws:kms"`.
 | **Example**          | Encrypting data or S3 bucket using custom KMS key |
 
 ---
-
-Would you like me to **generate and send this as a downloadable `.md` file** (so you can store it in your AWS DevOps notes or GitHub repo)?
-```
