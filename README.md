@@ -118,11 +118,3 @@
 * Integration with Fargate and EC2
 
 ---
-
-✅ **Completed till now:**
-All above sections (Core to Monitoring) are completed — covering **Compute, Storage, Networking, IAM, Security, IaC, CI/CD, and Monitoring**.
-
----
-
-Would you like me to **add a section for “Upcoming / To Learn Next” (e.g., AWS Glue, Athena, Redshift, CloudFront, etc.)** at the bottom?
-I can also generate this syllabus as a downloadable `AWS.md` file.
