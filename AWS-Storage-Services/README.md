@@ -1,7 +1,5 @@
 # 💾 AWS Storage Services
 
----
-
 ## 🪣 **1. Amazon S3 (Simple Storage Service)**
 
 **Amazon S3** is an object storage service designed to store and retrieve any amount of data from anywhere on the web. It is ideal for backup, archiving, analytics, and static website hosting.
