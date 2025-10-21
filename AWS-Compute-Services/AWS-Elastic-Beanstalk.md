@@ -2,6 +2,7 @@
 
 ## 🌐 What is AWS Elastic Beanstalk?
 **AWS Elastic Beanstalk** is a **Platform as a Service (PaaS)** that helps developers quickly deploy, manage, and scale web applications and services without worrying about the underlying infrastructure.  
+
 You simply upload your code, and Beanstalk automatically handles:
 - Provisioning EC2 instances  
 - Load balancing & scaling  
