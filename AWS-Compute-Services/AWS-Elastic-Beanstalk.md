@@ -150,4 +150,4 @@ Deploy a Node.js website on AWS with zero manual server setup.
 
 Integrate Elastic Beanstalk with **AWS CodePipeline** for full CI/CD automation — from Git commit to live deployment.
 
-```
+---
