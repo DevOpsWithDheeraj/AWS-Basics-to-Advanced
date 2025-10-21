@@ -84,8 +84,8 @@ ssh -i my-key.pem ec2-user@<public-ip>
 ## 🏷️ Tags
 
 Tags are **key-value pairs** used for identifying and organizing AWS resources.
-Example:
 
+Example:
 * `Key = Name`, `Value = WebServer-Prod`
 * Used for billing, automation, and management.
 
