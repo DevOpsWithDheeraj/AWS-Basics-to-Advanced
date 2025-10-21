@@ -78,3 +78,93 @@ A **Key Pair** is used for **secure SSH or RDP login** to your instance.
 Example:
 ```bash
 ssh -i my-key.pem ec2-user@<public-ip>
+```
+---
+
+## 🏷️ Tags
+
+Tags are **key-value pairs** used for identifying and organizing AWS resources.
+Example:
+
+* `Key = Name`, `Value = WebServer-Prod`
+* Used for billing, automation, and management.
+
+---
+
+## 💰 Pricing
+
+EC2 pricing models:
+
+| Model             | Description             | Example                        |
+| ----------------- | ----------------------- | ------------------------------ |
+| **On-Demand**     | Pay per hour/second     | Testing or short-term apps     |
+| **Reserved**      | 1 or 3-year commitment  | Long-term predictable workload |
+| **Spot**          | Bid for unused capacity | Batch jobs, flexible tasks     |
+| **Savings Plans** | Flexible discount model | Commitment to consistent usage |
+
+---
+
+## 🧠 Practical Example
+
+### Scenario: Deploying a Simple Web Server
+
+**Goal:** Host a personal website using EC2.
+
+### Steps:
+
+1. **Launch Instance**
+
+   * Choose AMI: `Amazon Linux 2`
+   * Type: `t2.micro` (Free Tier)
+   * Key Pair: `my-key.pem`
+   * Security Group: Allow SSH (22), HTTP (80)
+2. **Connect via SSH**
+
+   ```bash
+   ssh -i my-key.pem ec2-user@<public-ip>
+   ```
+3. **Install Apache**
+
+   ```bash
+   sudo yum update -y
+   sudo yum install httpd -y
+   sudo systemctl start httpd
+   sudo systemctl enable httpd
+   ```
+4. **Deploy Website**
+
+   ```bash
+   echo "<h1>Hello from my EC2 Web Server!</h1>" | sudo tee /var/www/html/index.html
+   ```
+5. **Access**
+
+   * Open browser → `http://<public-ip>`
+   * You’ll see your hosted web page.
+
+---
+
+## ✅ Summary
+
+| Concept            | Description           |
+| ------------------ | --------------------- |
+| **EC2**            | Virtual server in AWS |
+| **AMI**            | Template for instance |
+| **EBS**            | Persistent storage    |
+| **Instance Store** | Temporary storage     |
+| **Security Group** | Virtual firewall      |
+| **Key Pair**       | Secure login          |
+| **Tags**           | Resource identifiers  |
+| **Pricing**        | Multiple cost models  |
+
+---
+
+### 💡 Tip:
+
+Use **AWS CloudWatch** to monitor CPU, memory, and disk usage of your EC2 instance.
+
+```
+
+---
+
+Would you like me to **convert this `.md` file into a downloadable `.pdf` or `.docx`** for your AWS notes?
+```
