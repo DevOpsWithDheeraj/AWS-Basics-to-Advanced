@@ -16,6 +16,7 @@ This syllabus covers **all major AWS services** categorized by domain, suitable 
 - **Fargate**
   - Serverless containers with ECS/EKS
 - **Serverless Application Repository (SAR)**
+  - A Repository that stores and shares pre-built serverless applications (Lambda-based) for easy deployment and reuse.
 
 ---
 
