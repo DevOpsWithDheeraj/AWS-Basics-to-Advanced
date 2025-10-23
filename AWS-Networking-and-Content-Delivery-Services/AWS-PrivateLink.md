@@ -84,7 +84,6 @@ PrivateLink uses **Elastic Network Interfaces (ENIs)** with private IPs in your 
 2. Example:
    ```bash
    curl https://myservice.vpce.amazonaws.com/api
-````
 
 3. Verify traffic does not traverse the public internet:
 
