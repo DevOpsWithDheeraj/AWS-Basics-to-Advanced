@@ -94,7 +94,6 @@ Transit Gateway **routes traffic efficiently** between connected networks and su
 2. Ping or SSH from one VPC instance to another:
    ```bash
    ping 10.1.1.10  # Private IP in another VPC
-````
 
 3. Traffic should flow via **Transit Gateway**.
 4. For VPN, verify traffic from on-premises to AWS VPC flows correctly.
