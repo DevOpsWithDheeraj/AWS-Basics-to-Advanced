@@ -95,7 +95,7 @@ This ensures **every code change** automatically goes through the CI/CD process.
 
 ---
 
-###🚀 **5. AWS CodeDeploy — Automated Deployment**
+## 🚀 **5. AWS CodeDeploy — Automated Deployment**
 
 **Purpose:** CodeDeploy automates application deployments to **EC2**, **ECS**, **Lambda**, or **on-premise servers**.
 
