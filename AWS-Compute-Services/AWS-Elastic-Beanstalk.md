@@ -129,21 +129,6 @@ Application: MyWebApp
 └── Platform:
     └── 64bit Amazon Linux 2 running Python 3.9
 ```
-
----
-
-### ✅ Summary
-
-| Term                      | Description                                   | Example            |
-| ------------------------- | --------------------------------------------- | ------------------ |
-| Application               | Logical container for versions & environments | `MyWebApp`         |
-| Application Version       | Uploaded code (ZIP/WAR) stored in S3          | `v1`, `v2`         |
-| Environment               | Running version of your app                   | `MyWebApp-Prod`    |
-| Environment Tier          | Web Server / Worker                           | Web tier = website |
-| Environment Configuration | Environment’s settings                        | EC2 type, scaling  |
-| Saved Configuration       | Reusable snapshot of settings                 | `ProdConfig-v1`    |
-| Platform                  | OS + runtime + web server                     | Python 3.9 on AL2  |
-
 ---
 ## ⚖️ 7. Traffic Splitting (Canary Deployment)
 
@@ -218,23 +203,6 @@ aws elasticbeanstalk update-environment \
   --version-label v2 \
   --option-settings Namespace=aws:elasticbeanstalk:command,OptionName=DeploymentPolicy,Value=TrafficSplitting
 ```
----
-
-### 🔍 **Advantages of Traffic Splitting**
-
-✅ Zero downtime deployment
-✅ Real-user validation before full rollout
-✅ Automatic rollback if failure detected
-✅ Ideal for **production** environments with strict uptime requirements
-✅ Great for **A/B testing** or **canary releases**
-
----
-
-### ⚠️ **Limitations**
-
-* Slightly **higher cost** (because duplicate instances are created temporarily).
-* Not suitable for **stateful applications** unless session stickiness is handled.
-* **Evaluation time** is fixed — short tests might miss long-term issues.
 ---
 
 ## 💰 8. Pricing
