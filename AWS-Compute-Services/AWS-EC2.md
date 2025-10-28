@@ -409,16 +409,20 @@ These tags help you:
 
 ## ✅ 9. Summary
 
-| Concept            | Description           |
-| ------------------ | --------------------- |
-| **EC2**            | Virtual server in AWS |
-| **AMI**            | Template for instance |
-| **EBS**            | Persistent storage    |
-| **Instance Store** | Temporary storage     |
-| **Security Group** | Virtual firewall      |
-| **Key Pair**       | Secure login          |
-| **Tags**           | Resource identifiers  |
-| **Pricing**        | Multiple cost models  |
+Here’s a **summary table** of key **Amazon EC2 concepts** — concise and easy to revise 👇
+
+
+### 🧩 **Amazon EC2 – Summary Table**
+
+| **Component**                  | **Description**                                                                                          | **Purpose / Use Case**                                                  | **Example**                                                      |
+| ------------------------------ | -------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| **AMI (Amazon Machine Image)** | A pre-configured template with OS, application server, and apps.                                         | Used to **launch EC2 instances** with desired OS and configuration.     | Amazon Linux 2, Ubuntu, Windows Server AMI                       |
+| **Instance Type**              | Defines **hardware configuration** (CPU, memory, storage, network).                                      | Choose based on workload (General, Compute, Memory, Storage optimized). | `t3.micro` (General), `c6g.large` (Compute), `r5.large` (Memory) |
+| **Pricing Model**              | Defines **how you pay** for EC2 usage.                                                                   | Choose based on budget and workload duration.                           | On-Demand, Reserved, Spot, Savings Plan, Dedicated Host          |
+| **Instance Storage**           | Storage attached to an EC2 instance. Two types: **EBS (persistent)** and **Instance Store (temporary)**. | EBS → permanent data storage<br>Instance Store → temporary/fast storage | EBS Volume `/dev/xvda`, Instance Store `/dev/sda1`               |
+| **Security Group**             | Acts as a **virtual firewall** controlling inbound/outbound traffic.                                     | Controls access to EC2 (based on ports, protocols, IP).                 | Allow SSH (port 22) from `0.0.0.0/0`                             |
+| **Key Pair**                   | A combination of **public and private keys** used for secure SSH/RDP login.                              | Ensures **secure access** to EC2 instance.                              | Key name: `mykey.pem`                                            |
+| **Tags**                       | Key–Value pairs assigned to resources.                                                                   | Helps in **identification, automation, and cost tracking.**             | `Environment=Production`, `Owner=Dheeraj`                        |
 
 ---
 
