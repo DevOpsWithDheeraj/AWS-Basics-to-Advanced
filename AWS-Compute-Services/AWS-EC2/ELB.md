@@ -29,12 +29,12 @@ With ELB:
 
 ### ⚖️ **Types of Elastic Load Balancers**
 
-| ELB Type                               | Best For                                     | Protocols Supported  | Example                                                    |
-| -------------------------------------- | -------------------------------------------- | -------------------- | ---------------------------------------------------------- |
-| **1. Application Load Balancer (ALB)** | Web applications (HTTP/HTTPS), microservices | HTTP, HTTPS          | Routes requests to `/api` → backend1, `/images` → backend2 |
-| **2. Network Load Balancer (NLB)**     | High-performance, low-latency apps           | TCP, UDP, TLS        | Routes database or gaming traffic                          |
-| **3. Gateway Load Balancer (GLB)**     | Deploying firewalls or inspection appliances | IP (GENEVE protocol) | Routes traffic through security appliances                 |
-| **4. Classic Load Balancer (CLB)**     | Legacy apps                                  | HTTP, HTTPS, TCP     | Older generation of ALB/NLB                                |
+| **Type of ELB**                     | **Layer (OSI Model)**                 | **Supported Protocols** | **Best For / Use Case**                         | **Key Features**                                                                                           | **Example Scenario**                                                     |
+| ----------------------------------- | ------------------------------------- | ----------------------- | ----------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| **Application Load Balancer (ALB)** | Layer 7 (Application Layer)           | HTTP, HTTPS, WebSocket  | Web applications, Microservices, API-based apps | Path-based & host-based routing, SSL termination, WebSocket support, integrates with containers (ECS/EKS)  | Route `/api/*` requests to backend EC2s and `/images/*` to image servers |
+| **Network Load Balancer (NLB)**     | Layer 4 (Transport Layer)             | TCP, UDP, TLS           | High-performance, low-latency, real-time apps   | Handles millions of requests/sec, preserves source IP, supports static IP, best for latency-sensitive apps | Gaming apps, financial trading platforms, or IoT backends                |
+| **Gateway Load Balancer (GLB)**     | Layer 3 (Network Layer)               | IP (GENEVE Protocol)    | Security appliances (firewalls, IDS/IPS)        | Routes traffic through inspection appliances, scalable and transparent                                     | Pass all traffic through third-party firewall before reaching EC2s       |
+| **Classic Load Balancer (CLB)**     | Layer 4 & 7 (Transport + Application) | HTTP, HTTPS, TCP, SSL   | Legacy applications (EC2-Classic network)       | Basic load balancing across EC2 instances, limited features                                                | Older monolithic web apps needing simple load balancing                  |
 
 ---
 
