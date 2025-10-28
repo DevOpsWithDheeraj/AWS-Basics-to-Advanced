@@ -315,11 +315,56 @@ ssh -i webserver-key.pem ec2-user@54.210.25.9
 
 ## 🏷️ 7. Tags
 
-Tags are **key-value pairs** used for identifying and organizing AWS resources.
+An **EC2 Tag** is a **key–value pair** used to organize, manage, and identify your AWS resources like EC2 instances, EBS volumes, Security Groups, S3 buckets, etc.
 
-Example:
-* `Key = Name`, `Value = WebServer-Prod`
-* Used for billing, automation, and management.
+---
+
+### 🔹 **Definition**
+
+A **tag** is a label that helps you **categorize AWS resources** based on purpose, owner, environment, or cost center.
+It helps in **resource management, automation, and cost tracking.**
+
+---
+
+### 🔸 **Structure of a Tag**
+
+| **Component** | **Description**                                  | **Example**                            |
+| ------------- | ------------------------------------------------ | -------------------------------------- |
+| **Key**       | The name or category of the tag (case-sensitive) | `Environment`, `Owner`, `Project`      |
+| **Value**     | The specific data or label linked to the key     | `Production`, `Dheeraj`, `Website-App` |
+
+Each tag must have a **unique key**, and you can assign **up to 50 tags per resource**.
+
+---
+
+### 🔹 **Example**
+
+Let’s say you have 3 EC2 instances:
+
+| **Instance ID**       | **Tag Key**   | **Tag Value** | **Purpose**          |
+| --------------------- | ------------- | ------------- | -------------------- |
+| `i-08b12f6abc1234567` | `Environment` | `Development` | Used for dev testing |
+| `i-03d45a7def4567890` | `Environment` | `Production`  | Runs production app  |
+| `i-06a12c4bcd5678901` | `Owner`       | `Dheeraj`     | Owned by Dheeraj     |
+
+These tags help you:
+
+* Filter instances in the AWS Console (e.g., show all `Environment=Production`)
+* Identify ownership or purpose of resources
+* Set up **billing reports** or **cost allocation tags** to track AWS costs by project/team
+
+---
+
+### 🔹 **How to Add a Tag**
+
+**Option 1: During Instance Creation**
+
+* While launching an EC2 instance → “**Add Tags**” section
+  → Key: `Name`, Value: `WebServer-1`
+
+**Option 2: After Launch**
+
+* Go to EC2 Console → Select instance → **Tags** tab → **Manage tags → Add/Edit**
 
 ---
 
