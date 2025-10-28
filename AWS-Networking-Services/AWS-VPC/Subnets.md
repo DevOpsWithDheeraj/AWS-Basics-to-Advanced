@@ -95,5 +95,3 @@ This setup ensures:
 | **Security Control** | Managed via Route Tables, NACLs, and Security Groups.       |
 
 ---
-
-Would you like me to draw a **simple diagram** showing how public and private subnets connect inside a VPC (with IGW, NAT, and route tables)? It helps visualize this easily.
