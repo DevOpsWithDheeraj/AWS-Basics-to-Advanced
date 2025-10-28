@@ -1,7 +1,5 @@
 ## 🧩 **EC2 Auto Scaling Group (ASG)**
 
----
-
 ### 🔹 **What is an Auto Scaling Group (ASG)?**
 
 An **Auto Scaling Group (ASG)** in AWS automatically manages a group of **EC2 instances** based on demand.
