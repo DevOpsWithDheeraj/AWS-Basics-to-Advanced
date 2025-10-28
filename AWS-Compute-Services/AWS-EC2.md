@@ -22,7 +22,7 @@ You can launch, configure, and manage servers within minutes — just like renti
 
 ---
 
-## 💻 Instance Types
+## 💻 1. Instance Types
 EC2 instance Types are broadly classified into 5 types based on the hardware configurations:
 
 | **Type**                     | **Instance Family**                                           | **Use Cases**                                                                                                                                       | **Examples**                                                                                                                                                     |
@@ -35,7 +35,7 @@ EC2 instance Types are broadly classified into 5 types based on the hardware con
 
 ---
 
-## 💾 EBS Volume
+## 💾 2. EBS Volume
 **EBS (Elastic Block Store)** provides **persistent storage** for EC2 instances.  
 - It behaves like a hard drive that remains even after instance termination (if not deleted).  
 - You can take **snapshots** for backup or attach to another instance.  
@@ -44,14 +44,14 @@ Example: `/dev/xvda` → Root EBS Volume.
 
 ---
 
-## ⚡ Instance Store
+## ⚡ 3. Instance Store
 - Temporary storage physically attached to the host.  
 - **Faster**, but data is **lost** if instance stops or terminates.  
 - Best for **caching, buffer, or temporary data**.
 
 ---
 
-## 🧩 AMI (Amazon Machine Image)
+## 🧩 4. AMI (Amazon Machine Image)
 
 An **Amazon Machine Image (AMI)** is a **pre-configured template** that contains all the information needed to **launch an EC2 instance** — including the **operating system, application server, and applications**.
 
@@ -62,7 +62,7 @@ It acts like a **“snapshot” or blueprint** of your instance.
 
 ---
 
-### 🧩 **Key Components of an AMI**
+###  **Key Components of an AMI**
 
 1. **Root Volume Template** – The OS image (e.g., Linux, Windows).
 2. **Launch Permissions** – Controls which AWS accounts can use the AMI.
@@ -105,7 +105,7 @@ This command creates an AMI snapshot of the running instance named **MyAppServer
 
 ---
 
-## 🔒 Security Group
+## 🔒 5. Security Group
 A **Security Group** acts as a **virtual firewall** that controls inbound and outbound traffic.  
 Example Rules:
 - Inbound: Allow TCP 22 (SSH) from your IP  
@@ -113,7 +113,7 @@ Example Rules:
 
 ---
 
-## 🔑 Key Pair
+## 🔑 6. Key Pair
 A **Key Pair** is used for **secure SSH or RDP login** to your instance.  
 - `.pem` file (private key) → stored locally.  
 - Public key → stored in AWS.  
@@ -123,7 +123,7 @@ ssh -i my-key.pem ec2-user@<public-ip>
 ```
 ---
 
-## 🏷️ Tags
+## 🏷️ 7. Tags
 
 Tags are **key-value pairs** used for identifying and organizing AWS resources.
 
@@ -133,7 +133,7 @@ Example:
 
 ---
 
-## 💰 Pricing
+## 💰 8. Pricing
 
 EC2 pricing models:
 
@@ -148,7 +148,7 @@ EC2 pricing models:
 
 
 
-## 🧠 Practical Example
+## 🧠 9. Practical Example
 
 ### Scenario: Deploying a Simple Web Server
 
@@ -187,7 +187,7 @@ EC2 pricing models:
 
 ---
 
-## ✅ Summary
+## ✅ 10. Summary
 
 | Concept            | Description           |
 | ------------------ | --------------------- |
