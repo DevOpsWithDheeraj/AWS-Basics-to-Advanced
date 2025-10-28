@@ -204,6 +204,26 @@ aws elasticbeanstalk update-environment \
   --version-label v2 \
   --option-settings Namespace=aws:elasticbeanstalk:command,OptionName=DeploymentPolicy,Value=TrafficSplitting
 ```
+
+### 🧭 Example Visualization
+```
+Before:
+ ┌───────────────┐
+ │ 100% traffic  │
+ │  → v1 (old)   │
+ └───────────────┘
+
+During Traffic Split:
+ ┌───────────────┐
+ │ 90% → v1 (old)│
+ │ 10% → v2 (new)│
+ └───────────────┘
+
+After Success:
+ ┌───────────────┐
+ │ 100% → v2 (new)│
+ └───────────────┘
+```
 ---
 
 ## 💰 8. Pricing
