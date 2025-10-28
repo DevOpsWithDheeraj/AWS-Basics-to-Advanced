@@ -128,13 +128,6 @@ EC2 instance Types are broadly classified into 5 types based on the hardware con
 | ------------------------------------------------------------- | --------------------- | --------------------------------------------------------- |
 | Hosting a WordPress site with persistent data                 | **EBS Volume**        | Ensures the site files and database remain after restarts |
 | Running Hadoop or Spark cluster for temporary data processing | **Instance Store**    | Fast local I/O and no need to retain intermediate data    |
-
----
-
-### ✅ **Summary**
-
-* **EBS Volume →** Persistent, reliable, attachable, supports snapshots.
-* **Instance Store →** Temporary, high-speed, physically attached local storage.
 ---
 
 ## 🔒 5. Security Group
