@@ -35,6 +35,16 @@ EC2 instance Types are broadly classified into 5 types based on the hardware con
 
 ---
 
+| **Type**                  | **Family**                  | **Description / Use Cases**                                                                                                                     | **Examples**                                                                                                                                                            |
+| ------------------------- | --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **General Purpose**       | `t`, `m`, `a`               | Balanced compute, memory, and networking resources. Best for applications that use these resources in equal proportions.                        | - `t3`, `t4g` → Low-cost, burstable workloads<br>- `m6i`, `m7g` → Web/app servers, small & medium databases, development environments                                   |
+| **Compute Optimized**     | `c`                         | Designed for compute-intensive tasks that require high CPU performance. Ideal for workloads that benefit from fast processors.                  | - `c6i`, `c7g` → High-performance web servers, scientific modeling, gaming servers, batch processing, media transcoding                                                 |
+| **Memory Optimized**      | `r`, `x`, `u`, `z`          | Deliver high memory-to-CPU ratios for memory-intensive workloads. Best for applications that process large datasets in memory.                  | - `r6i`, `r7g` → In-memory caches (Redis, Memcached), big data analytics<br>- `x2idn`, `z1d` → SAP HANA, real-time analytics, large relational databases                |
+| **Accelerated Computing** | `p`, `inf`, `trn`, `g`, `f` | Use hardware accelerators (GPUs, FPGAs, or Inferentia chips) for floating-point calculations, graphics, or machine learning inference/training. | - `p4d`, `p5` → Deep learning training<br>- `g5` → Graphics rendering, video encoding<br>- `inf2`, `trn1` → ML inference & training<br>- `f1` → FPGA-based acceleration |
+| **Storage Optimized**     | `i`, `im`, `d`, `h`         | Designed for high, sequential read/write access to large data sets on local storage. Ideal for database and big data workloads.                 | - `i4i`, `i3en` → NoSQL databases, OLTP systems<br>- `d2`, `h1` → Data warehousing, Hadoop distributed storage, log processing                                          |
+
+---
+
 ## 💾 2. EBS Volume
 **EBS (Elastic Block Store)** provides **persistent storage** for EC2 instances.  
 - It behaves like a hard drive that remains even after instance termination (if not deleted).  
