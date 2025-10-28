@@ -146,10 +146,95 @@ Application: MyWebApp
 
 ---
 ## ⚖️ 7. Traffic Splitting (Canary Deployment)
-Elastic Beanstalk supports **Traffic Splitting** which gradually shifts a percentage of user traffic to the new version.  
-- Example: 10% traffic to new version for testing → then 100% if healthy.  
-- Ideal for **canary testing** and safe rollouts.
 
+**Traffic Splitting** is a **deployment strategy** in which **Elastic Beanstalk gradually routes a small percentage of live traffic to the new application version** while most users continue to be served by the old version.
+
+👉 If the new version performs well (no errors, good health), Beanstalk shifts **100% of traffic** to the new version automatically.
+👉 If it fails (health check errors or latency increase), Beanstalk **rolls back automatically** to the old version.
+
+It’s like doing a **canary deployment** — testing a new version with real users before fully rolling it out.
+
+---
+
+### ⚙️ How Traffic Splitting Works — Step by Step
+
+1. **Current environment** (e.g., `v1`) is running and healthy.
+2. You **deploy a new application version** (e.g., `v2`) using the **Traffic Splitting deployment policy**.
+3. Beanstalk temporarily **launches a duplicate set of EC2 instances** with the new version.
+4. **A small portion of live traffic** (say 10%) is routed to the new version.
+5. Beanstalk **monitors the new version’s health** for a short evaluation period.
+6. Based on the results:
+
+   * ✅ If healthy → Beanstalk shifts 100% traffic to the new version.
+   * ❌ If unhealthy → Beanstalk routes all traffic back to the old version and terminates the new instances.
+
+---
+
+### 🧩 **Example Scenario**
+
+Imagine you run a **Python Flask web app** called `MyWebApp` using Elastic Beanstalk.
+
+| Step | Description                                                                                           |
+| ---- | ----------------------------------------------------------------------------------------------------- |
+| 1️⃣  | Your current production environment runs **Version 1.0** (v1) — stable.                               |
+| 2️⃣  | You upload **Version 2.0** (v2) with new features.                                                    |
+| 3️⃣  | You choose **Deployment Policy → Traffic Splitting**.                                                 |
+| 4️⃣  | Beanstalk launches a duplicate environment temporarily and routes **10% of user traffic** to v2.      |
+| 5️⃣  | Beanstalk monitors logs, latency, and error rates.                                                    |
+| 6️⃣  | If everything is fine for, say, 5 minutes → all traffic moves to v2 and old instances are terminated. |
+| 7️⃣  | If there are issues → rollback happens automatically to v1.                                           |
+
+---
+
+### 💡 **Example: Real Use Case**
+
+Let’s say your website serves 10,000 requests/minute.
+
+* You deploy **v2** using Traffic Splitting (10% split).
+* For 5 minutes:
+
+  * 9,000 requests → v1 (old version)
+  * 1,000 requests → v2 (new version)
+* Beanstalk checks for errors (HTTP 5xx, timeouts, latency).
+* If healthy → 100% of traffic switches to v2.
+* If not → rollback happens seamlessly, without affecting most users.
+
+---
+
+### 🛠️ **Configuration Example**
+
+You can enable traffic splitting via:
+
+#### 1. **Elastic Beanstalk Console:**
+
+* Go to your environment → **Configuration → Rolling updates and deployments**
+* Under **Deployment Policy**, select → `Traffic Splitting`
+
+#### 2. **AWS CLI:**
+
+```bash
+aws elasticbeanstalk update-environment \
+  --environment-name MyWebApp-Prod \
+  --version-label v2 \
+  --option-settings Namespace=aws:elasticbeanstalk:command,OptionName=DeploymentPolicy,Value=TrafficSplitting
+```
+---
+
+### 🔍 **Advantages of Traffic Splitting**
+
+✅ Zero downtime deployment
+✅ Real-user validation before full rollout
+✅ Automatic rollback if failure detected
+✅ Ideal for **production** environments with strict uptime requirements
+✅ Great for **A/B testing** or **canary releases**
+
+---
+
+### ⚠️ **Limitations**
+
+* Slightly **higher cost** (because duplicate instances are created temporarily).
+* Not suitable for **stateful applications** unless session stickiness is handled.
+* **Evaluation time** is fixed — short tests might miss long-term issues.
 ---
 
 ## 💰 8. Pricing
