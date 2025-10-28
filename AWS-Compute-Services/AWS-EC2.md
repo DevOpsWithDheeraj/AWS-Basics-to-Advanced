@@ -218,13 +218,99 @@ This design ensures only **necessary communication paths** exist between tiers.
 ---
 
 ## 🔑 6. Key Pair
-A **Key Pair** is used for **secure SSH or RDP login** to your instance.  
-- `.pem` file (private key) → stored locally.  
-- Public key → stored in AWS.  
-Example:
+
+A **Key Pair** in AWS is a set of **two cryptographic keys** — a **Public Key** and a **Private Key** — used to securely connect to your EC2 instance.
+
+It enables **SSH (for Linux)** or **RDP (for Windows)** access without needing a password.
+
+---
+
+### 🧩 **How It Works**
+
+| **Component**                 | **Description**                                                                   |
+| ----------------------------- | --------------------------------------------------------------------------------- |
+| **Public Key**                | Stored automatically on the EC2 instance (by AWS during launch).                  |
+| **Private Key (.pem / .ppk)** | Downloaded by you. Used to log in securely to the instance.                       |
+| **Encryption Method**         | Uses **Public Key Cryptography (RSA or ED25519)** to authenticate login requests. |
+
+🔸 In simple terms:
+When you connect to EC2, AWS verifies your private key matches the public key on the instance — if they match, you get access ✅.
+
+---
+
+### ⚙️ **Steps to Create and Use a Key Pair**
+
+#### **Step 1: Create a Key Pair**
+
+1. Go to **EC2 Dashboard → Key Pairs → Create key pair**
+2. Give it a name (e.g., `MyKeyPair`)
+3. Choose:
+
+   * **Key type:** RSA or ED25519
+   * **Format:**
+
+     * `.pem` → for Linux/macOS (SSH)
+     * `.ppk` → for Windows (PuTTY)
+4. Click **Create Key Pair** → It automatically downloads to your computer.
+
+---
+
+#### **Step 2: Launch an EC2 Instance**
+
+* While launching, under **Key pair (login)** → choose **“MyKeyPair”**.
+* AWS will automatically place the **public key** on that instance (in `/home/ec2-user/.ssh/authorized_keys`).
+
+---
+
+#### **Step 3: Connect to the EC2 Instance**
+
+##### 🟢 For **Linux/macOS**
+
+1. Open Terminal
+2. Navigate to where `.pem` file is stored
+3. Change file permissions:
+
+   ```bash
+   chmod 400 MyKeyPair.pem
+   ```
+4. Connect using SSH:
+
+   ```bash
+   ssh -i "MyKeyPair.pem" ec2-user@<Public-IP>
+   ```
+
+   *(Replace `<Public-IP>` with your EC2 instance’s public IPv4 address.)*
+
+---
+
+##### 🔵 For **Windows (PuTTY)**
+
+1. Convert `.pem` → `.ppk` using **PuTTYgen**
+2. Open **PuTTY**
+
+   * Host Name: `ec2-user@<Public-IP>`
+   * In **Connection → SSH → Auth → Browse**, select your `.ppk` file
+3. Click **Open** → You’re in!
+
+---
+
+### 🧠 **Example Scenario**
+
+You launch a **web server** on an EC2 instance named `MyWebServer`.
+During setup:
+
+* You create a key pair named `webserver-key.pem`.
+* AWS installs the **public key** on the server.
+* You keep the **private key (.pem)** on your laptop.
+  Later, you connect securely:
+
 ```bash
-ssh -i my-key.pem ec2-user@<public-ip>
+ssh -i webserver-key.pem ec2-user@54.210.25.9
 ```
+
+✅ Connection established — no password required!
+
+
 ---
 
 ## 🏷️ 7. Tags
