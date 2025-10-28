@@ -21,37 +21,7 @@ You can launch, configure, and manage servers within minutes — just like renti
 10. Review and **Launch Instance**.
 
 ---
-
-## 💻 1. Instance Types
-EC2 instance Types are broadly classified into 5 types based on the hardware configurations:
-
-| **Type**                     | **Family**                  | **Description**                                                                                                             | **Typical Use Cases**                                                                                            | **Example Instances**                                  | **vCPU & Memory Range**    | **Storage Type**                       |
-| ---------------------------- | --------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ | -------------------------- | -------------------------------------- |
-| 🟢 **General Purpose**       | `t`, `m`, `a`               | Balanced compute, memory, and networking resources for most workloads. Cost-effective and flexible.                         | Web servers, small/medium databases, development/test environments, microservices, backend servers               | `t3`, `t4g`, `m6i`, `m7g`, `a1`                        | 2–128 vCPUs, 0.5–512 GiB   | EBS only (Elastic Block Store)         |
-| 🔵 **Compute Optimized**     | `c`                         | High-performance processors for compute-intensive applications. Offers best price-to-performance ratio for CPU-bound tasks. | High-performance web servers, scientific modeling, batch processing, media transcoding, gaming servers           | `c5`, `c6i`, `c7g`, `c7i`                              | 2–192 vCPUs, 4–384 GiB     | EBS only                               |
-| 🟣 **Memory Optimized**      | `r`, `x`, `u`, `z`          | Designed for workloads that process large datasets in memory with high memory-to-CPU ratios. (fast performance)                               | In-memory caching (Redis, Memcached), SAP HANA, real-time big data analytics, high-performance databases         | `r6i`, `r7g`, `x2idn`, `x2iedn`, `u-6tb1.metal`, `z1d` | 2–448 vCPUs, 16–24,576 GiB | EBS or NVMe SSD                        |
-| 🟠 **Accelerated Computing** | `p`, `g`, `inf`, `trn`, `f` | Equipped with GPUs, Inferentia, or FPGAs for specialized tasks requiring hardware acceleration.                             | Machine learning, Deep Learning, Seismic Analysis, 3D rendering, video encoding, scientific simulation, financial modeling | `p4d`, `p5`, `g5`, `inf2`, `trn1`, `f1`                | 8–192 vCPUs, 64–1,952 GiB  | EBS or NVMe SSD                        |
-| 🔴 **Storage Optimized**     | `i`, `im`, `d`, `h`         | High IOPS and low latency for large data sets stored locally. Ideal for high-performance, data-intensive workloads.         | NoSQL/OLTP databases, big data analytics (Hadoop, Spark), log processing, data warehousing                       | `i3`, `i4i`, `i3en`, `im4gn`, `d2`, `h1`               | 2–128 vCPUs, 16–4,096 GiB  | NVMe SSD or HDD (local instance store) |
-
----
-
-## 💾 2. EBS Volume
-**EBS (Elastic Block Store)** provides **persistent storage** for EC2 instances.  
-- It behaves like a hard drive that remains even after instance termination (if not deleted).  
-- You can take **snapshots** for backup or attach to another instance.  
-
-Example: `/dev/xvda` → Root EBS Volume.
-
----
-
-## ⚡ 3. Instance Store
-- Temporary storage physically attached to the host.  
-- **Faster**, but data is **lost** if instance stops or terminates.  
-- Best for **caching, buffer, or temporary data**.
-
----
-
-## 🧩 4. AMI (Amazon Machine Image)
+## 🧩 1. AMI (Amazon Machine Image)
 
 An **Amazon Machine Image (AMI)** is a **pre-configured template** that contains all the information needed to **launch an EC2 instance** — including the **operating system, application server, and applications**.
 
@@ -105,7 +75,50 @@ This command creates an AMI snapshot of the running instance named **MyAppServer
 
 ---
 
-## 🔒 5. Security Group
+## 💻 2. EC2 Instance Types
+EC2 instance Types are broadly classified into 5 types based on the hardware configurations:
+
+| **Type**                     | **Family**                  | **Description**                                                                                                             | **Typical Use Cases**                                                                                            | **Example Instances**                                  | **vCPU & Memory Range**    | **Storage Type**                       |
+| ---------------------------- | --------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ | -------------------------- | -------------------------------------- |
+| 🟢 **General Purpose**       | `t`, `m`, `a`               | Balanced compute, memory, and networking resources for most workloads. Cost-effective and flexible.                         | Web servers, small/medium databases, development/test environments, microservices, backend servers               | `t3`, `t4g`, `m6i`, `m7g`, `a1`                        | 2–128 vCPUs, 0.5–512 GiB   | EBS only (Elastic Block Store)         |
+| 🔵 **Compute Optimized**     | `c`                         | High-performance processors for compute-intensive applications. Offers best price-to-performance ratio for CPU-bound tasks. | High-performance web servers, scientific modeling, batch processing, media transcoding, gaming servers           | `c5`, `c6i`, `c7g`, `c7i`                              | 2–192 vCPUs, 4–384 GiB     | EBS only                               |
+| 🟣 **Memory Optimized**      | `r`, `x`, `u`, `z`          | Designed for workloads that process large datasets in memory with high memory-to-CPU ratios. (fast performance)                               | In-memory caching (Redis, Memcached), SAP HANA, real-time big data analytics, high-performance databases         | `r6i`, `r7g`, `x2idn`, `x2iedn`, `u-6tb1.metal`, `z1d` | 2–448 vCPUs, 16–24,576 GiB | EBS or NVMe SSD                        |
+| 🟠 **Accelerated Computing** | `p`, `g`, `inf`, `trn`, `f` | Equipped with GPUs, Inferentia, or FPGAs for specialized tasks requiring hardware acceleration.                             | Machine learning, Deep Learning, Seismic Analysis, 3D rendering, video encoding, scientific simulation, financial modeling | `p4d`, `p5`, `g5`, `inf2`, `trn1`, `f1`                | 8–192 vCPUs, 64–1,952 GiB  | EBS or NVMe SSD                        |
+| 🔴 **Storage Optimized**     | `i`, `im`, `d`, `h`         | High IOPS and low latency for large data sets stored locally. Ideal for high-performance, data-intensive workloads.         | NoSQL/OLTP databases, big data analytics (Hadoop, Spark), log processing, data warehousing                       | `i3`, `i4i`, `i3en`, `im4gn`, `d2`, `h1`               | 2–128 vCPUs, 16–4,096 GiB  | NVMe SSD or HDD (local instance store) |
+
+---
+## 💰 3. EC2 Pricing Models
+
+| **Pricing Model**                            | **Description**                                                                                                                                          | **Best For / Use Case**                                                                          | **Discount vs On-Demand**            | **Example**                                                                                                             |
+| -------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ | ------------------------------------ | ----------------------------------------------------------------------------------------------------------------------- |
+| 🟢 **On-Demand Instances**                   | Pay only for compute capacity you use — by the second or hour. No upfront payment or long-term commitment.                                               | Short-term, unpredictable workloads that can’t be interrupted. Great for testing or development. | 0% (Base Price)                      | A startup launches a new web app and scales up or down daily. They pay per hour for `t3.medium` without reservation.    |
+| 🔵 **Reserved Instances (RI)**               | Commit to a specific instance type in a specific region for 1 or 3 years in exchange for a lower hourly rate.                                            | Steady-state workloads with predictable usage.                                                   | Up to **75% cheaper** than On-Demand | A company runs a database server 24×7 and purchases a **3-year Standard Reserved Instance** for `m6i.large`.            |
+| 🟠 **Spot Instances**                        | Use unused EC2 capacity at deep discounts. Prices fluctuate based on supply and demand.                                                                  | Flexible, fault-tolerant, interruptible workloads like big data, CI/CD, or testing.              | Up to **90% cheaper** than On-Demand | A data analytics team uses `c6i.4xlarge` Spot Instances for Hadoop batch jobs that can restart if interrupted.          |
+| 🟣 **Savings Plans**                         | Commit to a consistent spend ($/hour) on EC2 or Fargate for 1 or 3 years, in exchange for discounts. More flexible than RIs (not tied to instance type). | Consistent workloads with flexible instance families or regions.                                 | Up to **72% cheaper** than On-Demand | A company commits to spend **$200/hour** on EC2 over 3 years, and AWS automatically applies discounts across instances. |
+| 🔴 **Dedicated Hosts / Dedicated Instances** | Physical servers fully dedicated to your organization. Used for compliance, licensing, or isolation requirements.                                        | Workloads needing physical isolation or BYOL (Bring Your Own License).                           | No fixed discount — depends on usage | A finance company runs Oracle DB on a **Dedicated Host** to comply with licensing and regulatory requirements.          |
+---
+
+
+## 💾 4. EBS Volume
+**EBS (Elastic Block Store)** provides **persistent storage** for EC2 instances.  
+- It behaves like a hard drive that remains even after instance termination (if not deleted).  
+- You can take **snapshots** for backup or attach to another instance.  
+
+Example: `/dev/xvda` → Root EBS Volume.
+
+---
+
+## ⚡ 5. Instance Store
+- Temporary storage physically attached to the host.  
+- **Faster**, but data is **lost** if instance stops or terminates.  
+- Best for **caching, buffer, or temporary data**.
+
+---
+
+
+---
+
+## 🔒 6. Security Group
 A **Security Group** acts as a **virtual firewall** that controls inbound and outbound traffic.  
 Example Rules:
 - Inbound: Allow TCP 22 (SSH) from your IP  
@@ -113,7 +126,7 @@ Example Rules:
 
 ---
 
-## 🔑 6. Key Pair
+## 🔑 7. Key Pair
 A **Key Pair** is used for **secure SSH or RDP login** to your instance.  
 - `.pem` file (private key) → stored locally.  
 - Public key → stored in AWS.  
@@ -123,7 +136,7 @@ ssh -i my-key.pem ec2-user@<public-ip>
 ```
 ---
 
-## 🏷️ 7. Tags
+## 🏷️ 8. Tags
 
 Tags are **key-value pairs** used for identifying and organizing AWS resources.
 
@@ -132,21 +145,6 @@ Example:
 * Used for billing, automation, and management.
 
 ---
-
-## 💰 8. Pricing
-
-EC2 pricing models:
-
-| Model             | Description             | Example                        |
-| ----------------- | ----------------------- | ------------------------------ |
-| **On-Demand**     | Pay per hour/second     | Testing or short-term apps     |
-| **Reserved**      | 1 or 3-year commitment  | Long-term predictable workload |
-| **Spot**          | Bid for unused capacity | Batch jobs, flexible tasks     |
-| **Savings Plans** | Flexible discount model | Commitment to consistent usage |
-
----
-
-
 
 ## 🧠 9. Practical Example
 
