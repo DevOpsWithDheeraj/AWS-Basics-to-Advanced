@@ -93,7 +93,7 @@ Elastic Beanstalk supports multiple programming platforms:
 
 ---
 
-## ⚙️ How It Works — Step-by-Step Example
+### ⚙️ How It Works — Step-by-Step Example
 
 Let’s say you have a **Python web app**.
 
@@ -106,7 +106,7 @@ Let’s say you have a **Python web app**.
 
 ---
 
-## 🧩 Example Visualization
+### 🧩 Example Visualization
 
 ```
 Application: MyWebApp
@@ -132,7 +132,7 @@ Application: MyWebApp
 
 ---
 
-## ✅ Summary
+### ✅ Summary
 
 | Term                      | Description                                   | Example            |
 | ------------------------- | --------------------------------------------- | ------------------ |
