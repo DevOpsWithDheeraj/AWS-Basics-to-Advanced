@@ -67,15 +67,16 @@ Elastic Beanstalk supports multiple programming platforms:
 
 ---
 
-## 🚀 5. Deployment Models in Elastic Beanstalk
+## 🚀 5. AWS Elastic Beanstalk Deployment Models (Policies)
 
-| Model | Description | Use Case |
-|--------|--------------|----------|
-| **All at Once** | Deploys new version to all instances simultaneously | Fast, but downtime possible |
-| **Rolling** | Updates instances in batches | Reduces downtime |
-| **Rolling with Additional Batch** | Launches new batch before terminating old ones | Ensures capacity |
-| **Immutable** | Launches new instances with new version, swaps after success | Safest deployment |
-| **Blue/Green Deployment** | Creates new environment (Green), then swaps traffic from old one (Blue) | Zero downtime deployment |
+| **Deployment Model**              | **How It Works**                                                                                                                 | **Downtime**                  | **Rollback**                                    | **Cost Impact**                             | **Best Use Case**                                   | **Notes / Behavior**                            |
+| --------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- | ----------------------------------------------- | ------------------------------------------- | --------------------------------------------------- | ----------------------------------------------- |
+| **All at Once**                   | Deploys new version to **all instances simultaneously**.                                                                         | ⚠️ Possible (short downtime). | ❌ Manual rollback needed.                       | 💲 Low (no extra instances).                | Dev/Test environments.                              | Fastest, but risky for production.              |
+| **Rolling**                       | Deploys new version to a **subset (batch)** of instances, replaces old ones gradually.                                           | ✅ No downtime (if healthy).   | ❌ Manual rollback required.                     | 💲 Normal (uses existing instances).        | Production environments with moderate traffic.      | Keeps capacity slightly reduced during update.  |
+| **Rolling with Additional Batch** | Creates **temporary instances** for each batch to maintain full capacity while deploying.                                        | ✅ No downtime.                | ❌ Manual rollback.                              | 💲💲 Slightly higher (temporary resources). | Production systems needing continuous availability. | Ensures full capacity during deployment.        |
+| **Immutable**                     | Deploys new version to a **completely new set of instances**, shifts traffic when healthy.                                       | ✅ No downtime.                | ✅ Easy rollback (just terminate new instances). | 💲💲 Higher (temporary full environment).   | Critical production systems.                        | Safest method before traffic splitting existed. |
+| **Traffic Splitting (Canary)**    | Temporarily launches new instances and routes a **small % of traffic** to test new version. If successful → shifts 100% traffic. | ✅ No downtime.                | ✅ Automatic rollback.                           | 💲💲 Slightly higher (temporary instances). | Canary testing or production validation.            | Safest for real-world testing with users.       |
+| **Blue/Green Deployment**         | Creates a **completely separate environment** (Green) with new version. When verified, **CNAME is swapped** to redirect traffic. | ✅ No downtime.                | ✅ Simple rollback (swap back).                  | 💲💲💲 High (full duplicate environment).   | Mission-critical production releases.               | Most reliable, supports pre-deployment testing. |
 
 ---
 
