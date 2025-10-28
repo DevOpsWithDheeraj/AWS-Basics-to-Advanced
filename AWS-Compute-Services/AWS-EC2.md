@@ -99,26 +99,45 @@ EC2 instance Types are broadly classified into 5 types based on the hardware con
 ---
 
 
-## 💾 4. EBS Volume
-**EBS (Elastic Block Store)** provides **persistent storage** for EC2 instances.  
-- It behaves like a hard drive that remains even after instance termination (if not deleted).  
-- You can take **snapshots** for backup or attach to another instance.  
+## 💾 4. EC2 Instance Storage
 
-Example: `/dev/xvda` → Root EBS Volume.
-
----
-
-## ⚡ 5. Instance Store
-- Temporary storage physically attached to the host.  
-- **Faster**, but data is **lost** if instance stops or terminates.  
-- Best for **caching, buffer, or temporary data**.
+| **Storage Type**             | **Full Form**                 | **Description**                                                                                                                                            | **Persistence**  | **Performance**                               | **Best For / Use Case**                                                       | **Example Scenario**                                                                                                                                                |
+| ---------------------------- | ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- | --------------------------------------------- | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 🟢 **EBS Volume**            | **Elastic Block Store**       | A durable, block-level storage that attaches to your EC2 instance like a virtual hard drive. Data persists even after the instance stops or terminates.    | ✅ **Persistent** | High and consistent IOPS (SSD or HDD options) | Databases, web servers, boot volumes, or applications needing data durability | You launch an EC2 instance with an **8 GB gp3 EBS volume** to host a website. Even if you stop the instance, your website data stays safe.                          |
+| 🔵 **Instance Store Volume** | **Ephemeral / Local Storage** | Physically attached disk storage on the same host as your EC2 instance. Offers very high I/O speed but data is lost when the instance stops or terminates. | ❌ **Temporary**  | Extremely fast (uses local SSD/NVMe)          | Temporary data, cache, or buffer storage that can be regenerated easily       | You run a **high-speed cache or big data job** on `i3.large` that uses **Instance Store NVMe SSD** for temporary processing. Once the instance stops, data is gone. |
 
 ---
 
+### ⚙️ **Key Differences**
+
+| **Feature**          | **EBS Volume**                                               | **Instance Store Volume**                   |
+| -------------------- | ------------------------------------------------------------ | ------------------------------------------- |
+| **Data Persistence** | Data persists after instance stop/termination                | Data lost on stop/termination               |
+| **Attach/Detach**    | Can attach/detach from any instance in the same AZ           | Tied to a specific instance                 |
+| **Backup Support**   | Supports Snapshots (to S3)                                   | No backup or snapshot                       |
+| **Durability**       | Highly durable (replicated across multiple AZ storage nodes) | Not durable (data loss on hardware failure) |
+| **Performance**      | Consistent, can be provisioned for high IOPS                 | Very high raw performance (faster I/O)      |
+| **Cost**             | Charged separately based on volume size and type             | Included in instance price                  |
+| **Use Case**         | Databases, logs, application data                            | Temporary cache, buffer, scratch space      |
 
 ---
 
-## 🔒 6. Security Group
+### 💡 **Example in Real Life**
+
+| **Scenario**                                                  | **Storage Type Used** | **Why**                                                   |
+| ------------------------------------------------------------- | --------------------- | --------------------------------------------------------- |
+| Hosting a WordPress site with persistent data                 | **EBS Volume**        | Ensures the site files and database remain after restarts |
+| Running Hadoop or Spark cluster for temporary data processing | **Instance Store**    | Fast local I/O and no need to retain intermediate data    |
+
+---
+
+### ✅ **Summary**
+
+* **EBS Volume →** Persistent, reliable, attachable, supports snapshots.
+* **Instance Store →** Temporary, high-speed, physically attached local storage.
+---
+
+## 🔒 5. Security Group
 A **Security Group** acts as a **virtual firewall** that controls inbound and outbound traffic.  
 Example Rules:
 - Inbound: Allow TCP 22 (SSH) from your IP  
@@ -126,7 +145,7 @@ Example Rules:
 
 ---
 
-## 🔑 7. Key Pair
+## 🔑 6. Key Pair
 A **Key Pair** is used for **secure SSH or RDP login** to your instance.  
 - `.pem` file (private key) → stored locally.  
 - Public key → stored in AWS.  
@@ -136,7 +155,7 @@ ssh -i my-key.pem ec2-user@<public-ip>
 ```
 ---
 
-## 🏷️ 8. Tags
+## 🏷️ 7. Tags
 
 Tags are **key-value pairs** used for identifying and organizing AWS resources.
 
@@ -146,7 +165,7 @@ Example:
 
 ---
 
-## 🧠 9. Practical Example
+## 🧠 8. Practical Example
 
 ### Scenario: Deploying a Simple Web Server
 
@@ -185,7 +204,7 @@ Example:
 
 ---
 
-## ✅ 10. Summary
+## ✅ 9. Summary
 
 | Concept            | Description           |
 | ------------------ | --------------------- |
