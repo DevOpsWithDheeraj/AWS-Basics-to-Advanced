@@ -131,10 +131,89 @@ EC2 instance Types are broadly classified into 5 types based on the hardware con
 ---
 
 ## 🔒 5. Security Group
-A **Security Group** acts as a **virtual firewall** that controls inbound and outbound traffic.  
-Example Rules:
-- Inbound: Allow TCP 22 (SSH) from your IP  
-- Outbound: Allow all traffic  
+
+A **Security Group (SG)** in AWS acts as a **virtual firewall** that controls **inbound and outbound traffic** to your EC2 instance.
+
+It defines **which traffic is allowed** to reach your instance and **which traffic your instance can send out**.
+
+---
+
+### ⚙️ **Key Characteristics**
+
+| **Feature**          | **Description**                                                                                      |
+| -------------------- | ---------------------------------------------------------------------------------------------------- |
+| **Scope**            | Works at the **instance level**, not the subnet level (unlike Network ACLs).                         |
+| **Stateful**         | Responses to allowed inbound traffic are automatically allowed outbound (and vice versa).            |
+| **Default Behavior** | - All **inbound traffic is denied** by default.<br>- All **outbound traffic is allowed** by default. |
+| **Rules Type**       | - **Inbound Rules** → Control incoming traffic.<br>- **Outbound Rules** → Control outgoing traffic.  |
+| **Attachment**       | Each EC2 instance can have **one or more security groups** attached.                                 |
+
+---
+
+### 🧩 **Structure of a Security Group Rule**
+
+| **Rule Type** | **Protocol** | **Port Range** | **Source/Destination** | **Purpose**                |
+| ------------- | ------------ | -------------- | ---------------------- | -------------------------- |
+| Inbound       | TCP          | 22             | 0.0.0.0/0              | Allow SSH from anywhere    |
+| Inbound       | TCP          | 80             | 0.0.0.0/0              | Allow HTTP web traffic     |
+| Inbound       | TCP          | 443            | 0.0.0.0/0              | Allow HTTPS web traffic    |
+| Outbound      | All          | All            | 0.0.0.0/0              | Allow all outbound traffic |
+
+---
+
+### 🧠 **Example Scenario: Launching a Web Server**
+
+You launched an EC2 instance running **Apache HTTP Server**.
+To make it accessible via a browser and SSH:
+
+#### ✅ **Step 1: Create a Security Group**
+
+**Name:** `WebServer-SG`
+**Description:** Allows web and SSH access
+
+#### ✅ **Step 2: Add Inbound Rules**
+
+| **Type** | **Protocol** | **Port Range** | **Source**                        | **Purpose**              |
+| -------- | ------------ | -------------- | --------------------------------- | ------------------------ |
+| SSH      | TCP          | 22             | Your IP (e.g., `203.0.113.25/32`) | Admin remote login       |
+| HTTP     | TCP          | 80             | 0.0.0.0/0                         | Allow web traffic        |
+| HTTPS    | TCP          | 443            | 0.0.0.0/0                         | Allow secure web traffic |
+
+#### ✅ **Step 3: Add Outbound Rules**
+
+| **Type**    | **Protocol** | **Port Range** | **Destination** | **Purpose**                                            |
+| ----------- | ------------ | -------------- | --------------- | ------------------------------------------------------ |
+| All traffic | All          | All            | 0.0.0.0/0       | Allow instance to reach internet for updates/downloads |
+
+---
+
+### 🌐 **How It Works**
+
+* When someone opens `http://<Public-IP>` in a browser,
+  the **HTTP (port 80)** rule in your SG allows that request.
+* You can SSH into the instance using your **SSH rule (port 22)**.
+* The **stateful nature** ensures response packets automatically return to the requester.
+
+---
+
+### 🔒 **Best Practices**
+
+1. **Restrict SSH (22)** to your own IP only — never open to `0.0.0.0/0`.
+2. Use **least privilege principle** — open only required ports.
+3. Create **separate SGs** for layers (e.g., Web SG, DB SG).
+4. Reference **another SG** as a source — e.g., allow traffic from Web SG to DB SG on port 3306.
+
+---
+
+### 🧩 **Example: Multi-Tier Setup**
+
+| **Layer**       | **Security Group** | **Inbound Rules**                        | **Outbound Rules** |
+| --------------- | ------------------ | ---------------------------------------- | ------------------ |
+| Web Server      | `Web-SG`           | Allow HTTP (80), HTTPS (443), SSH (22)   | Allow all outbound |
+| App Server      | `App-SG`           | Allow traffic from `Web-SG` on port 8080 | Allow to DB-SG     |
+| Database Server | `DB-SG`            | Allow traffic from `App-SG` on port 3306 | Restrict outbound  |
+
+This design ensures only **necessary communication paths** exist between tiers.
 
 ---
 
