@@ -23,16 +23,15 @@ You can launch, configure, and manage servers within minutes — just like renti
 ---
 
 ## 💻 Instance Types
-EC2 instances come in families optimized for different workloads:
+EC2 instance Types are broadly classified into 5 types based on the hardware configurations:
 
-| Type | Family | Use Case |
-|------|---------|----------|
-| **t2/t3** | General Purpose | Web servers, small apps |
-| **m5/m6** | Balanced | Application servers |
-| **c5/c6** | Compute Optimized | High-performance compute |
-| **r5/r6** | Memory Optimized | Databases, analytics |
-| **p3/g4** | GPU Optimized | AI/ML, graphics rendering |
-| **i3/d2/h1** | Storage Optimized | Big data, high I/O apps |
+| **Type**                     | **Instance Family**                                           | **Use Cases**                                                                                                                                       | **Examples**                                                                                                                                                     |
+| ---------------------------- | ------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 🟢 **General Purpose**       | **T, M, A** families (e.g., t3, t4g, m5, m6g, a1)             | Balanced compute, memory, and networking resources. Best for web servers, small databases, dev/test environments, and microservices.                | **t3.micro** – low-cost dev/test <br> **m6g.large** – general app hosting <br> **a1.medium** – ARM-based workloads                                               |
+| 🔵 **Compute Optimized**     | **C** family (e.g., c5, c6g, c7g)                             | High-performance processors for compute-intensive tasks like gaming servers, scientific modeling, batch processing, and machine learning inference. | **c5.xlarge** – high compute tasks <br> **c7g.large** – ARM Graviton3 workloads                                                                                  |
+| 🟣 **Memory Optimized**      | **R, X, Z, u** families (e.g., r5, r6g, x1e, z1d)             | For memory-heavy applications like in-memory databases, caching, real-time big data analytics, and high-performance computing (HPC).                | **r6g.xlarge** – in-memory cache (Redis) <br> **x1e.32xlarge** – SAP HANA <br> **z1d.large** – electronic design automation (EDA)                                |
+| 🟠 **Accelerated Computing** | **P, G, F, Trn, Inf** families (e.g., p4, g5, f1, trn1, inf1) | Use GPUs, FPGAs, or custom chips for ML training/inference, video rendering, deep learning, and scientific simulations.                             | **p4d.24xlarge** – deep learning training <br> **g5.xlarge** – graphics rendering <br> **f1.2xlarge** – FPGA-based workloads <br> **inf2.xlarge** – ML inference |
+| 🟤 **Storage Optimized**     | **I, D, H, Im, Is** families (e.g., i3, i4i, d2, h1)          | Designed for high, sequential read/write access to large data sets—ideal for databases, big data analytics, and data warehousing.                   | **i3.large** – NoSQL databases <br> **i4i.4xlarge** – transactional DBs <br> **d2.8xlarge** – data warehouse workloads                                           |
 
 ---
 
