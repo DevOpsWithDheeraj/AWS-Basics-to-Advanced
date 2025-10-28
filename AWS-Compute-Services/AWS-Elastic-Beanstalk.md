@@ -1,7 +1,7 @@
 # 🌿 AWS Elastic Beanstalk
 ---
 
-## 🌱 What is AWS Elastic Beanstalk?
+## 🌱 1. What is AWS Elastic Beanstalk?
 
 **AWS Elastic Beanstalk** is a **Platform-as-a-Service (PaaS)** that helps you **deploy, manage, and scale web applications** automatically — without worrying about the underlying infrastructure (like EC2, Load Balancer, or Auto Scaling).
 
@@ -20,7 +20,7 @@ You can focus on **code**, not servers.
 
 ---
 
-## ⚙️ How to Configure Elastic Beanstalk
+## ⚙️ 2. How to Configure Elastic Beanstalk
 
 1. **Open AWS Console** → Navigate to **Elastic Beanstalk**.
 2. Click **Create Application**.
@@ -44,7 +44,7 @@ Beanstalk will:
 
 ---
 
-## 🌱 Types of Environments
+## 🌱 3. Types of Environments
 
 | Type | Description |
 |------|--------------|
@@ -53,7 +53,7 @@ Beanstalk will:
 
 ---
 
-## 🧩 Platforms Supported
+## 🧩 4. Platforms Supported
 Elastic Beanstalk supports multiple programming platforms:
 
 | Category | Examples |
@@ -67,7 +67,7 @@ Elastic Beanstalk supports multiple programming platforms:
 
 ---
 
-## 🚀 Deployment Models in Elastic Beanstalk
+## 🚀 5. Deployment Models in Elastic Beanstalk
 
 | Model | Description | Use Case |
 |--------|--------------|----------|
@@ -79,7 +79,7 @@ Elastic Beanstalk supports multiple programming platforms:
 
 ---
 
-## 🔹 Key Concepts in Elastic Beanstalk
+## 🔹 6. Key Concepts in Elastic Beanstalk
 
 | Concept                       | Explanation                                                                                                                                                                              | Example                                                                                                            |
 | ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
@@ -145,14 +145,14 @@ Application: MyWebApp
 | Platform                  | OS + runtime + web server                     | Python 3.9 on AL2  |
 
 ---
-## ⚖️ Traffic Splitting (Canary Deployment)
+## ⚖️ 7. Traffic Splitting (Canary Deployment)
 Elastic Beanstalk supports **Traffic Splitting** which gradually shifts a percentage of user traffic to the new version.  
 - Example: 10% traffic to new version for testing → then 100% if healthy.  
 - Ideal for **canary testing** and safe rollouts.
 
 ---
 
-## 💰 Pricing
+## 💰 8. Pricing
 Elastic Beanstalk itself is **free**, but you pay for the AWS resources it provisions:
 - **EC2 instances**
 - **Elastic Load Balancer**
@@ -164,7 +164,7 @@ Elastic Beanstalk itself is **free**, but you pay for the AWS resources it provi
 
 ---
 
-## 🧠 Practical Example: Deploying a Node.js Web App
+## 🧠 9. Practical Example: Deploying a Node.js Web App
 
 ### Goal:
 Deploy a Node.js website on AWS with zero manual server setup.
@@ -206,7 +206,7 @@ Deploy a Node.js website on AWS with zero manual server setup.
 
 ---
 
-## ✅ Summary
+## ✅ 10. Summary
 
 | Component               | Description                                      |
 | ----------------------- | ------------------------------------------------ |
