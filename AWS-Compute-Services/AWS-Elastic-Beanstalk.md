@@ -131,6 +131,7 @@ Application: MyWebApp
     └── 64bit Amazon Linux 2 running Python 3.9
 ```
 ---
+
 ## ⚖️ 7. Traffic Splitting (Canary Deployment)
 
 **Traffic Splitting** is a **deployment strategy** in which **Elastic Beanstalk gradually routes a small percentage of live traffic to the new application version** while most users continue to be served by the old version.
@@ -225,8 +226,146 @@ After Success:
  └───────────────┘
 ```
 ---
+## 💙💚 8. Blue/Green Deployment
 
-## 💰 8. Pricing
+### 💙🟢 **What is Blue/Green Deployment?**
+
+**Blue/Green Deployment** is a **deployment model** where you run **two separate but identical environments** —
+
+* **Blue** = current (live/production) environment
+* **Green** = new version (staging/test environment)
+
+You deploy your new version (Green) **without touching the live environment (Blue)**.
+Once you verify that the new version works correctly, you **swap traffic (CNAME)** from Blue to Green instantly — achieving a **zero-downtime deployment**.
+
+If any issue occurs, you can **quickly roll back** by swapping traffic back to the Blue environment.
+
+---
+
+### ⚙️ **How Blue/Green Works — Step-by-Step**
+
+| Step | Description                                                                                             |
+| ---- | ------------------------------------------------------------------------------------------------------- |
+| 1️⃣  | Your current production environment (**Blue**) is running a stable version of your app.                 |
+| 2️⃣  | You **create a new environment** (**Green**) in Elastic Beanstalk with the **new application version**. |
+| 3️⃣  | AWS provisions all resources (EC2, Load Balancer, Auto Scaling, etc.) separately for Green.             |
+| 4️⃣  | You **test the Green environment** using its unique URL (e.g., `green.myapp.elasticbeanstalk.com`).     |
+| 5️⃣  | Once validated, you **swap the CNAMEs** between Blue and Green.                                         |
+| 6️⃣  | Now all production traffic goes to the Green environment.                                               |
+| 7️⃣  | If anything breaks, **swap back** to Blue to roll back instantly.                                       |
+
+---
+
+### 🧩 **Example**
+
+You have a web app called **`MyWebApp`**.
+
+| Environment | Version      | URL                                 | Status  |
+| ----------- | ------------ | ----------------------------------- | ------- |
+| **Blue**    | v1 (current) | mywebapp.elasticbeanstalk.com       | Live    |
+| **Green**   | v2 (new)     | mywebapp-green.elasticbeanstalk.com | Testing |
+
+After testing v2:
+
+* You **swap environment URLs (CNAMEs)** using the Elastic Beanstalk console or AWS CLI.
+* Now `mywebapp.elasticbeanstalk.com` points to the Green environment (v2).
+* Blue becomes idle and can be terminated or kept for rollback.
+
+---
+
+### 🧠 **Key Features**
+
+| Feature                    | Description                                          |
+| -------------------------- | ---------------------------------------------------- |
+| **Zero Downtime**          | CNAME swap makes traffic switch instant.             |
+| **Safe Rollback**          | Swap back if any issue occurs.                       |
+| **Isolation**              | Blue and Green environments are completely separate. |
+| **Testing Friendly**       | Green can be tested with real data before go-live.   |
+| **No Configuration Drift** | Both environments are configured identically.        |
+
+---
+
+### 🛠️ **How to Perform in Elastic Beanstalk**
+
+#### ✅ **Using AWS Console**
+
+1. Deploy new version to a **new environment** (Green).
+2. Validate health and application behavior.
+3. Choose **Actions → Swap Environment URLs** in Beanstalk console.
+
+#### ✅ **Using AWS CLI**
+
+```bash
+aws elasticbeanstalk swap-environment-cnames \
+  --source-environment-name MyWebApp-Blue \
+  --destination-environment-name MyWebApp-Green
+```
+
+---
+
+### 🔁 **Rollback Process**
+
+If something goes wrong after switching:
+
+* Simply **swap CNAMEs back**.
+* The Blue environment instantly becomes live again.
+* No downtime, no re-deployment needed.
+
+---
+
+### 💡 **When to Use Blue/Green Deployment**
+
+* Mission-critical production systems needing **zero downtime**.
+* When you want to **test new versions under real conditions** before full release.
+* To avoid risks associated with **in-place updates** (rolling or all-at-once).
+
+---
+
+### ⚖️ **Pros and Cons**
+
+| ✅ Advantages                   | ⚠️ Disadvantages                                  |
+| ------------------------------ | ------------------------------------------------- |
+| Zero downtime deployment       | Higher cost (two full environments)               |
+| Instant rollback (CNAME swap)  | Requires more environment management              |
+| Complete isolation for testing | Possible data sync issues if databases differ     |
+| Safer releases for production  | Needs good DNS planning for external dependencies |
+
+---
+
+### 🧭 **Visualization**
+
+```
+Before Swap:
+     ┌────────────┐       ┌────────────┐
+     │  Users     │──────▶│  Blue Env  │
+     │(Live v1)   │       └────────────┘
+                        ↓
+               Green Env (v2) - Testing only
+
+After Swap:
+     ┌────────────┐       ┌────────────┐
+     │  Users     │──────▶│  Green Env │
+     │(Live v2)   │       └────────────┘
+                        ↓
+               Blue Env (v1) - Idle / Rollback
+```
+
+---
+
+### 🧾 **Blue/Green vs Traffic Splitting**
+
+| Feature         | **Blue/Green**                      | **Traffic Splitting**                     |
+| --------------- | ----------------------------------- | ----------------------------------------- |
+| Deployment Type | Two separate environments           | Same environment, temporary new instances |
+| Traffic Shift   | 100% switched at once (CNAME swap)  | Gradual % split (e.g., 10%)               |
+| Downtime        | None                                | None                                      |
+| Rollback        | Instant (CNAME swap)                | Automatic (if health fails)               |
+| Cost            | Higher (duplicate environment)      | Moderate (temporary instances)            |
+| Best For        | Production releases, full isolation | Canary testing, real user sample testing  |
+
+---
+
+## 💰 9. Pricing
 Elastic Beanstalk itself is **free**, but you pay for the AWS resources it provisions:
 - **EC2 instances**
 - **Elastic Load Balancer**
@@ -238,7 +377,7 @@ Elastic Beanstalk itself is **free**, but you pay for the AWS resources it provi
 
 ---
 
-## 🧠 9. Practical Example: Deploying a Node.js Web App
+## 🧠 10. Practical Example: Deploying a Node.js Web App
 
 ### Goal:
 Deploy a Node.js website on AWS with zero manual server setup.
@@ -280,7 +419,7 @@ Deploy a Node.js website on AWS with zero manual server setup.
 
 ---
 
-## ✅ 10. Summary
+## ✅ 11. Summary
 
 | Component               | Description                                      |
 | ----------------------- | ------------------------------------------------ |
