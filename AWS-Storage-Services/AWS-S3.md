@@ -105,8 +105,8 @@ Think of it like a **cloud-based hard drive**, where instead of folders and file
 **Company:** Netflix
 
 **Use Case:** Storing and streaming large volumes of video content globally.
-**How:**
 
+**How:**
 * Upload video files as **S3 objects**.
 * Metadata stores video info (resolution, language, etc.).
 * Content Delivery Network (**CloudFront**) distributes videos worldwide from S3.
