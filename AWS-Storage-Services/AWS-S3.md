@@ -102,8 +102,7 @@ Think of it like a **cloud-based hard drive**, where instead of folders and file
 
 ## 🧮 7. **Example – Real-world Scenario**
 
-**Company:** **Netflix**
-**Use Case:** **Global video storage and streaming**
+**Company:** **Netflix**      **Use Case:** **Global video storage and streaming**
 
 **Explanation:**
 Netflix needs to store and deliver millions of videos to users all over the world. Using **Amazon S3**, they upload each video as an **object** into S3 **buckets**. The **metadata** attached to each object stores details such as video resolution, language, and genre.
