@@ -102,16 +102,16 @@ Think of it like a **cloud-based hard drive**, where instead of folders and file
 
 ## 🧮 7. **Example – Real-world Scenario**
 
-**Company:** Netflix
+**Company:** **Netflix**
+**Use Case:** **Global video storage and streaming**
 
-**Use Case:** Storing and streaming large volumes of video content globally.
+**Explanation:**
+Netflix needs to store and deliver millions of videos to users all over the world. Using **Amazon S3**, they upload each video as an **object** into S3 **buckets**. The **metadata** attached to each object stores details such as video resolution, language, and genre.
 
-**How:**
-* Upload video files as **S3 objects**.
-* Metadata stores video info (resolution, language, etc.).
-* Content Delivery Network (**CloudFront**) distributes videos worldwide from S3.
+S3’s **high durability and scalability** ensure that even if a data center fails, users still get uninterrupted access to their favorite shows. To improve performance and reduce latency, Netflix uses **Amazon CloudFront** (a CDN) to cache and deliver videos directly from the S3 origin to users in different regions.
 
-Result: Scalable, cost-efficient global streaming system.
+**Result:**
+Netflix achieves a **cost-efficient**, **highly available**, and **globally scalable** video streaming platform — powered by **Amazon S3** as the core storage layer.
 
 ---
 
