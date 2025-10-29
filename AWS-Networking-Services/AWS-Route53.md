@@ -22,16 +22,16 @@ It connects user requests to infrastructure running in AWS—like EC2 instances,
 
 ## 🧩 2. Components of Route 53
 
-1. **Hosted Zones**
+1. **Hosted Zones** :
    A *container* for DNS records that define how you want to route traffic for a domain.
 
    * **Public Hosted Zone** – Used for domains accessible over the internet.
    * **Private Hosted Zone** – Used within a VPC for internal domain resolution.
 
-2. **Record Sets (DNS Records)**
+2. **Record Sets (DNS Records)** :
    Entries that define how traffic is routed (e.g., A record for IP, CNAME for alias).
 
-3. **Health Checks**
+3. **Health Checks** :
    Used to monitor the health of resources. If a resource fails, Route 53 can route traffic to a healthy one.
 
 ---
