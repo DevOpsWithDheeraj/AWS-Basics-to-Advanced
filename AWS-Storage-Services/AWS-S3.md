@@ -103,6 +103,7 @@ Think of it like a **cloud-based hard drive**, where instead of folders and file
 ## 🧮 7. **Example – Real-world Scenario**
 
 **Company:** **Netflix**
+
 **Use Case:** **Global video storage and streaming**
 
 **Explanation:**
