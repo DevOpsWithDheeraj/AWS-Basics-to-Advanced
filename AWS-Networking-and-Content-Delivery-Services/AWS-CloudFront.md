@@ -1,6 +1,6 @@
 # Amazon CloudFront
 
-## What is Amazon CloudFront?
+## ☁️ What is Amazon CloudFront?
 
 Amazon CloudFront is a **Content Delivery Network (CDN)** service offered by AWS. It delivers data, videos, applications, and APIs to customers globally with **low latency and high transfer speeds**. CloudFront caches content at **edge locations** worldwide, which ensures faster delivery by serving content from locations closest to end-users.
 
@@ -8,7 +8,7 @@ CloudFront integrates seamlessly with other AWS services like **S3, EC2, Lambda@
 
 ---
 
-## Key Features of CloudFront
+## ✨ 1. Key Features of CloudFront
 
 1. **Global Distribution**: Uses a network of **edge locations** to deliver content closer to users.
 2. **Low Latency & High Throughput**: Reduces load time for websites and applications.
@@ -24,7 +24,7 @@ CloudFront integrates seamlessly with other AWS services like **S3, EC2, Lambda@
 
 ---
 
-## CloudFront Architecture
+## 🏗️ 2. CloudFront Architecture
 
 1. **Origin**: The source of the content (S3, EC2, ALB, API Gateway, etc.).
 2. **Edge Location**: Global points of presence where content is cached.
@@ -41,14 +41,14 @@ CloudFront integrates seamlessly with other AWS services like **S3, EC2, Lambda@
 
 ---
 
-## CloudFront Distribution Types
+## 🧱 3. CloudFront Distribution Types
 
 1. **Web Distribution**: For websites, APIs, and HTTP/HTTPS content.
 2. **RTMP Distribution**: For streaming media using Adobe Flash (legacy, less common).
 
 ---
 
-## Step-by-Step Guide to Configure CloudFront
+## 🪜 4. Step-by-Step Guide to Configure CloudFront
 
 ### Step 1: Create a CloudFront Distribution
 
@@ -88,7 +88,7 @@ CloudFront integrates seamlessly with other AWS services like **S3, EC2, Lambda@
 
 ---
 
-## Practical Example: Serving a Static Website from S3
+## 🧰 5. Practical Example: Serving a Static Website from S3
 
 ### Step 1: Create S3 Bucket
 
@@ -119,7 +119,7 @@ CloudFront integrates seamlessly with other AWS services like **S3, EC2, Lambda@
 
 ---
 
-## CloudFront Best Practices
+## 💡 6. CloudFront Best Practices
 
 1. Use **Lambda@Edge** for advanced request/response manipulation.
 2. Enable **Gzip or Brotli compression** for faster content delivery.
@@ -129,7 +129,7 @@ CloudFront integrates seamlessly with other AWS services like **S3, EC2, Lambda@
 
 ---
 
-## Summary
+## 🧾7. Summary
 
 Amazon CloudFront is a powerful, globally distributed CDN service that accelerates content delivery, improves website performance, and enhances security. By integrating with other AWS services, CloudFront provides a flexible and scalable solution for static, dynamic, and streaming content.  
 
