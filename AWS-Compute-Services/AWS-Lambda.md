@@ -70,15 +70,15 @@ def lambda_handler(event, context):
 
 ## 📦 5. Lambda Layers
 
-**Lambda Layers** are reusable packages of code or dependencies (e.g., libraries, SDKs).
-They help reduce code duplication across multiple Lambda functions.
+**AWS Lambda Layer** is a feature that lets you **package and share reusable code, libraries, or dependencies** separately from your main function code.
 
-Example use cases:
+👉 **In short:**
+A **Layer** is like a **shared library** for Lambda — you can include things like SDKs, custom modules, or configuration files without bundling them into every function.
 
-* Common logging library shared by multiple functions.
-* Machine Learning models or Python packages.
+**Example:**
+If multiple Lambda functions use the same Python library, you can put that library in a **Layer** and attach it to all functions — saving space and making updates easier.
 
-You can include **up to 5 layers** per function.
+> You can include **up to 5 layers** per function.
 
 ---
 
