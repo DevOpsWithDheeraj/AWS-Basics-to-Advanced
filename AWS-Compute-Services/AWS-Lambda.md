@@ -1,6 +1,6 @@
 # ⚡ AWS Lambda
 
-## 🌐 What is AWS Lambda?
+## 🌐 1. What is AWS Lambda?
 **AWS Lambda** is a **serverless compute service** that automatically runs your code **without provisioning or managing servers**.  
 You just upload your code — Lambda takes care of execution, scaling, and availability.  
 
@@ -8,7 +8,7 @@ You just upload your code — Lambda takes care of execution, scaling, and avail
 
 ---
 
-## ⚙️ How to Configure AWS Lambda
+## ⚙️ 2. How to Configure AWS Lambda
 
 1. **Open AWS Console** → Go to **AWS Lambda** service.  
 2. Click **Create Function** → Choose:
@@ -25,7 +25,7 @@ You just upload your code — Lambda takes care of execution, scaling, and avail
 
 ---
 
-## ⚙️ How Does It Work?
+## ⚙️ 3. How Does It Work?
 1. **Trigger/Event Source** (like S3 upload, API call, or scheduled CloudWatch event) invokes Lambda.
 2. **Lambda receives the event**, executes your function code in an isolated container.
 3. **Scales automatically** — Lambda launches as many parallel instances as needed.
@@ -33,7 +33,7 @@ You just upload your code — Lambda takes care of execution, scaling, and avail
 
 ---
 
-## 💡 Lambda Function
+## 💡 4. Lambda Function
 A **Lambda Function** is the core component — your executable code plus configuration.  
 Each function includes:
 - **Handler** → Entry point of execution.  
@@ -53,7 +53,7 @@ def lambda_handler(event, context):
 
 ---
 
-## 📦 Lambda Layers
+## 📦 5. Lambda Layers
 
 **Lambda Layers** are reusable packages of code or dependencies (e.g., libraries, SDKs).
 They help reduce code duplication across multiple Lambda functions.
@@ -67,7 +67,7 @@ You can include **up to 5 layers** per function.
 
 ---
 
-## 🔔 Lambda Events
+## 🔔 6. Lambda Events
 
 Lambda functions are triggered by **events** — objects that describe what happened.
 
@@ -97,7 +97,7 @@ Example S3 Event (JSON):
 
 ---
 
-## 🧩 Languages Supported
+## 🧩 7. Languages Supported
 
 AWS Lambda supports multiple runtimes:
 
@@ -113,7 +113,7 @@ AWS Lambda supports multiple runtimes:
 
 ---
 
-## 💰 Pricing
+## 💰 8. Pricing
 
 AWS Lambda charges are based on **compute time and requests**:
 
@@ -129,7 +129,7 @@ AWS Lambda charges are based on **compute time and requests**:
 
 ---
 
-## 🧠 Practical Example: Auto Thumbnail Generator
+## 🧠 9. Practical Example: Auto Thumbnail Generator
 
 ### Scenario:
 
@@ -183,8 +183,95 @@ When a user uploads a photo to **S3**, Lambda automatically creates a **thumbnai
 🎉 Result: Fully automated, serverless image processing system!
 
 ---
+## ⚡ 10. **Advantages of AWS Lambda**
 
-## ✅ Summary
+1. **No Server Management**
+
+   * You don’t need to provision, configure, or maintain servers — AWS handles all infrastructure.
+
+2. **Automatic Scaling**
+
+   * Lambda automatically scales based on the number of incoming requests or events.
+
+3. **Cost Efficiency (Pay-as-you-go)**
+
+   * You only pay for the compute time consumed (measured in milliseconds), not for idle time.
+
+4. **Event-Driven Execution**
+
+   * Can be easily triggered by AWS services like S3, DynamoDB, SNS, API Gateway, CloudWatch, etc.
+
+5. **Supports Multiple Languages**
+
+   * Supports Node.js, Python, Java, Go, C#, Ruby, and custom runtimes via Lambda Runtime API.
+
+6. **Quick Deployment**
+
+   * Simple to upload and deploy code directly from the console or CLI without worrying about servers.
+
+7. **Integrated Security**
+
+   * Works seamlessly with AWS IAM for fine-grained access control.
+
+8. **Built-in Fault Tolerance**
+
+   * AWS Lambda runs functions across multiple Availability Zones automatically for high availability.
+
+9. **Easily Connects with AWS Ecosystem**
+
+   * Tight integration with AWS services makes it ideal for building serverless applications.
+
+10. **Versioning and Aliases**
+
+    * Allows maintaining different versions of functions and routing traffic between them.
+
+---
+
+## ⚠️ 11. **Limitations of AWS Lambda**
+
+1. **Limited Execution Time**
+
+   * Maximum execution timeout is **15 minutes** per function invocation.
+
+2. **Cold Start Latency**
+
+   * First invocation after a period of inactivity may experience a delay (especially for large packages or Java-based functions).
+
+3. **Limited Temporary Storage**
+
+   * `/tmp` directory provides only **512 MB** of ephemeral storage (though expandable up to 10 GB).
+
+4. **Memory and CPU Constraints**
+
+   * Memory can be configured between **128 MB and 10 GB**, with proportional CPU — not suitable for heavy compute tasks.
+
+5. **Complex Debugging and Monitoring**
+
+   * Harder to debug locally compared to traditional servers; relies on CloudWatch Logs.
+
+6. **Vendor Lock-in**
+
+   * Deep integration with AWS services can make migration to other platforms challenging.
+
+7. **No Direct SSH Access**
+
+   * You cannot log in to the runtime environment to inspect or troubleshoot directly.
+
+8. **Concurrency Limits**
+
+   * Each account has default concurrency limits (though can be increased via AWS Support).
+
+9. **Deployment Package Size Limit**
+
+   * The size of deployment packages (including dependencies) is limited — **50 MB (zipped)** or **250 MB (unzipped)**.
+
+10. **Not Ideal for Long-Running Applications**
+
+    * Workloads requiring continuous processing (like streaming or large batch jobs) are not suitable for Lambda.
+
+---
+
+## ✅ 12. Summary
 
 | Component          | Description                                              |
 | ------------------ | -------------------------------------------------------- |
