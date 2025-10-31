@@ -34,16 +34,16 @@ It’s commonly used for:
 
 ## 4. **How AWS SES Works (Flow)**
 
-1. **Email Creation**
+1. **Email Creation** --
    You create the email (either manually or programmatically using API/SDK).
 
-2. **Email Sending**
+2. **Email Sending** --
    SES sends the email through its SMTP endpoint or using AWS SDK.
 
-3. **Email Delivery**
+3. **Email Delivery** --
    The recipient receives it in their inbox.
 
-4. **Feedback Loop**
+4. **Feedback Loop** --
    SES tracks metrics — deliveries, opens, bounces, complaints, etc.
 
 ---
