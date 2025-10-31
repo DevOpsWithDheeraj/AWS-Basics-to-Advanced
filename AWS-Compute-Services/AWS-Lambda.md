@@ -144,7 +144,95 @@ AWS Lambda charges are based on **compute time and requests**:
 
 ---
 
-## 🧠 9. Practical Example: Auto Thumbnail Generator
+## 🧠 9. Practical Example: AWS Lambda Function to Automatically Move Uploaded PDF, JPG, and TXT Files to Separate Buckets
+
+### **Description:**
+
+This Lambda function is triggered **automatically when a new object is uploaded** to an S3 source bucket.
+It checks the **file type (extension)** and **copies** it to a **specific destination bucket** based on its type:
+
+* **PDF → pdf-bucket**
+* **JPG → image-bucket**
+* **TXT → text-bucket**
+
+---
+
+### **Python Lambda Function Code (Python 3.9 or later)**
+
+```python
+import boto3
+import os
+
+s3 = boto3.client('s3')
+
+def lambda_handler(event, context):
+    # Extract bucket name and object key from the event
+    source_bucket = event['Records'][0]['s3']['bucket']['name']
+    object_key = event['Records'][0]['s3']['object']['key']
+    
+    # Extract file extension
+    _, file_extension = os.path.splitext(object_key)
+    file_extension = file_extension.lower()
+    
+    # Define destination buckets for each file type
+    pdf_bucket = 'your-pdf-bucket-name'
+    image_bucket = 'your-image-bucket-name'
+    text_bucket = 'your-text-bucket-name'
+    
+    # Determine destination bucket based on file type
+    if file_extension == '.pdf':
+        destination_bucket = pdf_bucket
+    elif file_extension in ['.jpg', '.jpeg']:
+        destination_bucket = image_bucket
+    elif file_extension == '.txt':
+        destination_bucket = text_bucket
+    else:
+        print(f"Unsupported file type: {file_extension}")
+        return
+    
+    # Copy file to destination bucket
+    copy_source = {'Bucket': source_bucket, 'Key': object_key}
+    s3.copy_object(CopySource=copy_source, Bucket=destination_bucket, Key=object_key)
+    
+    # Optional: delete the file from source after copying
+    # s3.delete_object(Bucket=source_bucket, Key=object_key)
+    
+    print(f"File '{object_key}' moved from '{source_bucket}' to '{destination_bucket}'")
+
+```
+
+---
+
+### **Setup Steps:**
+
+1. **Create 4 S3 Buckets:**
+
+   * `source-bucket` (upload files here)
+   * `pdf-bucket`
+   * `image-bucket`
+   * `text-bucket`
+
+2. **Create a Lambda Function:**
+
+   * Runtime: **Python 3.9**
+   * Role permissions:
+     Add **S3FullAccess** (or fine-tuned policy for GetObject, PutObject, DeleteObject)
+
+3. **Add S3 Trigger:**
+
+   * Configure the Lambda trigger for your **source bucket**
+   * Event type: **“All object create events”**
+   * Filter suffixes (optional): `.pdf`, `.jpg`, `.txt`
+
+4. **Deploy and Test:**
+
+   * Upload a file (like `example.pdf`) to your source bucket
+   * The Lambda will automatically copy it to the right destination bucket
+
+---
+
+
+## 🧠 10. Practical Example: Auto Thumbnail Generator
 
 ### Scenario:
 
@@ -198,7 +286,7 @@ When a user uploads a photo to **S3**, Lambda automatically creates a **thumbnai
 🎉 Result: Fully automated, serverless image processing system!
 
 ---
-## ⚡ 10. **Advantages of AWS Lambda**
+## ⚡ 11. **Advantages of AWS Lambda**
 
 1. **No Server Management**
 
@@ -242,7 +330,7 @@ When a user uploads a photo to **S3**, Lambda automatically creates a **thumbnai
 
 ---
 
-## ⚠️ 11. **Limitations of AWS Lambda**
+## ⚠️ 12. **Limitations of AWS Lambda**
 
 1. **Limited Execution Time**
 
@@ -286,7 +374,7 @@ When a user uploads a photo to **S3**, Lambda automatically creates a **thumbnai
 
 ---
 
-## ✅ 12. Summary
+## ✅ 13. Summary
 
 | Component          | Description                                              |
 | ------------------ | -------------------------------------------------------- |
