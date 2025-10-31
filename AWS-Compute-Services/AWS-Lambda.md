@@ -144,7 +144,7 @@ AWS Lambda charges are based on **compute time and requests**:
 
 ---
 
-## 🧠 9. Practical Example: AWS Lambda Function to Automatically Move Uploaded PDF, JPG, and TXT Files to Separate Buckets
+## 🧠 9. Practical Example: Auto File Sorter with AWS Lambda (PDF, JPG, TXT)
 
 ### **Description:**
 
@@ -155,6 +155,7 @@ It checks the **file type (extension)** and **copies** it to a **specific destin
 * **JPG → image-bucket**
 * **TXT → text-bucket**
 
+> AWS Lambda Function to Automatically Move Uploaded PDF, JPG, and TXT Files to Separate Buckets
 ---
 
 ### **Python Lambda Function Code (Python 3.9 or later)**
