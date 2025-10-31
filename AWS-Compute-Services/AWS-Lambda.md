@@ -26,10 +26,25 @@ You just upload your code — Lambda takes care of execution, scaling, and avail
 ---
 
 ## ⚙️ 3. How Does It Work?
-1. **Trigger/Event Source** (like S3 upload, API call, or scheduled CloudWatch event) invokes Lambda.
-2. **Lambda receives the event**, executes your function code in an isolated container.
-3. **Scales automatically** — Lambda launches as many parallel instances as needed.
-4. **Stops automatically** when execution completes — you pay only for compute time.
+1. **Trigger/Event:**
+
+   * Lambda is invoked automatically by an event (e.g., an S3 upload, API Gateway request, or CloudWatch event).
+
+2. **Execution:**
+
+   * AWS runs your function code in a secure, temporary container with allocated memory and CPU.
+
+3. **Scaling:**
+
+   * Lambda automatically creates more instances of the function if multiple events occur simultaneously.
+
+4. **Completion:**
+
+   * Once execution finishes, AWS shuts down the container. You’re charged only for the execution time.
+
+👉 **In simple terms:**
+**Event triggers function → AWS runs code → Scales automatically → Stops when done → Pay only for use.**
+
 
 ---
 
