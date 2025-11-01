@@ -192,7 +192,7 @@ OpsWorks ensures every “dish” (server setup) is prepared exactly the same wa
 
 ## 🧾 **Conclusion**
 
-AWS OpsWorks simplifies complex deployments by **automating server configuration, software installation, and code deployment** using **Chef or Puppet**.
-It brings consistency, control, and scalability to both cloud and on-premises environments — making it a powerful tool for **DevOps automation** and **infrastructure standardization**.
+> AWS OpsWorks simplifies complex deployments by **automating server configuration, software installation, and code deployment** using **Chef or Puppet**.
+> It brings consistency, control, and scalability to both cloud and on-premises environments — making it a powerful tool for **DevOps automation** and **infrastructure standardization**.
 
 ---
