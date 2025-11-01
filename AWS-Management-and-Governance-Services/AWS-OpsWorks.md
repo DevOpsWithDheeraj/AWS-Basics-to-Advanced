@@ -170,13 +170,8 @@ Automatically scale your application layers based on load.
 ## 💡 9. Real-World Example
 
 **Company:** *Food Delivery App Startup* 
-**Challenge:** Managing frequent updates to app servers during peak hours.
-**Solution:**
-They use **AWS OpsWorks for Chef Automate** to:
-
-**Company:** Food Delivery App Startup  
 **Challenge:** Managing frequent updates to app servers during peak hours.  
-**Solution:** They use AWS OpsWorks for Chef Automate to automate configuration, deployment, and scaling efficiently.
+**Solution:** They use **AWS OpsWorks for Chef Automate** to:
 
 
 * Automatically deploy new app versions.
