@@ -19,6 +19,7 @@ AWS provides **tools, frameworks, and best practices** to simplify the **assessm
 | **AWS Snow Family (Snowcone, Snowball, Snowmobile)** | Physical devices for **large-scale data transfer** when network bandwidth is limited.          | Transfer terabytes or petabytes of data to AWS.          |
 | **AWS DataSync**                                     | Automates **online data transfer** between on-premise storage and AWS services like S3 or EFS. | Continuous or scheduled data synchronization.            |
 | **AWS CloudEndure Migration**                        | Provides **disaster recovery** and migration solutions with real-time replication.             | Fast, reliable workload migration with minimal downtime. |
+| **AWS Application Discovery Service**                | Automatically discovers on-premises servers, applications, and dependencies to help plan your migration  | Used during the assessment phase to create migration plans and dependency maps.  |
 
 ---
 
