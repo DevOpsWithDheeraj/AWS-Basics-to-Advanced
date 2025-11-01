@@ -4,7 +4,7 @@
 
 **AWS OpsWorks** is a configuration management and application deployment service that helps you automate server setup, configuration, and operations across both AWS and on-premises environments.
 
-It uses popular automation tools like **Chef** and **Puppet** to define how your servers should be configured, deployed, and managed — allowing you to treat **infrastructure as code (IaC)**.
+It uses popular automation tools like **Chef** and **Puppet** to define how your servers should be configured, deployed, and managed — allowing you to treat **configuration as code**.
 
 ---
 
