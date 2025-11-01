@@ -2,7 +2,9 @@
 
 ## ☁️ What is Amazon CloudFront?
 
-Amazon CloudFront is a **Content Delivery Network (CDN)** service offered by AWS. It delivers data, videos, applications, and APIs to customers globally with **low latency and high transfer speeds**. CloudFront caches content at **edge locations** worldwide, which ensures faster delivery by serving content from locations closest to end-users.
+Amazon CloudFront is a **Content Delivery Network (CDN)** service offered by AWS. It delivers data, videos, applications, and APIs to customers globally with **low latency and high transfer speeds**. 
+
+CloudFront caches content at **edge locations** worldwide, which ensures faster delivery by serving content from locations closest to end-users.
 
 CloudFront integrates seamlessly with other AWS services like **S3, EC2, Lambda@Edge, and API Gateway**. It supports **dynamic and static content delivery**, and provides **security features** like SSL/TLS encryption and AWS Shield protection.
 
