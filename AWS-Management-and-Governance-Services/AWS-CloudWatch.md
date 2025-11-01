@@ -39,16 +39,16 @@ CloudWatch helps you:
 
 ## 🪜 3. **How CloudWatch Works**
 
-1. **Data Collection**
+1. **Data Collection** :
    CloudWatch collects **metrics and logs** from AWS services (EC2, RDS, Lambda, EKS, etc.) and custom sources (your own applications).
 
-2. **Monitoring & Analysis**
+2. **Monitoring & Analysis** :
    You can **view metrics**, **filter logs**, and **analyze performance** in the CloudWatch console.
 
-3. **Automation via Alarms & Events**
+3. **Automation via Alarms & Events** :
    Set up **alarms** that trigger **SNS notifications**, **Auto Scaling actions**, or **Lambda functions** when thresholds are crossed.
 
-4. **Visualization**
+4. **Visualization** :
    Use **dashboards** to view performance metrics and health indicators in real time.
 
 ---
