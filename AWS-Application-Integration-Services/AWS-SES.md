@@ -32,7 +32,7 @@ It’s commonly used for:
 
 ---
 
-## ⚙️ 4. How AWS SES Works — Step-by-Step
+## 4. How AWS SES Works — Step-by-Step
 
 | Step                             | Process                                                          | Description                                                                      |
 | -------------------------------- | ---------------------------------------------------------------- | -------------------------------------------------------------------------------- |
@@ -44,7 +44,7 @@ It’s commonly used for:
 
 ---
 
-## 🧭 **Diagram — AWS SES Workflow**
+## **Diagram — AWS SES Workflow**
 
 Below is a simple flow diagram (text-based for Markdown):
 
@@ -75,7 +75,7 @@ Below is a simple flow diagram (text-based for Markdown):
 
 ---
 
-## 🧠 **Key Features of AWS SES**
+## **Key Features of AWS SES**
 
 | Feature                 | Description                                                    |
 | ----------------------- | -------------------------------------------------------------- |
