@@ -56,10 +56,10 @@ It helps applications, microservices, and distributed systems **send notificatio
 ### **Message Flow Example:**
 
 * `Order Service` publishes → “Your order #1234 shipped!”
-* SNS Topic sends  →
+* SNS Topic sends → <br>
   → Email to customer <br>
-  → SMS to mobile
-  → Invokes Lambda for backend updates
+  → SMS to mobile <br>
+  → Invokes Lambda for backend updates <br>
   → Sends message to SQS for record-keeping 
 
 ---
