@@ -58,11 +58,8 @@ It helps applications, microservices, and distributed systems **send notificatio
 * `Order Service` publishes → “Your order #1234 shipped!”
 * SNS Topic sends  →
   → Email to customer
-  
   → SMS to mobile
-  
   → Invokes Lambda for backend updates
-  
   → Sends message to SQS for record-keeping 
 
 ---
