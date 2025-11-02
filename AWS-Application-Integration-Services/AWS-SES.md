@@ -46,31 +46,33 @@ It’s commonly used for:
 
 ## **Diagram — AWS SES Workflow**
 
-Below is a simple flow diagram (text-based for Markdown):
-
 ```
-             +-------------------+
-             |  Your Application  |
-             | (API / SMTP Call)  |
-             +---------+----------+
-                       |
-                       v
-             +-------------------+
-             |  Amazon SES       |
-             |  (Email Engine)   |
-             +---------+----------+
-                       |
-        +--------------+----------------+
-        |                               |
-        v                               v
-+-------------------+          +-------------------+
-| Recipient's Email |          | Feedback (Bounces,|
-| Server (Gmail etc)|          | Complaints)      |
-+---------+---------+          +---------+---------+
-          |                               |
-          v                               v
-   Email Delivered                 SNS / lambda / CloudWatch
-                                   Notification Logs
++------------------+
+|   Your App /     |
+|   Web Server     |
++--------+---------+
+         |
+         | (Send Email via API/SMTP)
+         v
++----------------------+
+|     AWS SES          |
+| (Validates & Sends)  |
++----------+-----------+
+           |
+           | (Delivery)
+           v
++----------------------+
+| Recipient's Mailbox  |
+|  (Gmail, Outlook, etc.) |
++----------------------+
+           |
+           | (Delivery Reports)
+           v
++----------------------+
+|  Amazon SNS / S3 /  |
+|  CloudWatch / Lambda|
++----------------------+
+
 ```
 
 ---
