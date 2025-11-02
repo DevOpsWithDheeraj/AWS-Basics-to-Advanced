@@ -74,20 +74,6 @@ It’s commonly used for:
 +----------------------+
 
 ```
-
----
-
-## **Key Features of AWS SES**
-
-| Feature                 | Description                                                    |
-| ----------------------- | -------------------------------------------------------------- |
-| **SMTP & API Support**  | Send emails using standard SMTP or AWS SDK / API               |
-| **High Deliverability** | Built-in reputation management and DKIM/SPF support            |
-| **Scalable**            | Automatically scales based on sending volume                   |
-| **Analytics**           | Track delivery, open rate, click rate, bounces, and complaints |
-| **Inbound Email**       | Can receive and process incoming emails using Lambda           |
-| **Integration**         | Works with **SNS**, **CloudWatch**, **S3**, **Lambda**         |
-
 ---
 
 ## 5. **Example 1: Transactional Email via AWS SES**
