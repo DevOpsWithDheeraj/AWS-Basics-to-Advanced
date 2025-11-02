@@ -25,6 +25,34 @@ It allows applications or components to **communicate asynchronously** — meani
 | **FIFO Queue (First-In-First-Out)** | Guarantees **exactly-once processing** and **message order**.                         | Financial transactions, inventory systems. |
 
 ---
+Here’s a clear and complete **table of key configuration parameters in Amazon SQS (Simple Queue Service)** — useful for setup, tuning, and AWS exam preparation 👇
+
+---
+
+## 🧩 ** AWS SQS Configuration Parameters**
+
+| **Parameter**                                | **Description**                                                                                 | **Default Value** | **Allowed Range / Values**                          | **Applicable Queue Type** |
+| -------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------- | --------------------------------------------------- | ------------------------- |
+| **Queue Name**                               | Unique name to identify the queue.                                                              | —                 | 1–80 characters; alphanumeric, hyphens, underscores | Standard & FIFO           |
+| **Queue Type**                               | Type of SQS queue — Standard (best-effort ordering) or FIFO (strict ordering).                  | Standard          | Standard / FIFO                                     | Both                      |
+| **Visibility Timeout**                       | Time during which a message is hidden from other consumers after being retrieved.               | 30 seconds        | 0 – 12 hours                                        | Both                      |
+| **Message Retention Period**                 | Duration messages are kept in the queue before automatic deletion.                              | 4 days            | 1 minute – 14 days                                  | Both                      |
+| **Maximum Message Size**                     | Maximum size of a single message.                                                               | 256 KB            | 1 KB – 256 KB                                       | Both                      |
+| **Delivery Delay**                           | Time to delay the delivery of all messages added to the queue.                                  | 0 seconds         | 0 – 15 minutes                                      | Both                      |
+| **Receive Message Wait Time (Long Polling)** | Wait time for `ReceiveMessage` API to return if no messages are available.                      | 0 seconds         | 0 – 20 seconds                                      | Both                      |
+| **Maximum Receives (Redrive Policy)**        | Maximum number of times a message can be received before being sent to Dead Letter Queue (DLQ). | —                 | 1 – 1,000                                           | Both                      |
+| **Dead-Letter Queue (DLQ)**                  | Queue to which failed messages are sent after exceeding the max receive count.                  | Disabled          | Enabled / Disabled                                  | Both                      |
+| **Content-Based Deduplication**              | Automatically deduplicates messages with identical content.                                     | Disabled          | Enabled / Disabled                                  | FIFO only                 |
+| **Deduplication ID**                         | Unique ID for deduplication of sent messages (required if deduplication is not content-based).  | —                 | String up to 128 characters                         | FIFO only                 |
+| **Message Group ID**                         | Logical tag for message grouping (ensures ordered processing within a group).                   | —                 | String up to 128 characters                         | FIFO only                 |
+| **Encryption (SSE)**                         | Encrypts messages at rest using AWS KMS.                                                        | Disabled          | Enabled / Disabled                                  | Both                      |
+| **KMS Master Key ID**                        | The KMS key used for encryption (if SSE enabled).                                               | AWS-managed key   | Custom KMS key ARN                                  | Both                      |
+| **Access Policy (Queue Policy)**             | Defines permissions (who can send/receive messages).                                            | —                 | JSON IAM policy                                     | Both                      |
+| **Redrive Allow Policy**                     | Controls which queues can send messages to this DLQ.                                            | —                 | JSON policy                                         | Both                      |
+| **FIFO Throughput Limit**                    | Determines throughput for FIFO queues (per message group or per queue).                         | Per Queue         | perQueue / perMessageGroupId                        | FIFO only                 |
+| **Deduplication Scope**                      | Defines how deduplication is applied.                                                           | Queue             | MessageGroup / Queue                                | FIFO only                 |
+
+---
 
 ## 🧠 **Example 1: Standard Queue — Image Processing System**
 
