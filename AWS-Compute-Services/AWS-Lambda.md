@@ -149,13 +149,13 @@ AWS Lambda charges are based on **compute time and requests**:
 ### **Description:**
 
 This Lambda function is triggered **automatically when a new object is uploaded** to an S3 source bucket.
-It checks the **file type (extension)** and **moved** it to a **specific destination bucket** based on its type:
+It checks the **file type (extension)** and **copies** it to a **specific destination bucket** based on its type:
 
 * **PDF → pdf-bucket**
 * **JPG → image-bucket**
 * **TXT → text-bucket**
 
-> AWS Lambda Function to Automatically Move Uploaded PDF, JPG, and TXT Files to Separate Buckets
+> AWS Lambda Function to Automatically copies Uploaded PDF, JPG, and TXT Files to Separate Buckets
 ---
 
 ### **Python Lambda Function Code (Python 3.9 or later)**
