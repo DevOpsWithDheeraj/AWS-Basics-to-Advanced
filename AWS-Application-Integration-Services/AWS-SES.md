@@ -69,7 +69,7 @@ Below is a simple flow diagram (text-based for Markdown):
 +---------+---------+          +---------+---------+
           |                               |
           v                               v
-   Email Delivered                 SNS / CloudWatch
+   Email Delivered                 SNS / lambda / CloudWatch
                                    Notification Logs
 ```
 
