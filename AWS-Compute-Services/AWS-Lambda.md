@@ -172,7 +172,7 @@ def lambda_handler(event, context):
     object_key = event['Records'][0]['s3']['object']['key']
     
     # Extract file extension
-    _, file_extension = os.path.splitext(object_key)
+    file_extension = os.path.splitext(object_key)
     file_extension = file_extension.lower()
     
     # Define destination buckets for each file type
