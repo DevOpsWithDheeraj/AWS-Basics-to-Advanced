@@ -24,18 +24,17 @@ AWS provides **tools, frameworks, and best practices** to simplify the **assessm
 
 ---
 
-## 🧭 2. 6 R’s of Cloud Migration Strategy
+## 🧭 2. **7 R’s of AWS Migration Strategies**
 
-AWS classifies migration strategies into **6 R’s**, which help determine the best approach for each workload.
-
-| Strategy                                       | Description                                                                   | Example                                                    |
-| ---------------------------------------------- | ----------------------------------------------------------------------------- | ---------------------------------------------------------- |
-| **1️⃣ Rehost (“Lift and Shift”)**              | Move applications **as-is** to AWS with little or no changes.                 | Migrate VMs from on-premise to EC2 using MGN.              |
-| **2️⃣ Replatform (“Lift, Tinker, and Shift”)** | Make **minor optimizations** for better performance or cost before moving.    | Move app to EC2 but use RDS instead of self-managed DB.    |
-| **3️⃣ Refactor / Re-architect**                | **Redesign** the application to take full advantage of cloud-native features. | Move monolithic app to microservices on AWS Lambda or ECS. |
-| **4️⃣ Repurchase**                             | Replace the existing application with a **SaaS-based solution**.              | Replace CRM with Salesforce or ServiceNow.                 |
-| **5️⃣ Retire**                                 | **Decommission** or remove applications that are no longer needed.            | Turn off legacy tools or duplicate systems.                |
-| **6️⃣ Retain (Revisit / Re-evaluate)**         | Keep some workloads **on-premise** due to compliance or latency reasons.      | Keep mainframe workloads locally for now.                  |
+| Strategy                                       | Description                                                                                     | Example                                                                               |
+| ---------------------------------------------- | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| **1️⃣ Rehost (“Lift and Shift”)**              | Move applications **as-is** to AWS with little or no changes.                                   | Migrate VMs from on-premise to EC2 using **AWS Application Migration Service (MGN)**. |
+| **2️⃣ Replatform (“Lift, Tinker, and Shift”)** | Make **minor optimizations** for better performance or cost before moving.                      | Move app to **EC2** but use **RDS** instead of self-managed database.                 |
+| **3️⃣ Refactor / Re-architect**                | **Redesign** the application to take full advantage of cloud-native features and scalability.   | Move monolithic app to **microservices on AWS Lambda or ECS**.                        |
+| **4️⃣ Repurchase**                             | Replace the existing application with a **SaaS-based or cloud-native solution**.                | Replace on-prem CRM with **Salesforce** or **ServiceNow**.                            |
+| **5️⃣ Relocate**                               | Move **entire servers or VMs** to AWS **without changing their architecture or operations**.    | **Migrate VMware workloads** directly to **VMware Cloud on AWS**.                     |
+| **6️⃣ Retire**                                 | **Decommission** or remove applications that are no longer needed or add no value.              | Turn off **legacy tools** or duplicate systems.                                       |
+| **7️⃣ Retain (Revisit / Re-evaluate)**         | Keep some workloads **on-premise or hybrid** due to compliance, latency, or dependency reasons. | Keep **mainframe workloads** locally for now.                                         |
 
 ---
 
