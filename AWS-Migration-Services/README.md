@@ -8,7 +8,7 @@ AWS provides **tools, frameworks, and best practices** to simplify the **assessm
 
 ---
 
-## ⚙️ 1. Key AWS Migration Services
+## ⚙️ Key AWS Migration Services
 
 | Service                                              | Description                                                                                    | Use Case                                                 |
 | ---------------------------------------------------- | ---------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
@@ -24,7 +24,7 @@ AWS provides **tools, frameworks, and best practices** to simplify the **assessm
 
 ---
 
-### 🧭 2. **Key Phases of Cloud Migration**
+### 🧭 **Key Phases of Cloud Migration**
 
 | **Phase**           | **Description**                                                                                             | **Key Activities / Examples**                                                                                          |
 | ------------------- | ----------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
@@ -36,7 +36,7 @@ AWS provides **tools, frameworks, and best practices** to simplify the **assessm
 
 ---
 
-## 🧭 3. **7 R’s of AWS Migration Strategies**
+## 🧭 **7 R’s of AWS Migration Strategies**
 
 | Strategy                                       | Description                                                                                     | Example                                                                               |
 | ---------------------------------------------- | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
