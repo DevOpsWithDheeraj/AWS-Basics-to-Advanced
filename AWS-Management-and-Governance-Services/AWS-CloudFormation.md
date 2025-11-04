@@ -71,57 +71,164 @@ Resources:
 
 ---
 
-## 💡 4. **Examples**
+## 🧩 4. **Basic Example – Creating an S3 Bucket**
 
-### 🧱 **Example 1: Simple Web Server Deployment**
-
-You can create a full web server environment with a single YAML file:
+Here’s a **simple YAML template** that creates an **S3 bucket**:
 
 ```yaml
-Resources:
-  WebServerInstance:
-    Type: AWS::EC2::Instance
-    Properties:
-      InstanceType: t2.micro
-      ImageId: ami-0abcd12345efgh678
-      KeyName: my-key
-      SecurityGroups:
-        - !Ref WebServerSecurityGroup
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Create an S3 bucket using CloudFormation
 
-  WebServerSecurityGroup:
+Resources:
+  MyS3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: my-demo-cf-bucket-12345
+      VersioningConfiguration:
+        Status: Enabled
+```
+
+### 📝 Explanation:
+
+| Section                      | Meaning                                                           |
+| ---------------------------- | ----------------------------------------------------------------- |
+| **AWSTemplateFormatVersion** | Version of CloudFormation template format                         |
+| **Description**              | Short description of the stack                                    |
+| **Resources**                | Main section — defines the AWS resources to create                |
+| **Type**                     | AWS resource type (e.g., `AWS::S3::Bucket`, `AWS::EC2::Instance`) |
+| **Properties**               | Configuration options for that resource                           |
+
+✅ When you deploy this file, CloudFormation automatically:
+
+* Creates an **S3 bucket**
+* Enables **versioning**
+
+---
+
+## 💻 **How to Deploy (via AWS CLI)**
+
+Save the above file as `s3bucket.yml`
+
+Then run:
+
+```bash
+aws cloudformation create-stack \
+  --stack-name MyS3Stack \
+  --template-body file://s3bucket.yml
+```
+
+To check stack status:
+
+```bash
+aws cloudformation describe-stacks --stack-name MyS3Stack
+```
+
+To delete stack:
+
+```bash
+aws cloudformation delete-stack --stack-name MyS3Stack
+```
+
+---
+
+## 🏗️ **Example 2 – EC2 Instance with Security Group**
+
+A more realistic example creating an **EC2 instance** and **Security Group**:
+
+```yaml
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Create EC2 instance and Security Group using CloudFormation
+
+Resources:
+  MySecurityGroup:
     Type: AWS::EC2::SecurityGroup
     Properties:
-      GroupDescription: Allow HTTP and SSH
+      GroupDescription: Allow SSH and HTTP access
       SecurityGroupIngress:
-        - IpProtocol: tcp
-          FromPort: 80
-          ToPort: 80
-          CidrIp: 0.0.0.0/0
         - IpProtocol: tcp
           FromPort: 22
           ToPort: 22
           CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+
+  MyEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-0c02fb55956c7d316  # Amazon Linux 2 (Example AMI)
+      SecurityGroupIds:
+        - !Ref MySecurityGroup
+      KeyName: my-keypair
 ```
 
-📘 **Explanation:**
-This template:
+### 🧠 What this does:
 
-* Creates a **Security Group** allowing HTTP and SSH.
-* Launches an **EC2 instance** using that Security Group.
-* CloudFormation automatically handles the dependency.
+* Creates a **Security Group** allowing SSH (22) and HTTP (80)
+* Creates an **EC2 instance** using that SG
+* Attaches an existing **Key Pair** for SSH login
 
 ---
 
-### 🌐 **Example 2: Automating Multi-Tier Architecture**
+## 🌐 **Example 3 – Full Stack (S3 + EC2 + IAM Role)**
 
-You can use CloudFormation to create:
+Here’s a compact stack that creates:
 
-* VPC → Subnets → Internet Gateway → Route Tables → EC2 + RDS
-  All in one automated process.
+1. An **S3 Bucket**
+2. An **IAM Role** for EC2
+3. An **EC2 instance** using that role
 
-📘 **Use Case:**
-In an enterprise, you can deploy a **three-tier web application** (frontend, backend, database) across multiple AWS accounts or regions with **one CloudFormation template**.
-This ensures every team uses the **same infrastructure blueprint** — reducing errors and manual setup time.
+```yaml
+AWSTemplateFormatVersion: '2010-09-09'
+Description: EC2 with IAM Role and S3 bucket
+
+Resources:
+  MyS3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: cf-demo-bucket-12345
+
+  EC2S3Role:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: ec2.amazonaws.com
+            Action: sts:AssumeRole
+      Policies:
+        - PolicyName: S3AccessPolicy
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action: ['s3:*']
+                Resource: '*'
+
+  MyInstanceProfile:
+    Type: AWS::IAM::InstanceProfile
+    Properties:
+      Roles:
+        - !Ref EC2S3Role
+
+  MyEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-0c02fb55956c7d316
+      IamInstanceProfile: !Ref MyInstanceProfile
+      KeyName: my-keypair
+```
+
+### ⚙️ What happens:
+
+* CloudFormation automatically creates an **IAM Role** for EC2 with **S3 full access**
+* Then attaches that role to an EC2 instance
+* The EC2 instance can now access S3 **securely (without access keys)**
 
 ---
 
