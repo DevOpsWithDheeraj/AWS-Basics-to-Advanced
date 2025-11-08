@@ -1,4 +1,4 @@
-## 🔹 What is AWS Systems Manager?
+# 🔹 What is AWS Systems Manager?
 
 **AWS Systems Manager (SSM)** is a **centralized management service** that helps you view and control your **AWS resources** (like EC2 instances, RDS, and S3) across multiple AWS accounts and regions.
 
