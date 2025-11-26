@@ -1,4 +1,4 @@
-# 🔐 AWS Security, Identity & Compliance Services
+#  AWS Security, Identity & Compliance Services
 
 Security in AWS follows **shared responsibility**:
 
