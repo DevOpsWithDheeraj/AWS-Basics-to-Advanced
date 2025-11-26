@@ -1,133 +1,292 @@
 # 🔐 AWS Security, Identity & Compliance Services
 
+Security in AWS follows **shared responsibility**:
+
+* **AWS secures the cloud** (hardware, network, hypervisor).
+* **You secure workloads in the cloud** (IAM, encryption, firewalls, patching).
+
+Below are the core AWS services that help you secure apps, data, networks, and identities.
+
 ---
 
-## **1. AWS IAM (Identity and Access Management)**
+## 🔐 **1. AWS IAM – Identity and Access Management**
 
-**IAM** enables secure control of access to AWS services and resources for users, groups, and roles.
+### **Purpose:**
 
-### **Key Features:**
-- Create **Users, Groups, and Roles**.
-- Assign fine-grained **permissions via Policies**.
-- Multi-Factor Authentication (MFA) support.
-- Federated access using external identity providers.
+Control *who* can do *what* in your AWS account.
+
+### **What it provides:**
+
+* IAM Users, Groups, Roles
+* Fine-grained policies (JSON)
+* MFA, Access Analyzer
+* Temporary credentials using Roles
 
 ### **Example:**
-A company creates IAM roles to allow EC2 instances to access S3 buckets securely without embedding credentials in the code.
+
+Your DevOps team deploys to EC2 using GitHub Actions.
+You don't want to store AWS keys in the repository.
+So, you create:
+
+* **IAM Role** → “GitHubDeployRole”
+* Give only `ec2:StartInstances`, `ec2:StopInstances`
+* GitHub OIDC authenticates → gets **temporary creds**
+
+**Result:** Secure, keyless deployments.
 
 ---
 
-## **2. AWS KMS (Key Management Service)**
+## 🔑 **2. AWS KMS – Key Management Service**
 
-**KMS** is a managed service for creating, managing, and controlling **encryption keys** used to protect data across AWS services.
+### **Purpose:**
 
-### **Key Features:**
-- Centralized key management and rotation.
-- Supports symmetric and asymmetric keys.
-- Integrated with S3, EBS, RDS, and Lambda for encryption.
+Create and manage encryption keys.
+
+### **Used for:**
+
+* Encrypting S3 data
+* EBS volume encryption
+* RDS, DynamoDB encryption
+* Secrets Manager
+* TLS certificates through ACM (indirectly)
 
 ### **Example:**
-An application encrypts sensitive customer data stored in **S3** using a KMS key, ensuring data is secure at rest.
+
+You store customer reports in S3.
+To protect data:
+
+* Enable **S3 Server-Side Encryption** (SSE-KMS)
+* Create a **customer-managed CMK**
+* Allow only finance-role to decrypt
+
+**Result:**
+Even if S3 objects leak → without KMS key access, data is unreadable.
 
 ---
 
-## **3. Amazon Cognito**
+## 🛡️ **3. AWS WAF – Web Application Firewall**
 
-**Cognito** provides authentication, authorization, and user management for web and mobile apps.
+### **Purpose:**
 
-### **Key Features:**
-- User sign-up, sign-in, and access control.
-- Integration with social identity providers (Google, Facebook, Amazon).
-- Supports multi-factor authentication and token-based authorization.
+Protect web applications at **HTTP/HTTPS layer (Layer 7).**
+
+### **Blocks:**
+
+* SQL Injection
+* Cross-site scripting
+* Bot attacks
+* Bad IPs
+* Rate limiting
+
+### **Where it attaches:**
+
+* CloudFront
+* Application Load Balancer
+* API Gateway
+* AppSync
 
 ### **Example:**
-A mobile app uses Cognito to manage users, allowing login via Google or email/password and providing temporary AWS credentials for secure API access.
+
+Your EKS application faces bot traffic.
+You attach:
+
+* AWS WAF → Enable **“Bot Control” rule**
+* Add **Rate-Limiting rule: 100 req/min per IP**
+
+**Result:** Scrapers and bots get blocked.
 
 ---
 
-## **4. AWS Directory Service**
+## 🛡️ **4. AWS Shield – DDoS Protection**
 
-**Directory Service** enables AWS resources to integrate with **Microsoft Active Directory (AD)** or create a managed AD in AWS.
+### **Levels:**
 
-### **Key Features:**
-- Managed AD in the cloud.
-- Single Sign-On (SSO) for AWS resources.
-- Integration with EC2, RDS, and applications that use AD authentication.
+1. **Shield Standard** (Free)
+
+   * Automatic DDoS protection for CloudFront, Route 53, ALB
+2. **Shield Advanced** (Paid)
+
+   * 24/7 DDoS Response Team
+   * Cost protection
+   * WAF integration
+   * Real-time attack visibility
 
 ### **Example:**
-A company hosts Windows servers on EC2 and uses Directory Service for centralized authentication and group policy management through AWS Managed Microsoft AD.
+
+Your e-commerce site behind CloudFront gets a 10M req/sec DDoS attack.
+
+* **Shield Standard** absorbs most of it.
+* With **Shield Advanced**, AWS also blocks pattern-based attacks and refunds scaling costs.
 
 ---
 
-## **5. AWS RAM (Resource Access Manager)**
+## 🕵️ **5. AWS Macie – Sensitive Data Discovery**
 
-**AWS RAM** allows you to **share AWS resources securely** across AWS accounts, Organizational Units (OUs), or the entire organization.
+### **Purpose:**
 
-### **Key Features:**
-- Share resources like VPC subnets, Transit Gateways, or License Manager configurations.
-- Centralized management for cross-account access.
+Automatically finds sensitive data such as:
+
+* PII (emails, names, Aadhaar-like IDs)
+* Credit card numbers
+* Secrets in files
 
 ### **Example:**
-A parent company shares a VPC subnet with its subsidiaries using **AWS RAM**, enabling secure access without duplicating resources.
+
+Your S3 bucket contains logs uploaded by users.
+You run Macie → It finds:
+
+* Passwords stored inside logs
+* Emails + phone numbers
+* Unencrypted files
+
+**Result:** You fix the issue and enforce encryption + access policies.
 
 ---
 
-## **6. AWS Secrets Manager**
+## 🛡️ **6. AWS GuardDuty – Threat Detection**
 
-**Secrets Manager** helps protect and manage sensitive information like database credentials, API keys, and tokens.
+### **Purpose:**
 
-### **Key Features:**
-- Securely store and rotate secrets automatically.
-- Fine-grained access using IAM policies.
-- Integrates with RDS, Lambda, and other AWS services.
+Machine-learning based threat detection.
+
+### **Detects:**
+
+* Malicious IP communication
+* Crypto-mining malware
+* Unusual IAM activity
+* Suspicious S3 access
+* EC2 compromised behavior
 
 ### **Example:**
-A web application retrieves database credentials from **Secrets Manager**, which automatically rotates the password every 30 days without code changes.
+
+GuardDuty alerts:
+
+> EC2 instance communicating with a known crypto-mining IP.
+
+You investigate → find that an engineer exposed SSH port 22 publicly and the server was compromised.
+
+**Result:** Rotate keys → Patch EC2 → Restrict SG.
 
 ---
 
-## **7. AWS Certificate Manager (ACM)**
+## 🔍 **7. AWS Inspector – Vulnerability Scanner**
 
-**ACM** simplifies the **provisioning, deployment, and management of SSL/TLS certificates** for securing websites and applications.
+### **Purpose:**
 
-### **Key Features:**
-- Free public SSL/TLS certificates for AWS services.
-- Automatic certificate renewal.
-- Integrates with CloudFront, Elastic Load Balancer, and API Gateway.
+Scan workloads for security vulnerabilities.
+
+### **Scans:**
+
+* EC2 instances (software CVEs)
+* Container images (ECR)
+* Lambda functions
 
 ### **Example:**
-A website hosted on **CloudFront** uses ACM to provision an SSL certificate, enabling HTTPS without manually managing the certificate lifecycle.
+
+Your CI/CD pipeline pushes Docker images to ECR.
+Inspector scans image → finds:
+
+* Critical CVE in openssl
+* Medium CVE in nginx version
+
+Pipeline blocks deployment → you upgrade base image → upload again → clean scan.
 
 ---
 
-## **8. AWS Security Hub**
+## 👥 **8. AWS Cognito – User Authentication for Applications**
 
-**Security Hub** provides a **centralized view of security alerts and compliance status** across AWS accounts.
+### **Purpose:**
 
-### **Key Features:**
-- Aggregates findings from AWS GuardDuty, Inspector, Macie, and third-party tools.
-- Provides compliance checks using AWS best practices and standards (CIS, PCI DSS, etc.).
-- Customizable automated actions and alerts.
+Secure identity service for app users.
+
+### **Features:**
+
+* Signup/Login
+* MFA
+* Social logins (Google, Facebook)
+* JWT token-based auth
+* User pools + Identity pools
 
 ### **Example:**
-A security team monitors multiple AWS accounts through **Security Hub**, receiving alerts for unencrypted S3 buckets and misconfigured security groups.
+
+You create:
+
+* **Cognito User Pool:** app users
+* **Cognito Hosted UI:** signup/login
+* **Cognito Identity Pool:** access temporary S3 permissions
+
+**Result:** You build authentication without coding your own backend auth.
 
 ---
 
-## ✅ **Summary Table**
+## 🔐 **9. AWS CloudHSM – Hardware Security Module**
 
-| Service | Purpose | Example Use Case |
-|---------|---------|-----------------|
-| **IAM** | Access control & identity management | EC2 instances access S3 securely via roles |
-| **KMS** | Encryption key management | Encrypt S3 bucket data at rest |
-| **Cognito** | User authentication & management | Mobile app login with Google & email |
-| **Directory Service** | Managed AD integration | Centralized Windows authentication on EC2 |
-| **RAM** | Cross-account resource sharing | Share VPC subnets across accounts |
-| **Secrets Manager** | Secure storage & rotation of secrets | Rotate database passwords automatically |
-| **ACM** | SSL/TLS certificate management | HTTPS for CloudFront-hosted website |
-| **Security Hub** | Centralized security monitoring | Monitor compliance & security across accounts |
+### **Purpose:**
+
+Dedicated, single-tenant HSM for cryptographic operations.
+
+### **Use cases:**
+
+* Banks, finance, governments
+* FIPS 140-2 Level 3 compliance
+* Custom encryption algorithms
+
+### **Example:**
+
+A bank needs PCI-DSS compliant key storage.
+They deploy **CloudHSM cluster** → Encrypt credit card data using custom algorithms.
+
+**Difference from KMS:**
+KMS = managed, multi-tenant, simpler.
+CloudHSM = dedicated, stricter compliance, full control.
 
 ---
 
-### 🎯 **Conclusion**
-AWS provides a comprehensive set of **security, identity, and compliance services** to protect cloud resources, manage access, enforce policies, and ensure compliance across workloads. Leveraging these services reduces operational overhead and enhances security posture.
+## 🔥 **10. AWS Firewall Manager – Central Policy Management**
+
+### **Purpose:**
+
+Manage security policies across multi-account AWS Organizations.
+
+### **Controls:**
+
+* WAF rules
+* Shield Advanced protection
+* Security Groups
+* VPC firewall policies
+
+### **Example:**
+
+Your company has 60 AWS accounts:
+
+* Dev
+* QA
+* Prod
+* Analytics
+* Clients
+
+You want a rule:
+
+❌ **No security group should allow 0.0.0.0/0 SSH**
+
+Using Firewall Manager:
+
+* Create SG policy
+* Apply to Org Root
+* Auto-remediation enabled
+
+**Result:** Any account that adds open SSH → automatically removed.
+
+---
+
+## 🧩 **How These Services Work Together (Architecture View)**
+
+| Layer                        | AWS Service                   | Purpose                                        |
+| ---------------------------- | ----------------------------- | ---------------------------------------------- |
+| **Identity Security**        | IAM, Cognito                  | Who can access resources & user authentication |
+| **Data Security**            | KMS, CloudHSM, Macie          | Encrypt data + find sensitive data             |
+| **Network Security**         | WAF, Shield, Firewall Manager | Protect against web and DDoS attacks           |
+| **Threat Detection**         | GuardDuty                     | Detect suspicious behavior                     |
+| **Vulnerability Management** | Inspector                     | Find and fix system/app vulnerabilities        |
+
+---
