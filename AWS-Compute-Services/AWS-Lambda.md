@@ -171,34 +171,36 @@ def lambda_handler(event, context):
     source_bucket = event['Records'][0]['s3']['bucket']['name']
     object_key = event['Records'][0]['s3']['object']['key']
     
-    # Extract file extension
-    file_extension = os.path.splitext(object_key)
+    # Extract file extension correctly
+    _, file_extension = os.path.splitext(object_key)
     file_extension = file_extension.lower()
     
-    # Define destination buckets for each file type
+    # Destination buckets
     pdf_bucket = 'your-pdf-bucket-name'
     image_bucket = 'your-image-bucket-name'
     text_bucket = 'your-text-bucket-name'
     
-    # Determine destination bucket based on file type
+    # Determine destination bucket
     if file_extension == '.pdf':
         destination_bucket = pdf_bucket
-    elif file_extension in ['.jpg', '.jpeg']:
+    elif file_extension in ['.jpg', '.jpeg', '.png']:
         destination_bucket = image_bucket
     elif file_extension == '.txt':
         destination_bucket = text_bucket
     else:
         print(f"Unsupported file type: {file_extension}")
-        return
+        return {"status": "unsupported file"}
     
     # Copy file to destination bucket
     copy_source = {'Bucket': source_bucket, 'Key': object_key}
     s3.copy_object(CopySource=copy_source, Bucket=destination_bucket, Key=object_key)
     
-    # Optional: delete the file from source after copying
+    # Optional: delete original file
     # s3.delete_object(Bucket=source_bucket, Key=object_key)
     
     print(f"File '{object_key}' moved from '{source_bucket}' to '{destination_bucket}'")
+    return {"status": "success", "file": object_key}
+
 
 ```
 
