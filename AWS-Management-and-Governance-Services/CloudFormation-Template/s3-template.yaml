@@ -1,0 +1,45 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "S3 bucket with versioning enabled"
+
+Parameters:
+  BucketName:
+    Type: String
+    Description: "Provide bucket name"
+
+Resources:
+  MyS3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref BucketName
+      VersioningConfiguration:
+        Status: Enabled
+
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+
+Outputs:
+
+  BucketName:
+    Description: "S3 Bucket Name"
+    Value: !Ref MyS3Bucket
+
+  BucketArn:
+    Description: "S3 Bucket ARN"
+    Value: !GetAtt MyS3Bucket.Arn
+
+  BucketUrl:
+    Description: "S3 Bucket URL (HTTPs Access)"
+    Value: !Sub "https://${BucketName}.s3.amazonaws.com/"
+
+  BucketWebsiteUrl:
+    Description: "Static Website URL (works only if hosting enabled)"
+    Value: !Sub "http://${BucketName}.s3-website-${AWS::Region}.amazonaws.com"
+

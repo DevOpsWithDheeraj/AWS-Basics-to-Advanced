@@ -1,0 +1,58 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "Create an EC2 instance in us-east-1 using CloudFormation"
+
+Parameters:
+  KeyName:
+    Type: AWS::EC2::KeyPair::KeyName
+    Default: sdhrjsngh-server-key
+    Description: Existing EC2 KeyPair for SSH access
+
+  VpcId:
+    Type: AWS::EC2::VPC::Id
+    Description: Select the VPC
+
+  InstanceType:
+    Type: String
+    Default: t3.micro
+    AllowedValues:
+      - t3.micro
+      - t3.small
+
+Resources:
+
+  MySecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: "Allow SSH & HTTP"
+      VpcId: !Ref VpcId
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+
+  MyEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: !Ref InstanceType
+      KeyName: !Ref KeyName
+      SecurityGroupIds:
+        - !Ref MySecurityGroup
+      ImageId: ami-0ecb62995f68bb549   # Ubuntu us-east-1
+      Tags:
+        - Key: Name
+          Value: MyCFNInstance
+
+Outputs:
+  InstanceID:
+    Description: EC2 ID
+    Value: !Ref MyEC2Instance
+
+  PublicIP:
+    Description: Public IP
+    Value: !GetAtt MyEC2Instance.PublicIp
+
