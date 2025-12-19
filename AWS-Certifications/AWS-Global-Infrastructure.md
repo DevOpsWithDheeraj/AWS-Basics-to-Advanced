@@ -66,8 +66,8 @@ An **Availability Zone** is **one or more discrete data centers** within a Regio
 
 📌 **Example**
 
-* User in Delhi accessing a website hosted in Mumbai
-* Static content (images/videos) is served from **Delhi Edge Location**
+>  User in Delhi accessing a website hosted in Mumbai
+>  Static content (images/videos) is served from **Delhi Edge Location**
 
 🧮 **How many Edge Locations?**
 ➡️ **600+ Edge Locations worldwide**
