@@ -12,7 +12,7 @@ It is made up of:
 
 ---
 
-## 🧱 Core Components Explained (with Example)
+## 🧱 Core Components :
 
 ### 1️⃣ AWS Regions
 
