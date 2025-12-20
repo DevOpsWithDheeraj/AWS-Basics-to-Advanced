@@ -247,7 +247,7 @@ They deploy **CloudHSM cluster** → Encrypt credit card data using custom algor
 
 **Difference from KMS:** <br>
 KMS = managed, multi-tenant, simpler. <br>
-CloudHSM = dedicated, stricter compliance, full control.
+CloudHSM = dedicated, stricter compliance, single-tenant, full control.
 
 ---
 
