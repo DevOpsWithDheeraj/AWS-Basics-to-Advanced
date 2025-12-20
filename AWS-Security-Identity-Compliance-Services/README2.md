@@ -333,6 +333,8 @@ Faster root cause analysis.
 
 Managed **Active Directory in AWS**.
 
+* AWS Directory Service provides managed, scalable directory solutions, primarily Microsoft Active Directory (AD) or LDAP-compatible, for identity management in the cloud, letting you use existing AD credentials for SSO, join EC2 instances to a domain, and integrate AD-dependent apps with AWS services without managing AD infrastructure yourself. Key options include AWS Managed Microsoft AD (a full managed AD), AD Connector (connects to on-prem AD), and Simple AD (basic, low-cost AD). 
+
 ### **Types:**
 
 1. **AWS Managed Microsoft AD**
