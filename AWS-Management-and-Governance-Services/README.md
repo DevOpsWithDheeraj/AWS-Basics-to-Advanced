@@ -20,8 +20,8 @@ CloudWatch is AWS’s primary **monitoring and observability service**. It colle
 
 ### 💡 **Example:**
 
-You have an EC2 instance running a web app.
-→ CloudWatch tracks **CPU Utilization** and **Network In/Out**.
+You have an EC2 instance running a web app. <br>
+→ CloudWatch tracks **CPU Utilization** and **Network In/Out**. <br>
 → You set an alarm: if CPU > 80% for 5 mins → **Auto Scaling** adds another instance or sends an **SNS alert** to admins.
 
 ---
@@ -43,10 +43,10 @@ It ensures **infrastructure consistency**, **auditing**, and **version-controlle
 
 ### 💡 **Example:**
 
-You deploy a VPC, EC2, and RDS instance using a CloudFormation template.
-→ CloudFormation keeps a **stack record** of all resources.
-→ If someone modifies an EC2 manually, **drift detection** flags it.
-→ This ensures your infrastructure remains **consistent and auditable**.
+You deploy a VPC, EC2, and RDS instance using a CloudFormation template. <br>
+→ CloudFormation keeps a **stack record** of all resources. <br>
+→ If someone modifies an EC2 manually, **drift detection** flags it. <br>
+→ This ensures your infrastructure remains **consistent and auditable**. 
 
 ---
 
@@ -65,9 +65,9 @@ It provides **governance, compliance, and security auditing**.
 
 ### 💡 **Example:**
 
-An IAM user accidentally deleted an S3 bucket.
-→ CloudTrail shows: `DeleteBucket` action performed by **user: devops_admin**, from **IP: 203.x.x.x**, at **11:32 AM**.
-→ Helps in **root-cause analysis** and **security auditing**.
+An IAM user accidentally deleted an S3 bucket. <br>
+→ CloudTrail shows: `DeleteBucket` action performed by **user: devops_admin**, from **IP: 203.x.x.x**, at **11:32 AM**. <br>
+→ Helps in **root-cause analysis** and **security auditing**. <br>
 
 ---
 
