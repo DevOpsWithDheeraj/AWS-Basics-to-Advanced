@@ -296,11 +296,20 @@ Secure traffic + zero certificate headaches.
 
 Investigate **security incidents using graphs & timelines**.
 
+* Amazon Detective is an AWS security service that automates the collection and analysis of log data (like CloudTrail, VPC Flow Logs, and GuardDuty findings) to build interactive, graph-based visualizations, helping security analysts quickly investigate, understand, and identify the root cause of security issues or suspicious activity without complex log queries.
+* It uses machine learning and graph theory to map relationships between AWS resources, users, and IP addresses, creating a unified view of behavior and potential threats. 
+
 ### **Works with:**
 
 * GuardDuty
 * VPC Flow Logs
 * CloudTrail
+
+### **How it Works**:
+* Ingests Data: Pulls data from CloudTrail (API calls), VPC Flow Logs (network traffic), and GuardDuty (threat detection).
+* Builds Behavior Graph: Uses ML and graph theory to create a linked dataset showing how resources behave and interact.
+* Visualizes Findings: Presents data in interactive graphs, highlighting anomalies like unusual IP connections or API call volumes.
+* Enables Deep Dives: Allows analysts to explore relationships, validate findings, and quickly understand the scope of a security event. 
 
 ### **Example:**
 
