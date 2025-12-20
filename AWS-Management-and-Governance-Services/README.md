@@ -137,16 +137,79 @@ You manage 5 AWS accounts — for Dev, Test, and Prod.
 → This provides **centralized governance and cost visibility** across the organization.
 
 ---
+Great summary already 👍
+Here are **AWS Auto Scaling** and **AWS Systems Manager** added in the same style, plus an **updated summary table**.
 
-## 📊 **Summary Table**
+---
 
-| **Service**         | **Category**             | **Purpose**                                | **Example Use Case**                       |
-| ------------------- | ------------------------ | ------------------------------------------ | ------------------------------------------ |
-| **CloudWatch**      | Monitoring               | Collects & visualizes metrics/logs         | Monitor EC2 CPU, trigger alarms            |
-| **CloudFormation**  | IaC / Governance         | Automates and tracks resource provisioning | Detect drift or unauthorized infra changes |
-| **CloudTrail**      | Auditing                 | Tracks API calls (who did what)            | Investigate resource deletion              |
-| **AWS Config**      | Compliance               | Tracks resource configuration & compliance | Ensure S3 buckets aren’t public            |
-| **Trusted Advisor** | Optimization             | Recommends best practices                  | Identify idle EC2s & security issues       |
-| **Organizations**   | Multi-Account Management | Centralized control & policy enforcement   | Manage multiple accounts and apply SCPs    |
+## ⚖️ **7. AWS Auto Scaling — Capacity & Performance Management**
+
+### 📘 **Purpose:**
+
+AWS Auto Scaling helps you **automatically adjust compute capacity** to maintain performance while **optimizing cost**.
+It ensures that applications have the **right amount of resources at the right time** based on demand.
+
+### ⚙️ **Key Features:**
+
+* Automatically **scale in/out** EC2 instances, ECS tasks, DynamoDB capacity, and Aurora replicas.
+* Supports **target tracking**, **step scaling**, and **scheduled scaling**.
+* Integrates tightly with **Amazon CloudWatch** metrics and alarms.
+* Improves **high availability and fault tolerance**.
+* Reduces cost by terminating **unused resources**.
+
+### 💡 **Example:**
+
+Your e-commerce website experiences high traffic during sales.
+→ CloudWatch monitors **CPU utilization**.
+→ Auto Scaling Group increases EC2 instances from **2 → 6** when CPU > 70%.
+→ After traffic drops, it scales back to **2 instances**, saving cost.
+
+---
+
+## 🛠️ **8. AWS Systems Manager — Operational Management & Automation**
+
+### 📘 **Purpose:**
+
+AWS Systems Manager (SSM) is a **centralized operations hub** that helps you **manage, automate, and secure AWS resources at scale**.
+It reduces the need for manual access (like SSH) and improves **operational visibility, security, and compliance**.
+
+### ⚙️ **Key Features:**
+
+* **Session Manager** – Secure, browser-based access to EC2 without SSH/RDP.
+* **Run Command** – Execute commands across multiple instances at once.
+* **Patch Manager** – Automate OS and software patching.
+* **Automation** – Create workflows for routine maintenance and remediation.
+* **Parameter Store** – Securely store configuration values and secrets.
+* **Inventory** – Track installed software and system configurations.
+
+### 💡 **Example:**
+
+You need to patch 100 EC2 instances.
+→ Use **Patch Manager** to apply patches during a maintenance window.
+→ Compliance reports show which instances are **patched or non-compliant**.
+→ No SSH keys or bastion hosts required.
+
+---
+
+## 📊 **Updated Summary Table**
+
+| **Service**               | **Category**               | **Purpose**                                | **Example Use Case**                       |
+| ------------------------- | -------------------------- | ------------------------------------------ | ------------------------------------------ |
+| **CloudWatch**            | Monitoring                 | Collects & visualizes metrics/logs         | Monitor EC2 CPU, trigger alarms            |
+| **CloudFormation**        | IaC / Governance           | Automates and tracks resource provisioning | Detect drift or unauthorized infra changes |
+| **CloudTrail**            | Auditing                   | Tracks API calls (who did what)            | Investigate resource deletion              |
+| **AWS Config**            | Compliance                 | Tracks resource configuration & compliance | Ensure S3 buckets aren’t public            |
+| **Trusted Advisor**       | Optimization               | Recommends best practices                  | Identify idle EC2s & security issues       |
+| **Organizations**         | Multi-Account Management   | Centralized control & policy enforcement   | Manage multiple accounts with SCPs         |
+| **Auto Scaling**          | Performance & Cost Control | Automatically adjusts capacity             | Scale EC2 during traffic spikes            |
+| **Systems Manager (SSM)** | Operations & Automation    | Manage, patch, and automate resources      | Patch EC2s, run commands, avoid SSH access |
+
+---
+
+### 🧠 **DevOps Interview Tip**
+
+If asked **“How do these services work together?”**, say:
+
+> *CloudWatch monitors metrics → Auto Scaling reacts → CloudTrail audits actions → AWS Config checks compliance → Systems Manager remediates → Organizations enforces policies → Trusted Advisor optimizes costs.*|
 
 ---
