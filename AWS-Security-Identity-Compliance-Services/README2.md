@@ -117,7 +117,7 @@ Securely **store, rotate, and access secrets**.
 
 Your app connects to RDS.
 
-❌ Hardcoded DB password in code
+❌ Hardcoded DB password in code <br>
 ✅ Use Secrets Manager:
 
 * Store DB creds
