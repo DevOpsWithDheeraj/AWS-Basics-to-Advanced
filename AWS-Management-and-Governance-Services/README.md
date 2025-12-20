@@ -137,10 +137,6 @@ You manage 5 AWS accounts — for Dev, Test, and Prod.
 → This provides **centralized governance and cost visibility** across the organization.
 
 ---
-Great summary already 👍
-Here are **AWS Auto Scaling** and **AWS Systems Manager** added in the same style, plus an **updated summary table**.
-
----
 
 ## ⚖️ **7. AWS Auto Scaling — Capacity & Performance Management**
 
