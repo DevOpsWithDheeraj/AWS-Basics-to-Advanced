@@ -11,7 +11,7 @@
 
 Centralized **workforce identity management** for AWS accounts and applications.
 
-AWS IAM Identity Center (formerly AWS Single Sign-On) is a cloud service that centrally manages workforce access to multiple AWS accounts and applications. It is the recommended "front door" for workforce users to access AWS resources securely and efficiently
+AWS IAM Identity Center (formerly AWS Single Sign-On) is a cloud service that centrally manages **workforce access** to multiple AWS accounts and applications. It is the recommended "front door" for workforce users to access AWS resources securely and efficiently
 
 ### **What it provides:**
 
