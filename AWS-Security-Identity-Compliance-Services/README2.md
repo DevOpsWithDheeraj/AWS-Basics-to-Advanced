@@ -182,6 +182,8 @@ One dashboard → complete security visibility.
 
 Self-service access to **AWS compliance reports & agreements**.
 
+* AWS Artifact is a free, self-service portal within the AWS console that gives you on-demand access to AWS's security and compliance documentation, like SOC, PCI, and ISO reports, plus agreements (e.g., BAA) for your AWS accounts, helping you prove compliance and understand the security posture of the AWS infrastructure for your auditors and regulators. 
+
 ### **Provides:**
 
 * SOC reports
