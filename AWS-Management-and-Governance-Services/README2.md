@@ -20,9 +20,9 @@ It automates the creation of a **Landing Zone** with built-in **guardrails** for
 
 ### 💡 **Example:**
 
-You are onboarding a new team.
-→ Use Control Tower to create a new AWS account.
-→ Guardrails prevent disabling CloudTrail or creating public S3 buckets.
+You are onboarding a new team. <br>
+→ Use Control Tower to create a new AWS account. <br>
+→ Guardrails prevent disabling CloudTrail or creating public S3 buckets. <br>
 → Account is compliant **from day one**.
 
 ---
@@ -42,9 +42,9 @@ AWS Health Dashboard provides **real-time visibility into AWS service health eve
 
 ### 💡 **Example:**
 
-An AWS region experiences an EC2 networking issue.
-→ Health Dashboard shows affected services.
-→ You receive alerts for impacted instances.
+An AWS region experiences an EC2 networking issue. <br>
+→ Health Dashboard shows affected services. <br>
+→ You receive alerts for impacted instances. <br>
 → Enables proactive incident response.
 
 ---
@@ -64,9 +64,9 @@ AWS License Manager helps you **track, manage, and enforce software license usag
 
 ### 💡 **Example:**
 
-You run Windows Server and SQL Server workloads.
-→ License Manager tracks license usage.
-→ Prevents launching instances beyond license limits.
+You run Windows Server and SQL Server workloads. <br>
+→ License Manager tracks license usage. <br>
+→ Prevents launching instances beyond license limits. <br>
 → Avoids **compliance penalties**.
 
 ---
@@ -87,9 +87,9 @@ It provides a visual way to interact with AWS services.
 
 ### 💡 **Example:**
 
-You want to quickly check EC2 instance status.
-→ Open AWS Console → EC2 Dashboard.
-→ View metrics, security groups, and logs visually.
+You want to quickly check EC2 instance status. <br>
+→ Open AWS Console → EC2 Dashboard. <br>
+→ View metrics, security groups, and logs visually. <br>
 
 ---
 
@@ -108,9 +108,9 @@ AWS Service Catalog allows organizations to **define and control approved AWS re
 
 ### 💡 **Example:**
 
-Developers need EC2 instances.
-→ Service Catalog provides approved templates.
-→ No manual misconfigurations.
+Developers need EC2 instances. <br>
+→ Service Catalog provides approved templates. <br>
+→ No manual misconfigurations. <br>
 → Ensures compliance and cost governance.
 
 ---
@@ -130,8 +130,8 @@ Service Quotas helps you **view, manage, and request increases** for AWS service
 
 ### 💡 **Example:**
 
-Your Auto Scaling Group fails to launch instances.
-→ Service Quotas shows EC2 limit reached.
+Your Auto Scaling Group fails to launch instances. <br>
+→ Service Quotas shows EC2 limit reached. <br>
 → Request quota increase before outages occur.
 
 ---
@@ -156,8 +156,8 @@ AWS Well-Architected Tool helps you **review workloads against AWS best practice
 
 ### 💡 **Example:**
 
-You review a production workload.
-→ Tool flags missing backups and weak monitoring.
+You review a production workload. <br>
+→ Tool flags missing backups and weak monitoring. <br>
 → Helps improve reliability and cost efficiency.
 
 ---
@@ -177,8 +177,8 @@ AWS Compute Optimizer analyzes resource usage and provides **right-sizing recomm
 
 ### 💡 **Example:**
 
-Your EC2 instance runs at 10% CPU usage.
-→ Compute Optimizer suggests a smaller instance.
+Your EC2 instance runs at 10% CPU usage. <br>
+→ Compute Optimizer suggests a smaller instance. <br>
 → You downsize and reduce monthly cost.
 
 ---
