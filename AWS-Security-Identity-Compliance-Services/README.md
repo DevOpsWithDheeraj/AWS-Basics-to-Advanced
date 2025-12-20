@@ -197,7 +197,13 @@ Pipeline blocks deployment → you upgrade base image → upload again → clean
 
 ### **Purpose:**
 
-Secure identity service for app users.
+Amazon Cognito is an AWS service that provides user sign-up, sign-in, and access control for web & mobile apps, handling authentication, authorization and user management securely and at scale.
+
+It offers two main components:
+1. **User Pools** : a user directory for sign-up/sign-in
+2. **Identity Pools** : granting temporary AWS Credentials
+
+> Cognito supports social logins (Google, Facebook) and enterprise providers (SAML, OIDC) while enabling features like MFA and custom user flows.
 
 ### **Features:**
 
