@@ -242,11 +242,11 @@ AWS CloudHSM is a managed service providing dedicated Hardware Security Modules 
 
 ### **Example:**
 
-A bank needs PCI-DSS compliant key storage.
+A bank needs PCI-DSS compliant key storage. <br>
 They deploy **CloudHSM cluster** → Encrypt credit card data using custom algorithms.
 
-**Difference from KMS:**
-KMS = managed, multi-tenant, simpler.
+**Difference from KMS:** <br>
+KMS = managed, multi-tenant, simpler. <br>
 CloudHSM = dedicated, stricter compliance, full control.
 
 ---
