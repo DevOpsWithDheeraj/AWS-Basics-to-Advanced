@@ -56,9 +56,9 @@ Centralized access control + no IAM user sprawl.
 
 **Securely share AWS resources** across accounts without duplication.
 
-AWS Resource Access Manager (RAM) is an AWS service that lets you securely share your AWS resources (like VPCs, subnets, AMI, RDS databases) across multiple AWS accounts, either within your AWS Organization, to specific Organizational Units (OUs), or to individual accounts, enabling central management and efficient use of resources without duplication.  <br>
+* AWS Resource Access Manager (RAM) is an AWS service that lets you securely share your AWS resources (like VPCs, subnets, AMI, RDS databases) across multiple AWS accounts, either within your AWS Organization, to specific Organizational Units (OUs), or to individual accounts, enabling central management and efficient use of resources without duplication.  <br>
 
-It simplifies multi-account setups by allowing you to create a resource once and make it accessible to others, supporting least-privilege access through managed permissions. 
+* It simplifies multi-account setups by allowing you to create a resource once and make it accessible to others, supporting least-privilege access through managed permissions. 
 
 ### **Shareable resources:**
 
