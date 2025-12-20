@@ -121,6 +121,10 @@ Developers need EC2 instances. <br>
 
 Service Quotas helps you **view, manage, and request increases** for AWS service limits.
 
+* An AWS Service Quota (also known as a **service limit**) is the maximum number of resources, actions, or items you can use in your AWS account for a specific service, set per AWS Region, designed to prevent accidental over-provisioning and protect services from abuse.
+
+* AWS provides default quotas for each service, but you can use the **central Service Quotas console** to view, manage, monitor, and request increases for these limits as your workloads grow. 
+
 ### ⚙️ **Key Features:**
 
 * Centralized view of service limits.
