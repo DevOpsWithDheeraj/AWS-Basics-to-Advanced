@@ -7,8 +7,10 @@
 
 ### 📘 **Purpose:**
 
-AWS Control Tower helps you **set up and govern a secure, multi-account AWS environment** using **best practices**.
-It automates the creation of a **Landing Zone** with built-in **guardrails** for governance, security, and compliance.
+AWS Control Tower is a managed governance service that helps you set up, secure, and govern a multi-account AWS environment using AWS best practices.
+
+In simple words:
+👉 It creates a ready-to-use, well-governed AWS **landing zone** for multiple accounts.
 
 ### ⚙️ **Key Features:**
 
