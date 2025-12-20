@@ -108,6 +108,11 @@ Securely **store, rotate, and access secrets**.
 * IAM-based access control
 * Native integration with RDS, Lambda, EKS
 
+### **How it Works**:
+* Store: You store your secret (e.g., a password) in Secrets Manager, specifying its name and encryption settings.
+* Retrieve: Your application makes an API call to Secrets Manager to fetch the secret at runtime.
+* Rotate: You configure a rotation schedule, often using a Lambda function, to automatically update the secret in the service and in Secrets Manager. 
+
 ### **Example:**
 
 Your app connects to RDS.
