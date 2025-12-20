@@ -66,7 +66,12 @@ When a new product is added to the catalog, SNS sends:
 ## 4. Amazon EventBridge
 
 **Description:**
-EventBridge is a **serverless event bus** that enables event-driven communication between AWS services, SaaS applications, and custom apps.
+Amazon EventBridge is a serverless event bus service that helps different AWS services and applications communicate with each other using events.
+
+In simple words:
+👉 Something happens → an event is generated → EventBridge routes it to the right service automatically
+
+You don’t need to manage servers, polling, or complex integrations.
 
 **Key Features:**
 
