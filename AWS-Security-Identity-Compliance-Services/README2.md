@@ -90,6 +90,10 @@ Central networking + reduced cost + consistent security.
 
 Securely **store, rotate, and access secrets**.
 
+* AWS Secrets Manager is a managed service for securely storing, retrieving, and rotating **sensitive information** like **database credentials**, **API keys**, and **tokens**, eliminating the need to hardcode them in applications for better security and compliance. 
+
+*It allows programmatic access to secrets, centralizes management, automates secret rotation, and integrates with AWS KMS for encryption, enhancing security posture and simplifying credential lifecycle management. 
+
 ### **Stores:**
 
 * Database passwords
