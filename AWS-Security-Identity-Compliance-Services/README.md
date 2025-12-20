@@ -231,7 +231,7 @@ You create:
 
 Dedicated, single-tenant HSM for cryptographic operations.
 
-AWS CloudHSM is a managed service providing dedicated Hardware Security Modules (HSMs) in the cloud for securely generating, storing, and managing cryptographic keys, helping meet strict compliance (FIPS 140-2 Level 3/FIPS 140-3 Level 3) with single-tenant access and full key control, complementing services like AWS KMS for applications needing hardware-backed key security.
+AWS CloudHSM is a managed service providing dedicated Hardware Security Modules (HSMs) in the cloud for securely **generating**, **storing**, and **managing cryptographic keys**, helping meet strict compliance (FIPS 140-2 Level 3/FIPS 140-3 Level 3) with single-tenant access and full key control, complementing services like AWS KMS for applications needing hardware-backed key security.
 
 ### **Use cases:**
 
