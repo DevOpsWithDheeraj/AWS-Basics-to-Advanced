@@ -88,6 +88,8 @@ A payment system sends events to EventBridge. When a payment succeeds:
 **Description:**
 AWS Step Functions is a **serverless orchestration service** that coordinates multiple AWS services into **sequential, parallel, or conditional workflows**.
 
+* AWS Step Functions is a serverless orchestration service that visually coordinates multiple AWS services (like Lambda, SNS, DynamoDB) into reliable, scalable, multi-step workflows, making it easy to build complex applications by defining steps, managing state, handling errors with automatic retries, and making decisions, all through a visual editor and the Amazon States Language (ASL) JSON definition, reducing custom code and operational overhead. 
+
 **Key Features:**
 
 * Visual workflow designer.
