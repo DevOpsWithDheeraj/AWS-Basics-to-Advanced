@@ -206,6 +206,6 @@ You need to patch 100 EC2 instances. <br>
 
 If asked **“How do these services work together?”**, say:
 
-> *CloudWatch monitors metrics → Auto Scaling reacts → CloudTrail audits actions → AWS Config checks compliance → Systems Manager remediates → Organizations enforces policies → Trusted Advisor optimizes costs.*|
+> *CloudWatch monitors metrics → Auto Scaling reacts → CloudTrail audits actions → AWS Config checks compliance → Systems Manager remediates → Organizations enforces policies → Trusted Advisor optimizes costs.*
 
 ---
