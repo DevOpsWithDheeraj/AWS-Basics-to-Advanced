@@ -210,12 +210,23 @@ Audit-ready compliance proof.
 
 Automates **evidence collection for audits**.
 
+* AWS Audit Manager is a service that simplifies risk and compliance management by automating the continuous collection and organization of evidence from your AWS usage, helping you audit against industry standards (like PCI DSS, HIPAA, NIST) and internal controls with less manual effort, generating audit-ready reports with verifiable data, and providing tools for delegation and evidence sharing.
+
+* It reduces the "all hands on deck" workload during audits by mapping AWS resources to controls and presenting them in easy-to-understand reports for auditors. 
+
 ### **Helps with:**
 
 * SOC 2
 * ISO 27001
 * PCI-DSS
 * Internal security audits
+
+### **How it Works**:
+* Set Up: Choose a prebuilt framework or create a custom one, defining controls relevant to your audit.
+* Scope: Specify the AWS accounts and services to be included in the assessment.
+* Automate: Audit Manager continuously collects evidence (logs, configurations, security findings) related to your controls.
+* Review: Manage stakeholder evaluations and delegate tasks.
+* Report: Generate assessment reports that bundle evidence and control summaries for auditors. 
 
 ### **Example:**
 
