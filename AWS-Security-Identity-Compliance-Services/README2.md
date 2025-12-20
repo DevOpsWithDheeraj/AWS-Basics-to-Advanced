@@ -252,6 +252,9 @@ Faster audits + less human error.
 
 Provision and manage **SSL/TLS certificates**.
 
+* AWS Certificate Manager (ACM) is an AWS service that simplifies provisioning, managing, and deploying SSL/TLS certificates for securing network traffic on AWS and connected resources, handling public and private certificates, including automated renewals, removing manual work. 
+* You request or import certificates, then deploy them to integrated services like Elastic Load Balancers (ALB), Amazon CloudFront, and API Gateway, with ACM managing renewals automatically. 
+
 ### **Used with:**
 
 * ALB
@@ -264,6 +267,13 @@ Provision and manage **SSL/TLS certificates**.
 * Free public certificates
 * Auto-renewal
 * Private CA support
+
+### **How it Works (Example with Load Balancer)**:
+* Request or import an SSL/TLS certificate for your domain using ACM.
+* Create an Application Load Balancer (ALB) (or other integrated service).
+* Configure the ALB with an HTTPS listener and associate the ACM certificate.
+* Point your domain (e.g., via Amazon Route 53) to the ALB.
+* ACM automatically renews the certificate before it expires, updating the ALB. 
 
 ### **Example:**
 
