@@ -85,7 +85,7 @@ AWS Config tracks **configuration changes** of AWS resources and checks whether 
 
 ### 💡 **Example:**
 
-You set a Config Rule: “S3 buckets must not be public.”
+You set a Config Rule: “S3 buckets must not be public.” <br>
 → If someone makes a bucket public, AWS Config marks it as **non-compliant** and can automatically **remove public access** or **notify via SNS**.
 
 ---
@@ -108,8 +108,8 @@ Trusted Advisor analyzes your AWS environment and gives recommendations for **co
 
 ### 💡 **Example:**
 
-Trusted Advisor finds unused EBS volumes or idle EC2 instances.
-→ Suggests deleting them to save cost.
+Trusted Advisor finds unused EBS volumes or idle EC2 instances. <br>
+→ Suggests deleting them to save cost. <br>
 → It may also warn that an S3 bucket is **publicly accessible**, violating security best practices.
 
 ---
@@ -131,9 +131,9 @@ It helps apply consistent **policies, permissions, and billing control** across 
 
 ### 💡 **Example:**
 
-You manage 5 AWS accounts — for Dev, Test, and Prod.
-→ With AWS Organizations, you group them under one management account.
-→ Apply an SCP to prevent users from **disabling CloudTrail** or **creating public S3 buckets** in any account.
+You manage 5 AWS accounts — for Dev, Test, and Prod. <br>
+→ With AWS Organizations, you group them under one management account. <br>
+→ Apply an SCP to prevent users from **disabling CloudTrail** or **creating public S3 buckets** in any account. <br>
 → This provides **centralized governance and cost visibility** across the organization.
 
 ---
@@ -155,9 +155,9 @@ It ensures that applications have the **right amount of resources at the right t
 
 ### 💡 **Example:**
 
-Your e-commerce website experiences high traffic during sales.
-→ CloudWatch monitors **CPU utilization**.
-→ Auto Scaling Group increases EC2 instances from **2 → 6** when CPU > 70%.
+Your e-commerce website experiences high traffic during sales. <br>
+→ CloudWatch monitors **CPU utilization**. <br>
+→ Auto Scaling Group increases EC2 instances from **2 → 6** when CPU > 70%. <br>
 → After traffic drops, it scales back to **2 instances**, saving cost.
 
 ---
@@ -180,9 +180,9 @@ It reduces the need for manual access (like SSH) and improves **operational visi
 
 ### 💡 **Example:**
 
-You need to patch 100 EC2 instances.
-→ Use **Patch Manager** to apply patches during a maintenance window.
-→ Compliance reports show which instances are **patched or non-compliant**.
+You need to patch 100 EC2 instances. <br>
+→ Use **Patch Manager** to apply patches during a maintenance window. <br>
+→ Compliance reports show which instances are **patched or non-compliant**. <br>
 → No SSH keys or bastion hosts required.
 
 ---
