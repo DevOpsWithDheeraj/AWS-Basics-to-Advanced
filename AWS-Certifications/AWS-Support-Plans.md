@@ -38,7 +38,7 @@ AWS offers **four levels of Support Plans**, depending on your business needs an
 
 ### 👥 **Team Involved:**
 
-* **AWS Cloud Support Engineers (CSEs)**
+* **AWS Cloud Support Engineers (CSEs)** --
   Provide guidance via email on development issues.
 
 ### 💡 **Example:**
