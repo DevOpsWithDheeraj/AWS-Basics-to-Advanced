@@ -16,9 +16,9 @@ AWS offers **four levels of Support Plans**, depending on your business needs an
 
 ### 👥 **Team Involved:**
 
-* **AWS Customer Service Team**
+* **AWS Customer Service Team** --
   Helps with **account & billing** queries.
-* **AWS Abuse Team**
+* **AWS Abuse Team** --
   Handles **malicious or unauthorized** use of AWS resources.
 
 ### 💡 **Example:**
