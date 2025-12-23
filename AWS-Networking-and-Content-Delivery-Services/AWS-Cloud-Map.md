@@ -2,7 +2,9 @@
 
 ## What is AWS Cloud Map?
 
-**AWS Cloud Map** is a fully managed **service discovery** service offered by AWS. It allows you to **register and discover application resources**, such as microservices, databases, and other cloud resources, via friendly names rather than hard-coded IP addresses. 
+**AWS Cloud Map is a service discovery service that helps your applications find and connect to services dynamically—without hard-coding IP addresses or endpoints.**
+
+* It’s especially useful in microservices, containerized, and dynamic cloud environments where IPs change frequently. 
 
 * Cloud Map integrates with **AWS services** like ECS, EC2, Lambda, and Route 53, enabling dynamic discovery of resources across your infrastructure.
 
