@@ -7,7 +7,7 @@
 
 * It bypasses the public internet, providing **more reliable, low-latency, and secure connectivity** to AWS services such as **VPC, S3, EC2, and more**.
 
-* Key features:
+Key features:
 - Dedicated, high-bandwidth network connection
 - Lower and predictable network latency
 - Enhanced security by bypassing the public internet
