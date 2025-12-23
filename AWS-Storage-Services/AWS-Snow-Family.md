@@ -1,4 +1,5 @@
-## What is AWS Snow Family?
+# What is AWS Snow Family?
+
 **AWS Snow Family** is a group of **physical devices** provided by AWS to **collect, process, and move large amounts of data** between your on-premises location (data center, office, or edge location) and the AWS Cloud—especially when **internet connectivity is slow, unreliable, or not available**.
 
 Think of it as **“AWS services in a box.”** 📦☁️
