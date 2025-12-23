@@ -1,4 +1,4 @@
-# AWS Transit Gateway
+
 
 ## What is AWS Transit Gateway?
 
