@@ -126,19 +126,46 @@ A company with 10 VPCs and 2 on-premises data centers can use a **Transit Gatewa
 
 ---
 
-## ✅ **Summary Table**
+## **10. AWS Site-to-Site VPN**
 
-| **Service** | **Purpose** | **Example Use Case** |
-|--------------|--------------|----------------------|
-| **VPC** | Create isolated virtual networks | Host secure web and database tiers |
-| **API Gateway** | Create and manage APIs | Expose Lambda APIs to mobile apps |
-| **Route 53** | DNS and domain management | Route `myapp.com` to EC2 instance |
-| **ELB** | Load balancing traffic | Distribute web traffic across EC2s |
-| **Direct Connect** | Private data center link | Low-latency on-premises connectivity |
-| **CloudFront** | CDN for content delivery | Cache web content globally |
-| **Cloud Map** | Service discovery | Discover ECS microservices |
-| **PrivateLink** | Private VPC connectivity | Secure internal service access |
-| **Transit Gateway** | Centralized VPC routing | Connect multiple VPCs easily |
+**AWS Site-to-Site VPN** enables a **secure, encrypted connection** between your **on-premises network (office/data center)** and your **Amazon VPC** over the **public internet** using **IPSec**.
+
+It is commonly used for **hybrid cloud architectures** where part of the infrastructure runs on-premises and part runs on AWS.
+
+### **Key Features:**
+
+* Uses **IPSec encryption** for secure communication.
+* Connects on-premises networks to AWS VPC.
+* Provides **two VPN tunnels** for high availability.
+* Cost-effective and quick to set up.
+* Can be used as a **primary connection** or a **backup** for Direct Connect.
+
+### **Components Involved:**
+
+* **Customer Gateway (CGW):** Your on-premises router/firewall.
+* **Virtual Private Gateway (VGW)** or **Transit Gateway:** AWS side of VPN.
+* **VPN Tunnel:** Encrypted IPSec tunnel over the internet.
+
+### **Example:**
+
+A company has its office network in Bangalore and hosts applications on AWS EC2 inside a VPC.
+Using **AWS Site-to-Site VPN**, employees can securely access AWS resources (EC2, RDS) from the office network as if they are part of the same private network.
 
 ---
 
+## ✅ **Summary Table**
+
+| **Service**          | **Purpose**                      | **Example Use Case**                 |
+| -------------------- | -------------------------------- | ------------------------------------ |
+| **VPC**              | Create isolated virtual networks | Host secure web and database tiers   |
+| **API Gateway**      | Create and manage APIs           | Expose Lambda APIs to mobile apps    |
+| **Route 53**         | DNS and domain management        | Route `myapp.com` to EC2 instance    |
+| **ELB**              | Load balancing traffic           | Distribute web traffic across EC2s   |
+| **Direct Connect**   | Private data center link         | Low-latency on-premises connectivity |
+| **CloudFront**       | CDN for content delivery         | Cache web content globally           |
+| **Cloud Map**        | Service discovery                | Discover ECS microservices           |
+| **PrivateLink**      | Private VPC connectivity         | Secure internal service access       |
+| **Transit Gateway**  | Centralized VPC routing          | Connect multiple VPCs easily         |
+| **Site-to-Site VPN** | Secure hybrid connectivity       | Connect on-prem network to AWS VPC   |
+
+---
