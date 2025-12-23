@@ -1,4 +1,4 @@
-# AWS Cloud Map
+
 
 ## What is AWS Cloud Map?
 
