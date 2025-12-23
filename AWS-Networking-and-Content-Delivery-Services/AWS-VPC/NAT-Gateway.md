@@ -6,6 +6,16 @@ A **NAT Gateway** is a **managed AWS service** that allows instances in a **Priv
 So, it provides **outbound Internet access** but **blocks inbound Internet connections**.
 
 ---
+🧠 Simple Definition (Layman Terms)
+
+Think of a NAT Gateway like a one-way door:
+
+Inside → Outside (Allowed) ✅
+
+Outside → Inside (Blocked) ❌
+
+Your private servers can go out to the internet, but hackers from the internet can’t directly come in.
+---
 
 ## ⚙️ Why Do We Need a NAT Gateway?
 
