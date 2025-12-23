@@ -15,6 +15,7 @@ Inside → Outside (Allowed) ✅
 Outside → Inside (Blocked) ❌
 
 Your private servers can go out to the internet, but hackers from the internet can’t directly come in.
+
 ---
 
 ## ⚙️ Why Do We Need a NAT Gateway?
