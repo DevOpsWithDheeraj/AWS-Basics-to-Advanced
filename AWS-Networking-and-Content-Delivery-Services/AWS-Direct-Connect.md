@@ -3,11 +3,11 @@
 
 **AWS Direct Connect is a dedicated private network connection between your on-premises data center (or office) and AWS, instead of using the public internet.**
 
-Think of it as a private highway to AWS 🚀.  
+* Think of it as a private highway to AWS 🚀.  
 
-It bypasses the public internet, providing **more reliable, low-latency, and secure connectivity** to AWS services such as **VPC, S3, EC2, and more**.
+* It bypasses the public internet, providing **more reliable, low-latency, and secure connectivity** to AWS services such as **VPC, S3, EC2, and more**.
 
-Key features:
+* Key features:
 - Dedicated, high-bandwidth network connection
 - Lower and predictable network latency
 - Enhanced security by bypassing the public internet
