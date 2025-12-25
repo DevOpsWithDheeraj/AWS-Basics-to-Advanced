@@ -1,7 +1,7 @@
 
 ## 🔐 What is Penetration Testing in AWS?
 
-**Penetration Testing (Pentesting)** is a **legal, controlled security testing process** where you simulate attacks on your AWS resources to find vulnerabilities **before hackers do**.
+**Penetration Testing (Pen Testing)** is a **legal, controlled security testing process** where you simulate attacks on your AWS resources to find vulnerabilities **before hackers do**.
 
 In AWS, pentesting means:
 
