@@ -38,15 +38,16 @@ It connects user requests to infrastructure running in AWS—like EC2 instances,
 
 ## 🧾 3. Common DNS Record Types
 
-| Record Type      | Description                                                       | Example                             |
-| ---------------- | ----------------------------------------------------------------- | ----------------------------------- |
-| **A Record**     | Maps domain name to IPv4 address                                  | `www.myapp.com → 192.0.2.1`         |
-| **AAAA Record**  | Maps domain name to IPv6 address                                  | `api.myapp.com → 2001:db8::1`       |
-| **CNAME Record** | Alias one domain to another                                       | `blog.myapp.com → myapp.medium.com` |
-| **MX Record**    | Mail server routing                                               | `myapp.com → mail.myapp.com`        |
-| **TXT Record**   | Stores text data (e.g., SPF, DKIM)                                | `“v=spf1 include:amazon.com”`       |
-| **NS Record**    | Lists the authoritative name servers                              | Points to AWS name servers          |
-| **Alias Record** | AWS-specific; routes to AWS resources (e.g., S3, ELB, CloudFront) | `myapp.com → myELB.amazonaws.com`   |
+| Record Type      | Description                                                                | Example                             |
+| ---------------- | -------------------------------------------------------------------------- | ----------------------------------- |
+| **A Record**     | Maps domain name to IPv4 address                                           | `www.myapp.com → 192.0.2.1`         |
+| **AAAA Record**  | Maps domain name to IPv6 address                                           | `api.myapp.com → 2001:db8::1`       |
+| **CNAME Record** | Alias one domain to another                                                | `blog.myapp.com → myapp.medium.com` |
+| **MX Record**    | Mail server routing                                                        | `myapp.com → mail.myapp.com`        |
+| **TXT Record**   | Stores text data (e.g., SPF, DKIM, domain verification)                    | `"v=spf1 include:amazon.com"`       |
+| **NS Record**    | Lists the authoritative name servers                                       | Points to AWS name servers          |
+| **SOA Record**   | **Start of Authority** – Contains DNS zone admin info, serial number, TTLs | Managed automatically by Route 53   |
+| **Alias Record** | AWS-specific; routes to AWS resources (S3, ELB, CloudFront)                | `myapp.com → myELB.amazonaws.com`   |
 
 ---
 
