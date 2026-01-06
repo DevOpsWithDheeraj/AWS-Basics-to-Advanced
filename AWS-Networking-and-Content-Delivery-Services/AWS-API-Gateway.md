@@ -3,6 +3,7 @@
 ## 📘 What is Amazon API Gateway?
 
 **Amazon API Gateway** is a **fully managed service** that allows developers to **create, deploy, and manage APIs** at any scale.  
+
 It acts as a **front door for applications** to access backend services such as **AWS Lambda, EC2, or any web application**, handling **request routing, throttling, security, and monitoring** automatically.
 
 Key features:
