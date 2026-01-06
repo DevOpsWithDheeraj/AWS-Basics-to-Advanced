@@ -51,7 +51,7 @@
 | ----------- | --------------------------------- |
 | GET         | Retrieve/fetch data (read-only)        |
 | POST        | Create new resource / submit / save data |
-| PUT         | Update existing resource          |
+| PUT         | Update existing resource (entire)         |
 | PATCH       | Partially update a resource       |
 | DELETE      | Remove resource                   |
 
