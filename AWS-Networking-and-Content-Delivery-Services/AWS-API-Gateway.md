@@ -47,10 +47,10 @@
 
 ## **4️⃣ Types of Requests (HTTP Methods)**
 
-| HTTP Method | Usage                             |
+| HTTP Method | Usage                             | 
 | ----------- | --------------------------------- |
-| GET         | Retrieve data (read-only)         |
-| POST        | Create new resource / submit data |
+| GET         | Retrieve/fetch data (read-only)        |
+| POST        | Create new resource / submit / save data |
 | PUT         | Update existing resource          |
 | PATCH       | Partially update a resource       |
 | DELETE      | Remove resource                   |
