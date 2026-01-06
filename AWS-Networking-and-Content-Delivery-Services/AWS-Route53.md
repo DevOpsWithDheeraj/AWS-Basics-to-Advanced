@@ -57,7 +57,9 @@ Amazon Route 53 is AWS’s DNS (Domain Name System) service.
 ## 🧠 4. **How Route 53 Works (Step-by-Step)**
 
 ### Flow Diagram:
-> User → DNS → Route 53 → AWS Service → User
+```
+User → DNS → Route 53 → AWS Service → User
+```
 
 1. **User enters URL:**
    User types `www.example.com` in a browser.
