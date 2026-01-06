@@ -83,7 +83,7 @@ User → DNS  →  Route 53  →  AWS Service  →  User
 
 ## 🏗️ 5. What Does Route 53 Provide?
 
-### 1. **Domain Name Registration**
+### (a). **Domain Name Registration**
 
 You can **register domain names** (like `myapp.com`) directly from AWS Route 53.
 
@@ -100,7 +100,7 @@ You can **register domain names** (like `myapp.com`) directly from AWS Route 53.
 
 ---
 
-### 2. **Domain Name Resolution (DNS Resolution)**
+### (b). **Domain Name Resolution (DNS Resolution)**
 
 When someone types `www.myapp.com`, Route 53:
 
@@ -113,7 +113,7 @@ A record: `www.myapp.com → 54.32.123.10` (an EC2 instance IP)
 
 ---
 
-### 3. **Health Checks**
+### (c). **Health Checks**
 
 Route 53 regularly pings endpoints (via HTTP, HTTPS, or TCP).
 If an endpoint fails, Route 53 can **stop routing** to it and use a **backup endpoint**.
