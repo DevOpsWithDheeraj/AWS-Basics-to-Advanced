@@ -136,5 +136,3 @@ https://<api-id>.execute-api.<region>.amazonaws.com/dev/welcome?name=Dheeraj
 
 ---
 
-Do you want me to make that diagram?
-
