@@ -1,7 +1,10 @@
 # 🌐 What is Amazon Route 53?
 
-**Amazon Route 53** is a **scalable and highly available Domain Name System (DNS) web service**.
-It connects user requests to infrastructure running in AWS—like EC2 instances, load balancers, or S3 buckets—and can also route users to resources outside AWS.
+Amazon Route 53 is AWS’s DNS (Domain Name System) service.
+
+* It translates domain names (like www.example.com) into IP addresses (like 3.110.25.10) so users can reach your application.
+
+* It connects user requests to infrastructure running in AWS—like EC2 instances, load balancers, or S3 buckets—and can also route users to resources outside AWS.
 
 > Think of Route 53 as **the phonebook of the internet** — it translates **domain names** (like `www.myapp.com`) into **IP addresses** (like `192.0.2.1`) that computers use to communicate.
 
@@ -52,6 +55,9 @@ It connects user requests to infrastructure running in AWS—like EC2 instances,
 ---
 
 ## 🧠 4. **How Route 53 Works (Step-by-Step)**
+
+### Flow Diagram:
+> User → DNS → Route 53 → AWS Service → User
 
 1. **User enters URL:**
    User types `www.example.com` in a browser.
