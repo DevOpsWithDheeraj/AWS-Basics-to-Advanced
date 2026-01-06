@@ -58,7 +58,7 @@ Amazon Route 53 is AWS’s DNS (Domain Name System) service.
 
 ### Flow Diagram:
 ```
-User    → DNS    → Route 53    → AWS Service    → User
+User → DNS  →  Route 53  →  AWS Service  →  User
 ```
 
 1. **User enters URL:**
