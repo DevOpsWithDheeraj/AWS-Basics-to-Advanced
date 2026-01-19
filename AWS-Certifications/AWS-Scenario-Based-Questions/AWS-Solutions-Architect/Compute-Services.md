@@ -1,8 +1,3 @@
-# AWS Certified Solutions Architect – Associate
-
-## Scenario-Based Questions on **AWS Compute Services**
-
----
 
 ### **Question 1: Choosing the Right EC2 Purchasing Option**
 
@@ -10,10 +5,10 @@ A fintech company runs a risk-analysis application that executes **every night f
 
 **Which EC2 pricing option should you choose?**
 
-A. On-Demand Instances
-B. Spot Instances
-C. Reserved Instances (Standard, 1-year)
-D. Dedicated Hosts
+A. On-Demand Instances <br>
+B. Spot Instances <br>
+C. Reserved Instances (Standard, 1-year) <br>
+D. Dedicated Hosts <br>
 
 ✅ **Correct Answer: C**
 
@@ -28,10 +23,10 @@ A company hosts a public web application on EC2. The application must remain ava
 
 **Which architecture meets this requirement?**
 
-A. Single EC2 instance with Elastic IP
-B. EC2 instances in multiple AZs behind an Application Load Balancer
-C. EC2 instance with scheduled snapshots
-D. EC2 Auto Scaling in a single AZ
+A. Single EC2 instance with Elastic IP <br>
+B. EC2 instances in multiple AZs behind an Application Load Balancer <br>
+C. EC2 instance with scheduled snapshots <br>
+D. EC2 Auto Scaling in a single AZ <br>
 
 ✅ **Correct Answer: B**
 
@@ -46,10 +41,10 @@ An e-commerce application experiences **traffic spikes during sales events**. Th
 
 **Which solution is MOST appropriate?**
 
-A. AWS Elastic Beanstalk
-B. EC2 Auto Scaling with Application Load Balancer
-C. AWS Lambda
-D. Manual instance launch using AMIs
+A. AWS Elastic Beanstalk <br>
+B. EC2 Auto Scaling with Application Load Balancer <br>
+C. AWS Lambda <br>
+D. Manual instance launch using AMIs <br>
 
 ✅ **Correct Answer: B**
 
@@ -64,10 +59,10 @@ A data analytics team runs batch jobs that can tolerate interruptions. Jobs can 
 
 **Which EC2 option is MOST cost-effective?**
 
-A. On-Demand Instances
-B. Reserved Instances
-C. Spot Instances
-D. Dedicated Instances
+A. On-Demand Instances <br>
+B. Reserved Instances <br>
+C. Spot Instances <br>
+D. Dedicated Instances <br>
 
 ✅ **Correct Answer: C**
 
@@ -82,10 +77,10 @@ A company wants to run **Docker containers** without managing EC2 instances or s
 
 **Which compute service should be used?**
 
-A. Amazon EC2 with Docker installed
-B. Amazon ECS with EC2 launch type
-C. AWS Lambda
-D. Amazon ECS with AWS Fargate
+A. Amazon EC2 with Docker installed <br>
+B. Amazon ECS with EC2 launch type <br>
+C. AWS Lambda <br>
+D. Amazon ECS with AWS Fargate <br>
 
 ✅ **Correct Answer: D**
 
@@ -100,10 +95,10 @@ An application processes image uploads. Code should run **only when an image is 
 
 **Which compute service is BEST suited?**
 
-A. EC2 Auto Scaling
-B. AWS Lambda
-C. Elastic Beanstalk
-D. Amazon ECS
+A. EC2 Auto Scaling <br>
+B. AWS Lambda <br>
+C. Elastic Beanstalk <br>
+D. Amazon ECS <br>
 
 ✅ **Correct Answer: B**
 
@@ -118,10 +113,10 @@ A company requires **physical isolation and control over the underlying hardware
 
 **Which EC2 option should be used?**
 
-A. Reserved Instances
-B. Spot Instances
-C. Dedicated Hosts
-D. On-Demand Instances
+A. Reserved Instances <br>
+B. Spot Instances <br>
+C. Dedicated Hosts <br>
+D. On-Demand Instances <br>
 
 ✅ **Correct Answer: C**
 
@@ -136,10 +131,10 @@ A startup wants to deploy a web application quickly without managing infrastruct
 
 **Which service should they use?**
 
-A. EC2 with Auto Scaling
-B. AWS Elastic Beanstalk
-C. Amazon ECS
-D. AWS Lambda
+A. EC2 with Auto Scaling <br>
+B. AWS Elastic Beanstalk <br>
+C. Amazon ECS <br>
+D. AWS Lambda <br>
 
 ✅ **Correct Answer: B**
 
@@ -154,10 +149,10 @@ An architect wants to provide EC2 instances **temporary credentials** to access 
 
 **What is the BEST solution?**
 
-A. Store access keys in environment variables
-B. Use IAM user credentials
-C. Attach an IAM role to the EC2 instance
-D. Use AWS KMS
+A. Store access keys in environment variables <br>
+B. Use IAM user credentials <br>
+C. Attach an IAM role to the EC2 instance <br>
+D. Use AWS KMS <br>
 
 ✅ **Correct Answer: C**
 
@@ -172,10 +167,10 @@ A machine learning team requires **GPU-based compute** for training deep learnin
 
 **Which EC2 instance family is MOST appropriate?**
 
-A. T family
-B. M family
-C. C family
-D. P family
+A. T family <br>
+B. M family <br>
+C. C family <br>
+D. P family <br>
 
 ✅ **Correct Answer: D**
 
