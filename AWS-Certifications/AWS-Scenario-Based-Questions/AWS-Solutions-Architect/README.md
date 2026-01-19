@@ -15,11 +15,6 @@
 * **Scoring:** Scaled score between 100–1000, **minimum passing score is 720** 
 * **Languages:** English + many international languages (e.g., Japanese, Spanish, Chinese) 
 * **No penalty for guessing.** Unanswered = incorrect.
-
-**Delivery Options:**
-* **In‑person at a test center (Pearson VUE)**
-* **Online proctored exam** 
-
 ---
 
 ## 📊 **2. Exam Domains & Weightage**
