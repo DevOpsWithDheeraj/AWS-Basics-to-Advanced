@@ -102,14 +102,8 @@ While not an exhaustive list, AWS typically expects knowledge in key services su
 * **Monitoring & Ops:** CloudWatch, CloudTrail
 * **Decoupling:** SQS, SNS, EventBridge
 * **Content Delivery:** CloudFront
-  These are often referenced in scenarios so strong hands‑on familiarity is important. ([Reddit][7])
+  These are often referenced in scenarios so strong hands‑on familiarity is important. 
 
 ---
 
-## 📝 **Exam Tips**
 
-✅ Understand *why* a service fits a scenario, not just *what it does*
-✅ Practice scenario‑based questions (not just MCQ drills)
-✅ Review **AWS Well‑Architected Framework** best practices
-
----
