@@ -6,10 +6,10 @@ A company wants to store website images and videos that must be **highly durable
 
 **Which AWS service should be used?**
 
-A. Amazon EBS
-B. Amazon EFS
-C. Amazon S3
-D. Amazon FSx
+A. Amazon EBS <br>
+B. Amazon EFS <br>
+C. Amazon S3 <br>
+D. Amazon FSx <br>
 
 ✅ **Correct Answer:** C. Amazon S3
 
@@ -25,10 +25,10 @@ An EC2 instance requires **persistent block storage** that remains available eve
 
 **Which AWS storage service meets this requirement?**
 
-A. Amazon S3
-B. Amazon EBS
-C. Amazon EFS
-D. AWS Snowball
+A. Amazon S3 <br>
+B. Amazon EBS <br>
+C. Amazon EFS <br>
+D. AWS Snowball <br>
 
 ✅ **Correct Answer:** B. Amazon EBS
 
@@ -44,10 +44,10 @@ A DevOps team needs a **shared file system** that can be accessed **simultaneous
 
 **Which service should they choose?**
 
-A. Amazon S3
-B. Amazon EBS
-C. Amazon EFS
-D. Amazon FSx for Lustre
+A. Amazon S3 <br>
+B. Amazon EBS <br>
+C. Amazon EFS <br>
+D. Amazon FSx for Lustre <br>
 
 ✅ **Correct Answer:** C. Amazon EFS
 
@@ -63,10 +63,10 @@ A company must store compliance data for **10 years** that is **rarely accessed*
 
 **Which S3 storage class is most suitable?**
 
-A. S3 Standard
-B. S3 Intelligent-Tiering
-C. S3 Glacier Instant Retrieval
-D. S3 Glacier Deep Archive
+A. S3 Standard <br>
+B. S3 Intelligent-Tiering <br>
+C. S3 Glacier Instant Retrieval <br>
+D. S3 Glacier Deep Archive <br>
 
 ✅ **Correct Answer:** D. S3 Glacier Deep Archive
 
@@ -82,10 +82,10 @@ An application stores files in S3, but the access pattern is unpredictable. The 
 
 **Which option should be used?**
 
-A. S3 Standard
-B. S3 Glacier
-C. S3 Intelligent-Tiering
-D. S3 One Zone-IA
+A. S3 Standard <br>
+B. S3 Glacier <br>
+C. S3 Intelligent-Tiering <br>
+D. S3 One Zone-IA <br>
 
 ✅ **Correct Answer:** C. S3 Intelligent-Tiering
 
@@ -101,10 +101,10 @@ An application running on EC2 needs **very fast temporary storage** that will be
 
 **Which storage option is best?**
 
-A. Amazon EBS
-B. Amazon EFS
-C. Instance Store
-D. Amazon S3
+A. Amazon EBS <br>
+B. Amazon EFS <br>
+C. Instance Store <br>
+D. Amazon S3 <br>
 
 ✅ **Correct Answer:** C. Instance Store
 
@@ -120,10 +120,10 @@ A company needs to migrate **50 TB of on-premises data** to AWS but has limited 
 
 **Which AWS service should be used?**
 
-A. AWS DataSync
-B. AWS Snowball
-C. Amazon S3 Transfer Acceleration
-D. AWS Storage Gateway
+A. AWS DataSync <br>
+B. AWS Snowball <br>
+C. Amazon S3 Transfer Acceleration <br>
+D. AWS Storage Gateway <br>
 
 ✅ **Correct Answer:** B. AWS Snowball
 
@@ -139,10 +139,10 @@ An organization wants to access AWS storage from its on-premises environment whi
 
 **Which service enables this hybrid approach?**
 
-A. Amazon EFS
-B. AWS Snowball
-C. AWS Storage Gateway
-D. Amazon FSx
+A. Amazon EFS <br>
+B. AWS Snowball <br>
+C. AWS Storage Gateway <br>
+D. Amazon FSx <br>
 
 ✅ **Correct Answer:** C. AWS Storage Gateway
 
@@ -158,10 +158,10 @@ A company runs a **Windows-based application** that requires a fully managed **W
 
 **Which service should be used?**
 
-A. Amazon EFS
-B. Amazon FSx for Windows File Server
-C. Amazon S3
-D. Amazon EBS
+A. Amazon EFS <br>
+B. Amazon FSx for Windows File Server <br>
+C. Amazon S3 <br>
+D. Amazon EBS <br>
 
 ✅ **Correct Answer:** B. Amazon FSx for Windows File Server
 
@@ -175,10 +175,10 @@ FSx for Windows File Server provides **native Windows SMB support**, Active Dire
 **Scenario:**
 Which AWS storage service **automatically replicates data across multiple Availability Zones**?
 
-A. Amazon EBS
-B. Amazon EFS
-C. Amazon S3
-D. Instance Store
+A. Amazon EBS <br>
+B. Amazon EFS <br>
+C. Amazon S3 <br>
+D. Instance Store <br>
 
 ✅ **Correct Answer:** C. Amazon S3
 
