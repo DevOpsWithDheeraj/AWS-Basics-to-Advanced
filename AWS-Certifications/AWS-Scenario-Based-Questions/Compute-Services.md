@@ -1,7 +1,4 @@
-Here are **scenario-based questions from AWS Compute Services** for the **AWS Certified Cloud Practitioner (CLF-C02)** exam.
-Each question includes **options, correct answer, and a clear explanation** 👇
 
----
 
 ## 1️⃣ Choosing a virtual server in the cloud
 
