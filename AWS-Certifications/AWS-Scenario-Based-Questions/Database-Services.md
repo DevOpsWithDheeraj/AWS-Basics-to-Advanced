@@ -6,10 +6,10 @@ A startup is building a web application that requires a **relational database**.
 
 **Which AWS service should they use?**
 
-A. Amazon EC2 with MySQL installed
-B. Amazon RDS
-C. Amazon DynamoDB
-D. Amazon S3
+A. Amazon EC2 with MySQL installed <br>
+B. Amazon RDS <br>
+C. Amazon DynamoDB <br>
+D. Amazon S3 <br>
 
 ✅ **Correct Answer:** **B. Amazon RDS**
 
@@ -25,10 +25,10 @@ A production database must remain available even if an **Availability Zone fails
 
 **Which Amazon RDS feature provides this capability?**
 
-A. Read Replicas
-B. Multi-AZ deployment
-C. Automated backups
-D. Manual snapshots
+A. Read Replicas <br>
+B. Multi-AZ deployment <br>
+C. Automated backups <br>
+D. Manual snapshots <br>
 
 ✅ **Correct Answer:** **B. Multi-AZ deployment**
 
@@ -44,10 +44,10 @@ A mobile application experiences **unpredictable traffic spikes** and requires *
 
 **Which AWS service is best?**
 
-A. Amazon Aurora
-B. Amazon RDS
-C. Amazon DynamoDB
-D. Amazon Redshift
+A. Amazon Aurora <br>
+B. Amazon RDS <br>
+C. Amazon DynamoDB <br>
+D. Amazon Redshift <br>
 
 ✅ **Correct Answer:** **C. Amazon DynamoDB**
 
@@ -63,10 +63,10 @@ A company wants to analyze **terabytes of historical data** for business intelli
 
 **Which AWS service is most appropriate?**
 
-A. Amazon RDS
-B. Amazon DynamoDB
-C. Amazon Aurora
-D. Amazon Redshift
+A. Amazon RDS <br>
+B. Amazon DynamoDB <br>
+C. Amazon Aurora <br>
+D. Amazon Redshift <br>
 
 ✅ **Correct Answer:** **D. Amazon Redshift**
 
@@ -82,10 +82,10 @@ An application reads data frequently from an Amazon RDS database. The database p
 
 **Which solution improves read performance?**
 
-A. Enable Multi-AZ
-B. Add Read Replicas
-C. Increase backup retention
-D. Take manual snapshots
+A. Enable Multi-AZ <br>
+B. Add Read Replicas <br>
+C. Increase backup retention <br>
+D. Take manual snapshots <br>
 
 ✅ **Correct Answer:** **B. Add Read Replicas**
 
@@ -101,10 +101,10 @@ A company needs a **MySQL-compatible database** with **higher performance and av
 
 **Which service should be used?**
 
-A. Amazon DynamoDB
-B. Amazon Aurora
-C. Amazon Redshift
-D. Amazon ElastiCache
+A. Amazon DynamoDB <br>
+B. Amazon Aurora <br>
+C. Amazon Redshift <br>
+D. Amazon ElastiCache <br>
 
 ✅ **Correct Answer:** **B. Amazon Aurora**
 
@@ -120,10 +120,10 @@ An application needs **microsecond-level latency** for frequently accessed data 
 
 **Which AWS service is best?**
 
-A. Amazon RDS
-B. Amazon DynamoDB
-C. Amazon ElastiCache
-D. Amazon Redshift
+A. Amazon RDS <br>
+B. Amazon DynamoDB <br>
+C. Amazon ElastiCache <br>
+D. Amazon Redshift <br>
 
 ✅ **Correct Answer:** **C. Amazon ElastiCache**
 
@@ -139,10 +139,10 @@ A DynamoDB table experiences unpredictable workload changes.
 
 **Which feature helps manage capacity automatically?**
 
-A. Global Tables
-B. DynamoDB Streams
-C. On-Demand Capacity Mode
-D. Encryption at rest
+A. Global Tables <br>
+B. DynamoDB Streams <br>
+C. On-Demand Capacity Mode <br>
+D. Encryption at rest <br>
 
 ✅ **Correct Answer:** **C. On-Demand Capacity Mode**
 
@@ -158,10 +158,10 @@ A company wants to protect its database from accidental deletion.
 
 **Which feature helps restore data to a previous point in time?**
 
-A. Read Replicas
-B. Multi-AZ
-C. Point-in-Time Recovery
-D. Global Tables
+A. Read Replicas <br>
+B. Multi-AZ <br>
+C. Point-in-Time Recovery <br>
+D. Global Tables <br>
 
 ✅ **Correct Answer:** **C. Point-in-Time Recovery**
 
@@ -177,10 +177,10 @@ A globally distributed application requires **low-latency access** for users in 
 
 **Which AWS service should be used?**
 
-A. Amazon RDS Multi-AZ
-B. Amazon Aurora
-C. Amazon DynamoDB Global Tables
-D. Amazon Redshift
+A. Amazon RDS Multi-AZ <br>
+B. Amazon Aurora <br>
+C. Amazon DynamoDB Global Tables <br>
+D. Amazon Redshift <br>
 
 ✅ **Correct Answer:** **C. Amazon DynamoDB Global Tables**
 
