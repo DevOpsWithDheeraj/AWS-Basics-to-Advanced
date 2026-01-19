@@ -9,10 +9,10 @@ A startup wants to quickly launch a web application on a virtual server where th
 
 **Which AWS service should they use?**
 
-A. AWS Lambda
-B. Amazon EC2
-C. Amazon RDS
-D. AWS Elastic Beanstalk
+A. AWS Lambda <br>
+B. Amazon EC2 <br>
+C. Amazon RDS <br>
+D. AWS Elastic Beanstalk <br>
 
 ✅ **Correct Answer:** **B. Amazon EC2**
 
@@ -27,10 +27,10 @@ A developer wants to run backend code in response to HTTP requests without provi
 
 **Which compute service is MOST suitable?**
 
-A. Amazon EC2
-B. Amazon ECS
-C. AWS Lambda
-D. AWS Batch
+A. Amazon EC2 <br>
+B. Amazon ECS <br>
+C. AWS Lambda <br>
+D. AWS Batch <br>
 
 ✅ **Correct Answer:** **C. AWS Lambda**
 
@@ -45,10 +45,10 @@ A company is running Docker containers and wants AWS to manage the container orc
 
 **Which service should they use?**
 
-A. Amazon EC2
-B. Amazon ECS with EC2 launch type
-C. Amazon EKS
-D. Amazon ECS with AWS Fargate
+A. Amazon EC2 <br>
+B. Amazon ECS with EC2 launch type <br>
+C. Amazon EKS <br>
+D. Amazon ECS with AWS Fargate <br>
 
 ✅ **Correct Answer:** **D. Amazon ECS with AWS Fargate**
 
@@ -63,10 +63,10 @@ A research team needs to process large volumes of data jobs that can run at any 
 
 **Which AWS compute service is BEST suited?**
 
-A. AWS Lambda
-B. Amazon EC2 Auto Scaling
-C. AWS Batch
-D. Amazon Lightsail
+A. AWS Lambda <br>
+B. Amazon EC2 Auto Scaling <br>
+C. AWS Batch <br>
+D. Amazon Lightsail <br>
 
 ✅ **Correct Answer:** **C. AWS Batch**
 
@@ -81,10 +81,10 @@ A small business wants a simple, low-cost virtual server with bundled storage an
 
 **Which AWS service should they choose?**
 
-A. Amazon EC2
-B. Amazon Lightsail
-C. AWS Lambda
-D. Amazon ECS
+A. Amazon EC2 <br>
+B. Amazon Lightsail <br>
+C. AWS Lambda <br>
+D. Amazon ECS <br>
 
 ✅ **Correct Answer:** **B. Amazon Lightsail**
 
@@ -99,10 +99,10 @@ An application must remain available even if one EC2 instance fails.
 
 **Which AWS feature helps achieve this?**
 
-A. Elastic Load Balancer
-B. Amazon S3
-C. AWS Snowball
-D. Amazon CloudFront
+A. Elastic Load Balancer <br>
+B. Amazon S3 <br>
+C. AWS Snowball <br>
+D. Amazon CloudFront <br>
 
 ✅ **Correct Answer:** **A. Elastic Load Balancer**
 
@@ -117,10 +117,10 @@ A company expects unpredictable traffic spikes and wants EC2 instances to scale 
 
 **Which AWS service should they use?**
 
-A. AWS Lambda
-B. Amazon EC2 Auto Scaling
-C. Amazon CloudWatch Logs
-D. AWS Batch
+A. AWS Lambda <br>
+B. Amazon EC2 Auto Scaling <br>
+C. Amazon CloudWatch Logs <br>
+D. AWS Batch <br>
 
 ✅ **Correct Answer:** **B. Amazon EC2 Auto Scaling**
 
@@ -135,10 +135,10 @@ An image upload should trigger thumbnail generation automatically.
 
 **Which compute service is MOST appropriate?**
 
-A. Amazon EC2
-B. AWS Lambda
-C. Amazon ECS
-D. Amazon Lightsail
+A. Amazon EC2 <br>
+B. AWS Lambda <br>
+C. Amazon ECS <br>
+D. Amazon Lightsail <br>
 
 ✅ **Correct Answer:** **B. AWS Lambda**
 
@@ -153,10 +153,10 @@ A company wants to run Kubernetes clusters managed by AWS.
 
 **Which service should they use?**
 
-A. Amazon ECS
-B. Amazon EKS
-C. AWS Lambda
-D. Amazon Lightsail
+A. Amazon ECS <br>
+B. Amazon EKS <br>
+C. AWS Lambda <br>
+D. Amazon Lightsail <br>
 
 ✅ **Correct Answer:** **B. Amazon EKS**
 
@@ -169,10 +169,10 @@ Amazon EKS is AWS’s **managed Kubernetes service**, reducing the operational e
 
 Which compute service charges you **only for the time your code runs**?
 
-A. Amazon EC2
-B. Amazon Lightsail
-C. AWS Lambda
-D. Amazon ECS
+A. Amazon EC2 <br>
+B. Amazon Lightsail <br>
+C. AWS Lambda <br>
+D. Amazon ECS <br>
 
 ✅ **Correct Answer:** **C. AWS Lambda**
 
@@ -185,9 +185,9 @@ AWS Lambda follows a **pay-per-use model**, charging only for execution duration
 
 Remember these quick associations:
 
-* **EC2** → Virtual servers
-* **Lambda** → Serverless, event-driven
-* **ECS / EKS** → Containers
-* **Fargate** → Serverless containers
-* **Lightsail** → Simple VPS
-* **Batch** → Large-scale batch jobs
+* **EC2** → Virtual servers <br>
+* **Lambda** → Serverless, event-driven <br>
+* **ECS / EKS** → Containers <br>
+* **Fargate** → Serverless containers <br>
+* **Lightsail** → Simple VPS <br>
+* **Batch** → Large-scale batch jobs <br>
