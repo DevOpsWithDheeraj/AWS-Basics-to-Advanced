@@ -1,4 +1,4 @@
-Let’s go through some **scenario-based questions** on **AWS Well-Architected Framework (WAF) pillars** for the **AWS Certified Cloud Practitioner** exam. I’ll give **options, correct answers, and explanations**. The Well-Architected Framework has **6 pillars**:
+The Well-Architected Framework has **6 pillars**:
 
 1. **Operational Excellence**
 2. **Security**
