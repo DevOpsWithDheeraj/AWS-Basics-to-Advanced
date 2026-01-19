@@ -1,15 +1,14 @@
 
-## 📌 **1. Exam Overview & Pattern** <br>
+## **1. Exam Overview & Pattern** <br>
+
 📌 **Exam Name:**  AWS Certified Solutions Architect – Associate <br>
 📌 **Exam Code:** SAA‑C03 <br>
 📌 **Level:** Associate <br>
 📌 **Format:** Multiple Choice & Multiple Response questions <br>
 
 **Key Details:**
-
 * **Total Questions:** 65 questions (50 *scored* + around 15 *unscored*) 
 * **Question Types:**
-
   * **Multiple choice:** 1 correct answer + 3 distractors
   * **Multiple response:** 2 or more correct answers out of several options
 * **Duration:** 130 minutes 
@@ -18,7 +17,6 @@
 * **No penalty for guessing.** Unanswered = incorrect.
 
 **Delivery Options:**
-
 * **In‑person at a test center (Pearson VUE)**
 * **Online proctored exam** 
 
